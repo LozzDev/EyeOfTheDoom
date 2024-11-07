@@ -3,14 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="customStyle.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="image"></div>
-    <div class="userInput"></div>
-    <input type="text" placeholder="Nombre de usuario" />
-    <input type="text" placeholder="Nombre de usuario" />
-    <input type="text" placeholder="Nombre de usuario" />
-    <input type="text" placeholder="Nombre de usuario" />
+    <form id="form">
+      <div class="image">
+        <img id="logo" src="../images/logo.png" alt="logo of the game" />
+      </div>
+      <div class="description">
+        <p>Un juego sobre un ojo que pega tiros</p>
+      </div>
+      <div class="userInput">
+        <input
+          type="text"
+          id="nombre1"
+          name="nombre"
+          placeholder="Nombre de usuario 1"
+        /></br>
+        <input
+          type="text"
+          id="nombre2"
+          name="nombre"
+          placeholder="Nombre de usuario 2"
+        /></br>
+        <input
+          type="text"
+          id="nombre3"
+          name="nombre"
+          placeholder="Nombre de usuario 3"
+        /></br>
+        <input
+          type="text"
+          id="nombre4"
+          name="nombre"
+          placeholder="Nombre de usuario 4"
+        /></br>
+      </div>
+      <div class="button">
+      <button type="submit" onclick="validarFormulario(event)">Jugar</button>
+      <p id="mensajeError" style="color: red"></p>
+      </div>
+    </form>
+
+    <script>
+      function validarFormulario(event) {
+        event.preventDefault();
+
+        const inputs = document.querySelectorAll('input[type="text"]');
+        const mensajeError = document.getElementById("mensajeError");
+        let todosLlenos = true;
+
+        inputs.forEach((input) => {
+          if (input.value.trim() === "") {
+            todosLlenos = false;
+          }
+        });
+
+        if (!todosLlenos) {
+          mensajeError.textContent = "Por favor, rellena todos los campos.";
+        } else {
+          mensajeError.textContent = "";
+          alert("Formulario enviado con éxito.");
+        }
+      }
+    </script>
   </body>
 </html>

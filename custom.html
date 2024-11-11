@@ -8,72 +8,45 @@
     <title>Document</title>
   </head>
   <body>
-    <form id="form">
-      <div class="image">
-        <img id="logo" src="../images/logo.png" alt="logo of the game" />
+    <div id="background_a">
+      <form id="form_a">
+        <div class="image_a">
+          <img id="logo_a" src="../images/logo2.png" alt="logo of the game" />
+        </div>
+        <div class="description_a">
+          <p>Juego personalizado</p>
+        </div>
+        <div class="userInput_a">
+          <div class="input-container_a">
+            <input type="text" id="nombre1_a" name="nombre" placeholder="Nombre de usuario 1" />
+            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 1" />
+          </div>
+          <div class="input-container_a">
+            <input type="text" id="nombre2_a" name="nombre" placeholder="Nombre de usuario 2" />
+            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 2" />
+          </div>
+          <div class="input-container_a">
+            <input type="text" id="nombre3_a" name="nombre" placeholder="Nombre de usuario 3" />
+            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 3" />
+          </div>
+          <div class="input-container_a">
+            <input type="text" id="nombre4_a" name="nombre" placeholder="Nombre de usuario 4" />
+            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 4" />
+          </div>
+        </div>
+        <div class="inputField-container_a">
+        <input type="text" id="inputField_a" placeholder="Opcional" />
+        <button type="button" class="entryButton_a" onclick="storeEntry()">→</button>
+        <p id="contador_a">0/16</p>
       </div>
-      <div class="description">
-        <p>Un juego sobre un ojo que pega tiros, muchos tiros y que mata aliens</p>
-      </div>
-      <div class="userInput">
-        <input
-          type="text"
-          id="nombre1"
-          name="nombre"
-          placeholder="Nombre de usuario 1"
-        />
-        <p id="obligatory"></p></br>
-        <input
-          type="text"
-          id="nombre2"
-          name="nombre"
-          placeholder="Nombre de usuario 2"
-        />
-        <p id="obligatory"></p></br>
-        <input
-          type="text"
-          id="nombre3"
-          name="nombre"
-          placeholder="Nombre de usuario 3"
-        />
-        <p id="obligatory"></p></br>
-        <input
-          type="text"
-          id="nombre4"
-          name="nombre"
-          placeholder="Nombre de usuario 4"
-        />
-        <p id="obligatory"></p></br>
-      </div>
-      <div class="button">
-      <button type="submit" class="submitbtn" onclick="validarFormulario(event)">Jugar</button>
-      <p id="mensajeError" style="color: red"></p>
-      </div>
-    </form>
+        <div class="button_a">
+          <button type="submit" class="submitbtn_a" onclick="validarFormulario(event)">Jugar</button>
+          <p id="mensajeError_a"></p>
+          <div id="storedEntries_a"></div>
+        </div>
+      </form>
 
-    <script>
-      function validarFormulario(event) {
-        event.preventDefault();
-
-        const inputs = document.querySelectorAll('input[type="text"]');
-        const mensajeError = document.getElementById("mensajeError");
-        const obligatory = document.getElementById("obligatory");
-        let todosLlenos = true;
-
-        inputs.forEach((input) => {
-          if (input.value.trim() === "") {
-            todosLlenos = false;
-          }
-        });
-
-        if (!todosLlenos) {
-          mensajeError.textContent = "Por favor, rellena todos los campos.";
-          obligatory.textContent = "*Obligatorio";
-        } else {
-          mensajeError.textContent = "";
-          alert("Formulario enviado con éxito.");
-        }
-      }
-    </script>
+    <script src="/customScript.js"></script>
+    </div>
   </body>
 </html>

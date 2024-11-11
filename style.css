@@ -3,7 +3,12 @@ body{
     padding: 0;
     font-family: "Pixelify Sans", sans-serif;
     color: #ffffff;
-    background-color: black;
+}
+
+#background{
+    position: absolute;
+    background-image: url(./images/fondo.png);
+    background-size: cover;
 }
 
 header{
@@ -12,4 +17,13 @@ header{
 
 main{
     max-height: fit-content;
+}
+
+.body_logo_img_b{
+    max-height: 300px;
+    width: auto;
+}
+
+footer{
+    bottom: 0;
 }

@@ -129,7 +129,16 @@ function chosenAliveHumans(humans){
     //primero que cree un array con los humanos vivos
     //luego que se haga un random 4 veces para los 4 ejecutados
     //TO-DO
+
+    const aliveHumans=[]
+    Object.values(humansCasual).forEach(human => {
+        if(human.alive==true){
+            aliveHumans.push(human);
+        }
+    });
+    return aliveHumans;
 }
+console.log(chosenAliveHumans(humansCasual))
 
 
 //funcion que se activa cuando se aprieta el boton

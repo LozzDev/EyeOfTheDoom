@@ -1,4 +1,4 @@
-const paragraph = document.getElementById("main_paragraph_b");
+const paragraph = document.getElementById("main_div_paragraph_b");
 const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
 const skipButton = document.getElementById("body_skip_button_b");

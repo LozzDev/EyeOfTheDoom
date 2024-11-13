@@ -23,8 +23,14 @@ body {
   header {
     margin-top: 35px;
   }
+
+  .main_div_b{
+    width: 100%;
+    text-align: center;
+  }
   
-  .main_paragraph_b {
+  .main_div_paragraph_b {
+    text-align: left;
     position: fixed;
     top: 25%;
     margin: 10px 30px;

@@ -7,6 +7,20 @@ const text =
 let index = 0;
 let typingInterval;
 
+
+function setRedText() {
+  let eyeOfTheAbyssTextInterval = [];
+  let searchPhrase = "Eye of the Abyss";
+  for (let i = 0; i <= text.length - searchPhrase.length; i++) {
+    if (text.slice(i, i + searchPhrase.length) === searchPhrase) {
+      for (let j = 0; j < searchPhrase.length; j++) {
+        eyeOfTheAbyssTextInterval.push(i + j);
+      }
+    }
+  }
+  return eyeOfTheAbyssTextInterval;
+}
+
 setTimeout(() => {
   setTimeout(fadeSkipButton, 1000)
 }, 300);
@@ -15,14 +29,23 @@ function fadeSkipButton(){
   skipButton.style.opacity= 1; 
 }
 function generateHiddenText() {
-  text.split("").forEach((char) => {
+  const eyeOfTheAbyssTextInterval = setRedText();
+
+  text.split("").forEach((char, i) => {
     const span = document.createElement("span");
     span.innerText = char;
-    span.style.visibility = "hidden";
+    span.style.visibility = "hidden"; // Inicialmente invisibles
     span.className = "main_div_paragraph_span_b";
-    paragraph.appendChild(span);
+
+    // Si el índice está en el intervalo de la frase "Eye of the Abyss", cambia el color a rojo
+    if (eyeOfTheAbyssTextInterval.includes(i)) {
+      span.style.color = "#c51e32"; // Cambia el color a rojo
+    }
+
+    paragraph.appendChild(span); // Añadir el span al DOM
   });
 }
+
 
 function revealHiddenText() {
   const spans = document.querySelectorAll(".main_div_paragraph_span_b");

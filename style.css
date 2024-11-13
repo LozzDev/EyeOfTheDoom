@@ -17,11 +17,16 @@ header{
 #header_img_ovni2_b{
   position: relative;
   top: 30px;
-  animation: reverseFloat 2s ease-in-out infinite;
+  animation: reverseFloat 8s ease-in-out infinite;
 }
 
-#header_img_ovni1_b, #header_img_ovni3_b{
-  animation: float 2s ease-in-out infinite;
+#header_img_ovni1_b{
+  animation: float 8s ease-in-out infinite;
+}
+
+#header_img_ovni3_b{
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
 .header_img_b{
@@ -31,25 +36,37 @@ header{
 
 @keyframes float {
   0% {
-    transform: translateY(0); 
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(10px); 
   }
   50% {
-    transform: translateY(-8px); 
+    transform: translateY(0) translateX(0px); 
+  }
+  75% {
+    transform: translateY(10px) translateX(10px); 
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) translateX(0); 
   }
 }
 
 @keyframes reverseFloat {
   0% {
-    transform: translateY(-8px); 
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(10px) translateX(10px); 
   }
   50% {
-    transform: translateY(0); 
+    transform: translateY(0) translateX(0px); 
+  }
+  75% {
+    transform: translateY(-10px) translateX(10px); 
   }
   100% {
-    transform: translateY(-8px);
+    transform: translateY(0) translateX(0); 
   }
 }
 

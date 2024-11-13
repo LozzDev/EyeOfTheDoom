@@ -122,19 +122,21 @@ function trackingEyePosition(){
     
     const coordsEye= doomEye.getBoundingClientRect();
 
-    coordsXeye=coordsEye.left;
+    coordsXeye=coordsEye.left; //creo que esto te coge la esquina superior izquierda pero se arregla
     coordsYeye=coordsEye.top;
 
     //console.log(`Posición X: ${coordsX}, Posición Y: ${coordsY}`);
     
     requestAnimationFrame(trackingEyePosition);
 }
+trackingEyePosition();
 
 //fpuncion para que el ojo siga al raton 
-
+let mouseX=0;
+let mouseY=0;
 function eyeFollowMouse(event){
-    const mouseX=event.clientX;
-    const mouseY=event.clientY;
+    mouseX=event.clientX;
+    mouseY=event.clientY;
     doomEye.style.transform = `translate(${mouseX - 50}px, ${mouseY - 80}px)`;
 }
 
@@ -144,9 +146,6 @@ document.addEventListener("mousemove", eyeFollowMouse);
 
 function killAliveHumans(aliveHumansArray){
     
-    const executedHumans=[]
-
-    for(i=0;i<3;i++){ //se ejecuta 5 veces porque matamos a 3 humanos cada vez que presionamos el boton
         let randomHuman=Math.floor(Math.random() * aliveHumansArray.length);
         
         while(aliveHumansArray[randomHuman].alive == false){ //se hace un while por si el numero aleatorio coincide con un muerto y hasta que no de un numero de un vivo no para
@@ -154,10 +153,8 @@ function killAliveHumans(aliveHumansArray){
         }
 
         aliveHumansArray[randomHuman].alive = false;
-        executedHumans.push(aliveHumansArray[randomHuman]) //ademas pusheamos a un array de muertos los 5 disparados para usar esa info para captar sus coordenadas y disparar
-    }
-
-    return executedHumans
+        
+    return (aliveHumansArray[randomHuman]);
 }//funciona, esta testeado
 
 
@@ -167,32 +164,42 @@ function killAliveHumans(aliveHumansArray){
 
 function executerCasual(){
 //TO-DO
+//cuando se presiona el click se consigue el array de los vivos
+    const executedHuman = killAliveHumans(alivehumansCasual); //esto es un objeto human
+    //informacion del humano muerto
+    let human=document.getElementById(executedHuman.id);
+    let humanCoordsX=executedHuman.coordsX;
+    let humanCoordsY=executedHuman.coordsY;
 
-//cuando se presiona el boton se consigue el array de los vivos
-//const executedHumans = killAliveHumans(alivehumansCasual);
-
-//for(i=0;i<executedHumans.length;i++){
-    //let human=document.getElementById(executedHumans[i].id);
-   // let humanCoordsX=executedHumans[i].coordsX;
-    //let humanCoordsY=executedHumans[i].coordsY;
     //una vez tenemos toda la info del primer humano tenemos que lanzar el cohete a su ubi desde el ojo
 
-   // const laser=document.getElementById("laser"); //quiero obtener el laser, y hacer animacion desde la ubi del ojo al tio
-/*
-    const element = document.getElementById("myElement");
+    const laser=document.getElementById("laser"); //quiero obtener el laser, y hacer animacion desde la ubi del ojo al tio
+    laser.style.display = "block"; //ocultar el rayo una vez se lance
+    //aqui creamos la animacion
 
-    element.style.animation = "moveRight 1s ease-in-out forwards";
+    const shootAnimation = `
+        @keyframes shootAnimation{
+            0%{
+                transform: translate(${coordsXeye+30}px, ${coordsYeye-470}px);
+            }
+            100%{
+                transform: translate(${humanCoordsX+30}px, ${humanCoordsY-470}px);
+            }
+        }
+        
+    `
+    // Insertar la animación en el documento
+    const style = document.createElement("style");
+    style.textContent = shootAnimation;
+    document.head.appendChild(style);
+    //ejecutamos la animacion
+    laser.style.animation = "shootAnimation 1s forwards"
 
-    // Define la animación en JavaScript
-    const styleSheet = document.styleSheets[0];
-    styleSheet.insertRule(`
-    @keyframes moveRight {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(100px); }
-    }
-`, styleSheet.cssRules.length);
-*/
-//}
 
+    setTimeout(() => {
+        laser.style.display = "none"; //ocultar el rayo una vez se lance
+        human.style.display="none";
+    }, 1000);
 }
 
+document.addEventListener("click", executerCasual);

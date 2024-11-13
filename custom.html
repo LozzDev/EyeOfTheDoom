@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="customStyle.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Custom page</title>
   </head>
   <body>
     <div id="background_a">
+      <div class="ship-container">
+        <img class="ship1_a" src="./images/ship.png" alt="space ship" />
+        <img class="ship2_a" src="./images/ship.png" alt="space ship" />
+        <img class="ship3_a" src="./images/ship.png" alt="space ship" />
+      </div>
       <form id="form_a">
         <div class="image_a">
           <img id="logo_a" src="../images/logo2.png" alt="logo of the game" />
@@ -18,35 +26,81 @@
         </div>
         <div class="userInput_a">
           <div class="input-container_a">
-            <input type="text" id="nombre1_a" name="nombre" placeholder="Nombre de usuario 1" />
-            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 1" />
+            <input
+              type="text"
+              id="nombre1_a"
+              name="nombre"
+              placeholder="Nombre de usuario 1"
+            required />
+            <img
+              src="/images/astronaut.png"
+              class="icon_a"
+              alt="icon for user 1"
+            />
           </div>
           <div class="input-container_a">
-            <input type="text" id="nombre2_a" name="nombre" placeholder="Nombre de usuario 2" />
-            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 2" />
+            <input
+              type="text"
+              id="nombre2_a"
+              name="nombre"
+              placeholder="Nombre de usuario 2"
+              required />
+            <img
+              src="/images/astronaut_07.png"
+              class="icon_a"
+              alt="icon for user 2"
+            />
           </div>
           <div class="input-container_a">
-            <input type="text" id="nombre3_a" name="nombre" placeholder="Nombre de usuario 3" />
-            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 3" />
+            <input
+              type="text"
+              id="nombre3_a"
+              name="nombre"
+              placeholder="Nombre de usuario 3"
+              required />
+            <img
+              src="/images/astronaut_11.png"
+              class="icon_a"
+              alt="icon for user 3"
+            />
           </div>
           <div class="input-container_a">
-            <input type="text" id="nombre4_a" name="nombre" placeholder="Nombre de usuario 4" />
-            <img src="/images/astronauta.png" class="icon_a" alt="icon for user 4" />
+            <input
+              type="text"
+              id="nombre4_a"
+              name="nombre"
+              placeholder="Nombre de usuario 4"
+            />
+            <img
+              src="/images/astronaut_10.png"
+              class="icon_a"
+              alt="icon for user 4"
+            />
           </div>
         </div>
+        <img class="ship4_a" src="./images/ship.png" alt="space ship" />
         <div class="inputField-container_a">
-        <input type="text" id="inputField_a" placeholder="Opcional" />
-        <button type="button" class="entryButton_a" onclick="storeEntry()">→</button>
-        <p id="contador_a">0/16</p>
-      </div>
+          <input type="text" id="inputField_a" placeholder="Opcional" />
+          <button type="button" class="entryButton_a" onclick="storeEntry()">
+            →
+          </button>
+          <p id="contador_a">0/16</p>
+        </div>
+        <img class="ship5_a" src="./images/ship.png" alt="space ship" />
         <div class="button_a">
-          <button type="submit" class="submitbtn_a" onclick="validarFormulario(event)">Jugar</button>
+          <button
+            type="submit"
+            class="submitbtn_a"
+            onclick="validarFormulario(event)"
+          >
+            Jugar
+          </button>
           <p id="mensajeError_a"></p>
           <div id="storedEntries_a"></div>
         </div>
       </form>
 
-    <script src="/customScript.js"></script>
+      <script src="/customScript.js"></script>
     </div>
   </body>
 </html>

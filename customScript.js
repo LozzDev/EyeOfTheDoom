@@ -3,7 +3,6 @@ let entries = [];
 function storeEntry() {
     const inputField = document.getElementById("inputField_a");
     const mensajeError = document.getElementById("mensajeError_a");
-    const storedEntries = document.getElementById("storedEntries_a");
     const contador = document.getElementById("contador_a");
 
     if (entries.length >= 16) {
@@ -19,33 +18,26 @@ function storeEntry() {
     }
 
     mensajeError.textContent = "";
-
     entries.push(entry);
-
     inputField.value = "";
-
     contador.textContent = `${entries.length}/16`;
-
-        entries.map((item, index) => `${index + 1}. ${item}`).join("<br>");
 }
 
 function validarFormulario(event) {
     event.preventDefault();
 
-    const inputs = document.querySelectorAll('input[type="text"]');
     const mensajeError = document.getElementById("mensajeError_a");
-    let todosLlenos = true;
 
-    inputs.forEach((input) => {
-        if (input.value.trim() === "") {
-            todosLlenos = false;
-        }
-    });
+    const nombre1 = document.getElementById("nombre1_a").value.trim();
+    const nombre2 = document.getElementById("nombre2_a").value.trim();
+    const nombre3 = document.getElementById("nombre3_a").value.trim();
+    const nombre4 = document.getElementById("nombre4_a").value.trim();
 
-    if (!todosLlenos) {
-        mensajeError.textContent = "Por favor, rellena todos los campos.";
-    } else {
-        mensajeError.textContent = "";
-        alert("Formulario enviado con éxito.");
+    if (!nombre1 || !nombre2 || !nombre3 || !nombre4) {
+        mensajeError.textContent = "Por favor, rellena los primeros 4 campos.";
+        return;
     }
+
+    mensajeError.textContent = "";
+    alert("Formulario enviado con éxito.");
 }

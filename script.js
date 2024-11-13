@@ -3,14 +3,14 @@ const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
 const skipButton = document.getElementById("body_skip_button_b");
 const text =
-  "In a distant future, humanity stands on the edge of extinction. A dark entity, the Eye of the Abyss, has awakened in the depths of space. With immense power, it has fixed its gaze on Earth, aiming to consume it in eternal darkness. Yet hope remains: a team of 16 brave astronauts has been assembled to face this threat and stop what is coming.";
+  "In a distant future, humanity stands on the edge of extinction. A dark entity, the Eye of the Doom, has awakened in the depths of space. With immense power, it has fixed its gaze on Earth, aiming to consume it in eternal darkness. Yet hope remains: a team of 16 brave astronauts has been assembled to face this threat and stop what is coming.";
 let index = 0;
 let typingInterval;
 
 
 function setRedText() {
   let eyeOfTheAbyssTextInterval = [];
-  let searchPhrase = "Eye of the Abyss";
+  let searchPhrase = "Eye of the Doom";
   for (let i = 0; i <= text.length - searchPhrase.length; i++) {
     if (text.slice(i, i + searchPhrase.length) === searchPhrase) {
       for (let j = 0; j < searchPhrase.length; j++) {
@@ -34,15 +34,14 @@ function generateHiddenText() {
   text.split("").forEach((char, i) => {
     const span = document.createElement("span");
     span.innerText = char;
-    span.style.visibility = "hidden"; // Inicialmente invisibles
+    span.style.visibility = "hidden";
     span.className = "main_div_paragraph_span_b";
 
-    // Si el índice está en el intervalo de la frase "Eye of the Abyss", cambia el color a rojo
     if (eyeOfTheAbyssTextInterval.includes(i)) {
-      span.style.color = "#c51e32"; // Cambia el color a rojo
+      span.style.color = "#c51e32"; 
     }
 
-    paragraph.appendChild(span); // Añadir el span al DOM
+    paragraph.appendChild(span);
   });
 }
 

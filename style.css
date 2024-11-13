@@ -17,11 +17,40 @@ header{
 #header_img_ovni2_b{
   position: relative;
   top: 30px;
+  animation: reverseFloat 2s ease-in-out infinite;
+}
+
+#header_img_ovni1_b, #header_img_ovni3_b{
+  animation: float 2s ease-in-out infinite;
 }
 
 .header_img_b{
   width: auto;
   height: 30px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-8px); 
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes reverseFloat {
+  0% {
+    transform: translateY(-8px); 
+  }
+  50% {
+    transform: translateY(0); 
+  }
+  100% {
+    transform: translateY(-8px);
+  }
 }
 
 body {
@@ -52,7 +81,7 @@ body {
   }
   
   .main_div_paragraph_b {
-    font-size: 30px;
+    font-size: 32px;
     position: fixed;
     top: 22%;
     margin: 10px 30px;
@@ -91,7 +120,7 @@ body {
     font-size: 40px;
     position: fixed;
     left: 50%;
-    top: 75%;
+    top: 78%;
     opacity: 0;
     transform: translate(-50%, -50%);
   }
@@ -103,7 +132,6 @@ body {
     font-size: 30px;
   }
   
-  /* Animaciones */
   .fade-out {
     opacity: 0;
   }

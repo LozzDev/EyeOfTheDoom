@@ -3,7 +3,7 @@ const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
 const skipButton = document.getElementById("body_skip_button_b");
 const text =
-  "In the distant future, humanity is on the brink of extinction. A dark and evil entity has awakened in the depths of the cosmos: The Eye of the Abyss. With its cosmic power, it has fixed its gaze on the Earth, determined to consume it and plunge it into an abyss of eternal darkness. But all is not lost. An elite group of 16 brave astronauts has been assembled to confront the threat and stop the coming apocalypse. The battle for the fate of humanity has begun. The Eye of the Abyss watches every move... and the countdown to the destruction of the world has already begun. Will the pilots be able to stop it before its gaze becomes irreversible?";
+  "In a distant future, humanity stands on the edge of extinction. A dark entity, the Eye of the Abyss, has awakened in the depths of space. With immense power, it has fixed its gaze on Earth, aiming to consume it in eternal darkness. Yet hope remains: a team of 16 brave astronauts has been assembled to face this threat and stop what is coming.";
 let index = 0;
 let typingInterval;
 

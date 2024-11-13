@@ -2,10 +2,15 @@
     
 }
 
+@font-face {
+  font-family: 'Pixelade';
+  src: url('./fonts/PIXELADE.ttf'),
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'Pixelade';
     color: #ffffec;
     text-align: center;
   }
@@ -30,7 +35,7 @@ body {
   }
   
   .main_div_paragraph_b {
-    text-align: left;
+    font-size: 22px;
     position: fixed;
     top: 25%;
     margin: 10px 30px;
@@ -52,7 +57,7 @@ body {
   
   .body_button_b {
     color: #ffffec;
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: 'Pixelade';
     background-color: #c51e32;
     border-style: none;
     border: 6px;
@@ -66,7 +71,7 @@ body {
   
   #body_start_button_b {
     padding: 8px 40px;
-    font-size: 18px;
+    font-size: 25px;
     position: fixed;
     left: 50%;
     top: 75%;
@@ -78,7 +83,7 @@ body {
     margin-right: 5px;
     padding-right: 25px;
     padding-left: 25px;
-    font-size: 15px;
+    font-size: 20px;
   }
   
   /* Animaciones */

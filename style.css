@@ -126,10 +126,12 @@ body {
   }
   
   #body_skip_button_b {
+    opacity: 0;
     margin-right: 5px;
     padding-right: 30px;
     padding-left: 30px;
     font-size: 30px;
+    transition: opacity 1s ease;
   }
   
   .fade-out {

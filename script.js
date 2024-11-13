@@ -7,6 +7,13 @@ const text =
 let index = 0;
 let typingInterval;
 
+setTimeout(() => {
+  setTimeout(fadeSkipButton, 1000)
+}, 300);
+
+function fadeSkipButton(){
+  skipButton.style.opacity= 1; 
+}
 function generateHiddenText() {
   // Corregir el método `split("")` para dividir cada carácter
   text.split("").forEach((char) => {

@@ -1,7 +1,9 @@
 body{
     background-image: url('./images/fondo.png');
     background-size: cover; 
-    
+    background-position: center;
+    background-clip: content-box;
+    overflow: hidden;
     
 }
 
@@ -11,7 +13,7 @@ main{
 }
 
 .mt-custom-eye{
-    margin-top: 8rem;
+    margin-top: 2rem;
 }
 
 .mt-custom-humans{
@@ -19,7 +21,7 @@ main{
 }
 
 #eye{
-    animation: attack1 10s ease-out 1;
+    /*animation: attack1 10s ease-out 1;*/
 }
 
 @keyframes attack {

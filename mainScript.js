@@ -114,17 +114,31 @@ alivehumansCasual.forEach(human => {
 
 //funcion para trackear en tiempo real la posicion del ojo en todo momento
 
-function trackingEyePosition(){
+    let coordsXeye=0;
+    let coordsYeye=0;
     const doomEye = document.getElementById("eye");
-    const coords= doomEye.getBoundingClientRect();
 
-    let coordsX=coords.left;
-    let coordsY=coords.top;
+function trackingEyePosition(){
+    
+    const coordsEye= doomEye.getBoundingClientRect();
+
+    coordsXeye=coordsEye.left;
+    coordsYeye=coordsEye.top;
 
     //console.log(`Posición X: ${coordsX}, Posición Y: ${coordsY}`);
-    //TO-DO --> necesitamos una funcion que returne el eje x y otra el eje y, para realizar el disparo porque esta no returna nada.
+    
     requestAnimationFrame(trackingEyePosition);
 }
+
+//fpuncion para que el ojo siga al raton 
+
+function eyeFollowMouse(event){
+    const mouseX=event.clientX;
+    const mouseY=event.clientY;
+    doomEye.style.transform = `translate(${mouseX - 50}px, ${mouseY - 80}px)`;
+}
+
+document.addEventListener("mousemove", eyeFollowMouse);
 
 //funcion para ejecutar a los 5 humanos VIVOS randoms que van a morir y ademas generamos un array con ellos para el futuro
 
@@ -150,10 +164,35 @@ function killAliveHumans(aliveHumansArray){
 //funcion que se activa cuando se aprieta el boton
 //cosas que debe hacer --> crear array vivos, elegir 5 humanos a morir, ejecutar animacion de matar
 
+
 function executerCasual(){
 //TO-DO
-//cuando se presiona el boton se consigue el array de los vivos
 
+//cuando se presiona el boton se consigue el array de los vivos
+//const executedHumans = killAliveHumans(alivehumansCasual);
+
+//for(i=0;i<executedHumans.length;i++){
+    //let human=document.getElementById(executedHumans[i].id);
+   // let humanCoordsX=executedHumans[i].coordsX;
+    //let humanCoordsY=executedHumans[i].coordsY;
+    //una vez tenemos toda la info del primer humano tenemos que lanzar el cohete a su ubi desde el ojo
+
+   // const laser=document.getElementById("laser"); //quiero obtener el laser, y hacer animacion desde la ubi del ojo al tio
+/*
+    const element = document.getElementById("myElement");
+
+    element.style.animation = "moveRight 1s ease-in-out forwards";
+
+    // Define la animación en JavaScript
+    const styleSheet = document.styleSheets[0];
+    styleSheet.insertRule(`
+    @keyframes moveRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(100px); }
+    }
+`, styleSheet.cssRules.length);
+*/
+//}
 
 }
 

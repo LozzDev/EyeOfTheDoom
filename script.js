@@ -15,7 +15,6 @@ function fadeSkipButton(){
   skipButton.style.opacity= 1; 
 }
 function generateHiddenText() {
-  // Corregir el método `split("")` para dividir cada carácter
   text.split("").forEach((char) => {
     const span = document.createElement("span");
     span.innerText = char;
@@ -25,9 +24,8 @@ function generateHiddenText() {
   });
 }
 
-// Revela los caracteres de texto uno por uno
 function revealHiddenText() {
-  const spans = document.querySelectorAll(".main_div_paragraph_span_b"); // Corregir el selector
+  const spans = document.querySelectorAll(".main_div_paragraph_span_b");
   if (index < spans.length) {
     spans[index].style.visibility = "visible";
     index++;
@@ -42,24 +40,20 @@ function revealHiddenText() {
   }
 }
 
-// Oculta el botón de omitir
 function hideSkipButton() {
   skipButton.style.display = "none";
 }
 
-// Muestra la imagen con un efecto de fade-in
 function showImage() {
   image.classList.add("fade-in");
 }
 
-// Muestra el botón de inicio
 function showStartButton() {
   startButton.style.opacity = 1;
 }
 
-// Función para omitir la animación de introducción
 function skipIntro() {
-  clearTimeout(typingInterval); // Detiene el efecto de escribir
+  clearTimeout(typingInterval); 
   paragraph.classList.add("fade-out");
   paragraph.style.transition = "none"; 
   image.classList.add("fade-in"); 
@@ -68,9 +62,7 @@ function skipIntro() {
   showStartButton();
 }
 
-// Asigna la función de omitir al botón de omitir
 skipButton.addEventListener("click", skipIntro);
 
-// Llama a `generateHiddenText` para crear los spans y luego inicia la animación
 generateHiddenText();
 revealHiddenText();

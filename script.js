@@ -79,7 +79,6 @@ function skipIntro() {
   paragraph.classList.add("fade-out");
   paragraph.style.transition = "none"; 
   image.classList.add("fade-in"); 
-  image.style.transition = "none";
   hideSkipButton();
   showStartButton();
 }

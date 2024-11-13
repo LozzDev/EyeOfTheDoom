@@ -7,6 +7,23 @@
   src: url('./fonts/PIXELADE.ttf'),
 }
 
+header{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 110px;
+}
+
+#header_img_ovni2_b{
+  position: relative;
+  top: 30px;
+}
+
+.header_img_b{
+  width: auto;
+  height: 30px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -35,9 +52,9 @@ body {
   }
   
   .main_div_paragraph_b {
-    font-size: 22px;
+    font-size: 30px;
     position: fixed;
-    top: 25%;
+    top: 22%;
     margin: 10px 30px;
     opacity: 1;
     transition: opacity 1s ease;
@@ -65,13 +82,13 @@ body {
   }
   
   .body_button_b:hover {
-    background-color: #8a038c;
+    background-color: #008a85;
     color: #fcfc40;
   }
   
   #body_start_button_b {
-    padding: 8px 40px;
-    font-size: 25px;
+    padding: 8px 45px;
+    font-size: 40px;
     position: fixed;
     left: 50%;
     top: 75%;
@@ -81,9 +98,9 @@ body {
   
   #body_skip_button_b {
     margin-right: 5px;
-    padding-right: 25px;
-    padding-left: 25px;
-    font-size: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 30px;
   }
   
   /* Animaciones */
@@ -97,6 +114,6 @@ body {
   
   footer {
     position: fixed;
-    bottom: 20px;
+    bottom: 50px;
     right: 10px;
   }

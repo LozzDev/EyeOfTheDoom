@@ -129,7 +129,7 @@ function trackingEyePosition(){
     
     requestAnimationFrame(trackingEyePosition);
 }
-trackingEyePosition();
+trackingEyePosition(); // esto debe estar para que se active la funcion y saber donde esta el ojo
 
 //fpuncion para que el ojo siga al raton 
 let mouseX=0;
@@ -193,13 +193,46 @@ function executerCasual(){
     style.textContent = shootAnimation;
     document.head.appendChild(style);
     //ejecutamos la animacion
-    laser.style.animation = "shootAnimation 1s forwards"
+    laser.style.animation = "shootAnimation 0.9s forwards"
 
 
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
-        human.style.display="none";
-    }, 1000);
+        
+        human.setAttribute("src", "./images/blood_effect.gif");
+        human.style.opacity=0;
+      
+    }, 900);
+    setTimeout(() => {
+            
+        human.setAttribute("src", "./images/blood_effect.gif");
+        laser.setAttribute("src", "./images/yellowBallExplosion.gif")
+    }, 450);
+    
+    laser.setAttribute("src", "./images/yellowBall.gif")//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
 }
 
 document.addEventListener("click", executerCasual);
+
+//--------------pruebas------------SE QUEDA-----------------
+const container = document.querySelector('.drop_effect')
+
+const createRipple = (e) => {
+    let ripple = document.createElement('span');
+    let x = e.clientX;
+    let y = e.clientY;
+
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+
+    container.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 5000)
+
+    console.log(x, y);
+}
+
+container.addEventListener('click', createRipple);
+

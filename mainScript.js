@@ -85,26 +85,41 @@ const alivehumansCasual = [
 console.log(alivehumansCasual)
 
 //funciones para hallar las coordenadas x e y de los humanos
+    
+
+    
     function humanUbicationX(human){
         const humanElement=document.getElementById(human.id);
         const coords=humanElement.getBoundingClientRect();
-        const coordsX=((coords.left+35) / window.innerWidth) * window.innerWidth; //con esta formula hayamos la posicion X adaptada a cualquier resolucion
+        const coordsX=((coords.left) / window.innerWidth) * window.innerWidth; //con esta formula hayamos la posicion X adaptada a cualquier resolucion
         return coordsX; //cuando se cambien a astronautas se debe modificar ese 35
     }
     function humanUbicationY(human){
         const humanElement=document.getElementById(human.id);
         const coords=humanElement.getBoundingClientRect();
-        const coordsY=((coords.top+35) / window.innerWidth) * window.innerWidth; //con esta formula hayamos la posicion Y adaptada a cualquier resolucion
+        const coordsY=((coords.top) / window.innerHeight) * window.innerHeight; //con esta formula hayamos la posicion Y adaptada a cualquier resolucion
         return coordsY; //cuando se cambien a astronautas se debe modificar ese 35
     }
+    
 
 // Inicializamos las coordenadas después de la creación de los humanos
 //con este foreach nos ahorramos codigo y asignamos coordenadas a todos los objetos
-alivehumansCasual.forEach(human => {
-    human.coordsX = humanUbicationX(human);
-    human.coordsY = humanUbicationY(human);
-    console.log(human)
-})
+
+function humanCoordsCalculator(){
+    alivehumansCasual.forEach(human => {
+        human.coordsX = humanUbicationX(human);
+        human.coordsY = humanUbicationY(human);
+        console.log(`Coordenada Y de ${human.id}: ${human.coordsY}`);
+        console.log(human)
+    })
+}
+
+humanCoordsCalculator();
+
+window.addEventListener("resize", humanCoordsCalculator); //cada vez que se cambia el tamaño de la pagina se ajusta la posi de cada humano
+
+
+
 
 //siguiente paso: ejecutar una animacion (splittear mi animacion en 4 partes)
 //cada vez que se pulse el boton se mate a 4 humanos
@@ -125,13 +140,13 @@ function trackingEyePosition(){
     coordsXeye=coordsEye.left; //creo que esto te coge la esquina superior izquierda pero se arregla
     coordsYeye=coordsEye.top;
 
-    //console.log(`Posición X: ${coordsX}, Posición Y: ${coordsY}`);
+    //console.log(`Posición X: ${coordsXeye}, Posición Y: ${coordsYeye}`);
     
     requestAnimationFrame(trackingEyePosition);
 }
 trackingEyePosition(); // esto debe estar para que se active la funcion y saber donde esta el ojo
 
-//fpuncion para que el ojo siga al raton 
+//fpuncion para que el ojo siga al raton en escriotrio
 let mouseX=0;
 let mouseY=0;
 function eyeFollowMouse(event){
@@ -141,8 +156,24 @@ function eyeFollowMouse(event){
 }
 
 document.addEventListener("mousemove", eyeFollowMouse);
+//funcion para que el ojo siga el movimiento del movil
 
-//funcion para ejecutar a los 5 humanos VIVOS randoms que van a morir y ademas generamos un array con ellos para el futuro
+function eyeFollowGyroscope(event) {
+    // Los ángulos de inclinación del dispositivo
+    const tiltX = event.beta; // Inclinación hacia adelante o atrás (-180 a 180)
+    const tiltY = event.gamma; // Inclinación hacia izquierda o derecha (-90 a 90)
+
+    // Ajustar los valores para mover el ojo (puedes calibrarlos según tu diseño)
+    const offsetX = tiltY * 1.5; // Factor multiplicador para ajustar sensibilidad
+    const offsetY = tiltX * 1.5;
+
+    // Aplicar transformaciones al ojo
+    doomEye.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+}
+
+window.addEventListener("deviceorientation", eyeFollowGyroscope);
+
+//funcion para elegir al humano ejecutado
 
 function killAliveHumans(aliveHumansArray){
     
@@ -180,10 +211,10 @@ function executerCasual(){
     const shootAnimation = `
         @keyframes shootAnimation{
             0%{
-                transform: translate(${coordsXeye+30}px, ${coordsYeye-470}px);
+                transform: translate(${((coordsXeye)/ window.innerWidth) * window.innerWidth}px, ${((coordsYeye)/ window.innerHeight) * window.innerHeight}px);
             }
             100%{
-                transform: translate(${humanCoordsX+30}px, ${humanCoordsY-470}px);
+                transform: translate(${((humanCoordsX)/ window.innerWidth) * window.innerWidth}px, ${((humanCoordsY)/ window.innerHeight) * window.innerHeight}px) rotate(800deg);
             }
         }
         
@@ -193,29 +224,30 @@ function executerCasual(){
     style.textContent = shootAnimation;
     document.head.appendChild(style);
     //ejecutamos la animacion
-    laser.style.animation = "shootAnimation 0.9s forwards"
-
+    laser.style.animation = "shootAnimation 0.9s ";
+    const doomEyeImage=document.getElementById("eye-image");
 
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
         
-        human.setAttribute("src", "./images/blood_effect.gif");
+        doomEyeImage.setAttribute=("src", "./images/eye-attack.gif");
         human.style.opacity=0;
-      
+        
     }, 900);
     setTimeout(() => {
             
         human.setAttribute("src", "./images/blood_effect.gif");
-        laser.setAttribute("src", "./images/yellowBallExplosion.gif")
-    }, 450);
+        laser.setAttribute("src", "./images/yellowBallExplosion.gif");
+    }, 500);
     
-    laser.setAttribute("src", "./images/yellowBall.gif")//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
+    laser.setAttribute("src", "./images/yellowBall.gif");//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
+    
 }
 
 document.addEventListener("click", executerCasual);
 
-//--------------pruebas------------SE QUEDA-----------------
-const container = document.querySelector('.drop_effect')
+//efecto onda expansiva cuando dispara
+const container = document.querySelector('.drop_effect');
 
 const createRipple = (e) => {
     let ripple = document.createElement('span');

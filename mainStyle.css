@@ -1,17 +1,18 @@
-body{
+body, html{
     background-image: url('./images/fondo.png');
     background-size: cover; 
     background-position: center;
     background-clip: content-box;
+
     overflow: hidden;
+    
     cursor: none;
       
-    
-}
-
-main{
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh; /* Asegura que siempre sea al menos el tamaño de la ventana */
+    height: auto;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .mt-custom-eye{
@@ -27,128 +28,6 @@ main{
     z-index: 1; /* Encima de la distorsión */
 }
 
-@keyframes attack {
-    0% {
-        transform: translate(0, 0) rotate(0deg); /* Posición inicial */
-    }
-    6.5% {
-        transform: translate(150px, -40px) rotate(60deg); /* Apunta hacia el humano (derecha y arriba) */
-    }
-    13% {
-        transform: translate(-120px, 80px) rotate(-45deg); /* Apunta hacia el humano (izquierda y centro) */
-    }
-    19.5% {
-        transform: translate(100px, 220px) rotate(30deg); /* Apunta hacia el humano (derecha y abajo) */
-        
-    }
-    26% {
-        transform: translate(-150px, 150px) rotate(-60deg); /* Apunta hacia el humano (izquierda y abajo) */
-    }
-    32.5% {
-        transform: translate(80px, 240px) rotate(15deg); /* Apunta hacia el humano (derecha y abajo extremo) */
-    }
-    39% {
-        transform: translate(-50px, -80px) rotate(-90deg); /* Apunta hacia el humano (izquierda y arriba extremo) */
-    }
-    45.5% {
-        transform: translate(150px, 0px) rotate(75deg); /* Apunta hacia el humano (derecha y centro) */
-    }
-    52% {
-        transform: translate(-150px, 100px) rotate(-30deg); /* Apunta hacia el humano (izquierda y medio) */
-    }
-    58.5% {
-        transform: translate(100px, 60px) rotate(45deg); /* Apunta hacia el humano (derecha y medio superior) */
-    }
-    65% {
-        transform: translate(-100px, 240px) rotate(-15deg); /* Apunta hacia el humano (izquierda y abajo extremo) */
-    }
-    71.5% {
-        transform: translate(50px, 180px) rotate(25deg); /* Apunta hacia el humano (derecha y abajo) */
-    }
-    78% {
-        transform: translate(-80px, -20px) rotate(-75deg); /* Apunta hacia el humano (izquierda y medio superior) */
-    }
-    84.5% {
-        transform: translate(120px, 140px) rotate(10deg); /* Apunta hacia el humano (derecha y medio) */
-    }
-    91% {
-        transform: translate(-150px, 220px) rotate(-50deg); /* Apunta hacia el humano (izquierda y abajo extremo) */
-    }
-    97.5% {
-        transform: translate(50px, 40px) rotate(0deg); /* Apunta hacia el humano (centro) */
-    }
-    100% {
-        transform: translate(0, 0) rotate(0deg) scale(0); /* Vuelve al sitio original */
-
-    }
-
-}
-
-
-@keyframes attack1 {
-    0% {
-        transform: translate(0, 0) rotate(0deg); /* Posición inicial */
-    }
-    11% {
-        transform: translate(150px, -40px) rotate(60deg); /* Apunta hacia el humano (derecha y arriba) */
-    }
-    13% {
-        transform: translate(145px, -35px) rotate(60deg); 
-    }
-    14% {
-        transform: translate(155px, -35px) rotate(60deg); 
-    }
-    15% {
-        transform: translate(145px, -45px) rotate(60deg); 
-    }
-    16% {
-        transform: translate(145px, -45px) rotate(60deg); 
-    }
-    17% {
-        transform: translate(155px, -35px) rotate(60deg); 
-    }
-    18% {
-        transform: translate(155px, -35px) rotate(60deg); 
-    }
-    19% {
-        transform: translate(145px, -45px) rotate(60deg); 
-    }
-    20% {
-        transform: translate(145px, -45px) rotate(60deg); 
-    }
-    21% {
-        transform: translate(155px, -35px) rotate(60deg) scale(1.5, 1.5); 
-    }
-    22% {
-        transform: translate(155px, -35px) rotate(60deg) scale(1.5, 1.5); 
-    }
-    23% {
-        transform: translate(145px, -45px) rotate(60deg) scale(1.5, 1.5); 
-    }
-    24% {
-        transform: translate(145px, -45px) rotate(60deg) scale(1.5, 1.5); 
-    }
-    25% {
-        transform: translate(150px, -40px) rotate(60deg)scale(2, 2); 
-    }
-    
-    
-
-
-
-    
-    
-
-    50% {
-        transform: translate(-120px, 80px) rotate(-45deg); /* Apunta hacia el humano (izquierda y centro) */
-    }
-    75% {
-        transform: translate(100px, 220px) rotate(30deg); /* Apunta hacia el humano (derecha y abajo) */
-    }
-    100% {
-        transform: translate(0, 0) rotate(0deg); /* Posición inicial */
-    }
-}
 
 
 

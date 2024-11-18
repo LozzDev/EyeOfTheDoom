@@ -169,18 +169,13 @@ body {
   color: white;
 }
 
-.inputField_a {
+#inputField_a {
   width: 50%;
   padding: 12px;
   border: 1px solid #000000;
   border-radius: 20px;
   box-sizing: border-box;
   background-color: #c51e32;
-}
-
-.inputField_a :hover {
-  background-color: purple;
-  color: yellow;
 }
 
 .entryButton_a {
@@ -190,11 +185,6 @@ body {
   box-sizing: border-box;
   background-color: #c51e32;
   color: white;
-}
-
-.entryButton_a :hover {
-  background-color: purple;
-  color: yellow;
 }
 
 .inputField-container_a ::placeholder {

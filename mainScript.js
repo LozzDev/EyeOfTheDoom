@@ -193,10 +193,25 @@ function killAliveHumans(aliveHumansArray){
 //cosas que debe hacer --> crear array vivos, elegir 5 humanos a morir, ejecutar animacion de matar
 
 const executeHumansArray=[];
-
+let indexLimitClicker=0;
+let canClick=true;
 function executerCasual(){
 //TO-DO
 //cuando se presiona el click se consigue el array de los vivos
+if (!canClick) return; // Si no se puede hacer clic, salimos de la función
+
+    canClick = false; // Bloqueamos nuevos clics
+
+    setTimeout(() => {
+        canClick = true; // Permitimos clics después de 1 segundo
+    }, 1000);
+if (indexLimitClicker >= 15) {
+    // Eliminar el evento después de 15 clics
+    document.removeEventListener("click", executerCasual);
+    
+    return; // Salimos de la función
+}
+
 
     const executedHuman = killAliveHumans(alivehumansCasual); //esto es un objeto human
     executeHumansArray.push(executedHuman);
@@ -244,10 +259,24 @@ function executerCasual(){
     }, 500);
     
     laser.setAttribute("src", "./images/yellowBall.gif");//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
+    indexLimitClicker++;
+    
+        
+    if(indexLimitClicker==15){
+        setTimeout(() => {
+            
+            window.location.href = "end.html";
+        }, 3000 );
+        
+    }
     
 }
 
 document.addEventListener("click", executerCasual);
+
+
+
+
 
 //efecto onda expansiva cuando dispara
 const container = document.querySelector('.drop_effect');

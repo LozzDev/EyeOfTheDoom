@@ -155,6 +155,7 @@
     width: 50px;
     height: 50px;
     order: 2;
+    animation: upAndDown 4s ease-in-out infinite;
   }
 
   .userInput_a input {
@@ -329,5 +330,17 @@
     }
     100% {
       transform: translateY(0) translateX(0); 
+    }
+  }
+
+  @keyframes upAndDown {
+    0% {
+      transform: translateY(3px) translateX(0px); 
+    }
+    50% {
+      transform: translateY(-3px) translateX(0px); 
+    }
+    100% {
+      transform: translateY(3px) translateX(0px); 
     }
   }

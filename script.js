@@ -58,7 +58,7 @@ function revealHiddenText() {
       setTimeout(showImage, 1000);
       setTimeout(showStartButton, 1000);
       setTimeout(hideSkipButton, 1000);
-    }, 2000);
+    }, 4000);
   }
 }
 

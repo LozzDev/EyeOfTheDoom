@@ -59,18 +59,22 @@ body {
 
 .ship1_a {
   left: 5%;
+  animation: float 7s ease-in-out infinite;
 }
 
 .ship2_a {
   right: 5%;
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
 .ship3_a {
   width: 25%;
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 40%;
   transform: translateX(-50%);
+  animation: reverseFloat 7s ease-in-out infinite;
 }
 
 .ship4_a {
@@ -125,8 +129,8 @@ body {
 }
 
 .nameInputs_a :hover {
-  background-color: purple;
-  color: yellow;
+  background-color: #008a85;
+  color: #fcfc40;
 }
 
 .input-container_a {
@@ -219,4 +223,40 @@ body {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(10px); 
+  }
+  50% {
+    transform: translateY(0) translateX(0px); 
+  }
+  75% {
+    transform: translateY(10px) translateX(10px); 
+  }
+  100% {
+    transform: translateY(0) translateX(0); 
+  }
+}
+
+@keyframes reverseFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(10px) translateX(10px); 
+  }
+  50% {
+    transform: translateY(0) translateX(0px); 
+  }
+  75% {
+    transform: translateY(-10px) translateX(10px); 
+  }
+  100% {
+    transform: translateY(0) translateX(0); 
+  }
 }

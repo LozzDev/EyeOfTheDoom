@@ -1,5 +1,15 @@
 let entries = [];
 
+function updateVisibility() {
+    const deleteUserContainer = document.querySelector(".deleteUser-container_a");
+    
+    if (entries.length > 0) {
+        deleteUserContainer.style.display = "flex";
+    } else {
+        deleteUserContainer.style.display = "none";
+    }
+}
+
 function storeEntry() {
     const inputField = document.getElementById("inputField_a");
     const mensajeError = document.getElementById("mensajeError_a");
@@ -21,6 +31,8 @@ function storeEntry() {
     entries.push(entry);
     inputField.value = "";
     contador.textContent = `${entries.length}/16`;
+
+    updateVisibility();
 }
 
 function deleteEntry() {
@@ -28,23 +40,30 @@ function deleteEntry() {
     const mensajeError = document.getElementById("mensajeError_a");
     const contador = document.getElementById("contador_a");
 
-    const entryToDelete = deleteField.value.trim();
+    const entryToDelete = deleteField.value.trim().toLowerCase();
 
     if (entryToDelete === "") {
         mensajeError.textContent = "Por favor, introduce un nombre para eliminar.";
         return;
     }
 
-    const index = entries.indexOf(entryToDelete);
+    const index = entries.findIndex(entry => entry.toLowerCase() === entryToDelete);
+
     if (index !== -1) {
         entries.splice(index, 1);
         mensajeError.textContent = `El usuario "${entryToDelete}" ha sido eliminado.`;
         deleteField.value = "";
         contador.textContent = `${entries.length}/16`;
+
+        updateVisibility();
     } else {
         mensajeError.textContent = `El usuario "${entryToDelete}" no está en la lista.`;
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateVisibility();
+});
 
 function validarFormulario(event) {
     event.preventDefault();

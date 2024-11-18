@@ -23,6 +23,10 @@ function storeEntry() {
     contador.textContent = `${entries.length}/16`;
 }
 
+function deleteEntry() {
+    
+}
+
 function validarFormulario(event) {
     event.preventDefault();
 

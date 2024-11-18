@@ -1,222 +1,285 @@
 @media only screen and (min-width: 413px) and (min-height: 918px) {
-  #logo_a {
-    padding-top: 10%;
-    margin-top: 30%;
-    width: 50%;
+    #logo_a {
+      padding-top: 10%;
+      margin-top: 30%;
+      width: 50%;
+    }
   }
-}
+  
+  #main-container {
+    width: 412px;
+    height: 917px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #background_a {
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  * {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 10px;
+  }
+  
+  .ship-container {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ship1_a,
+  .ship2_a {
+    width: 25%;
+    position: absolute;
+    top: 12%;
+  }
+  
+  .ship1_a {
+    left: 5%;
+    animation: float 7s ease-in-out infinite;
+  }
+  
+  .ship2_a {
+    right: 5%;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .ship3_a {
+    width: 25%;
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translateX(-50%);
+    animation: reverseFloat 7s ease-in-out infinite;
+  }
+  
+  .ship4_a {
+    width: 13%;
+    height: 5%;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ship5_a {
+    width: 13%;
+    height: 5%;
+    position: absolute;
+    top: 78%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #logo_a {
+    padding-top: 15%;
+    margin-top: 135%;
+    width: 780%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .description_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 10%;
+  }
+  
+  .userInput_a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .nameInputs_a :hover {
+    background-color: #008a85;
+    color: #fcfc40;
+  }
+  
+  .input-container_a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+  
+  .userInput_a input {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+  }
+  
+  .icon_a {
+    width: 50px;
+    height: 50px;
+    order: 2;
+  }
+  
+  .userInput_a ::placeholder {
+    color: white;
+  }
+  
+  .userInput_a :hover ::placeholder {
+    color: yellow;
+  }
+  
+  .inputField-container_a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    margin-top: 10%;
+    color: white;
+  }
+  
+  #inputField_a {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+  }
+  
+  .entryButton_a {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+    color: white;
+  }
+  
+  .inputField-container_a ::placeholder {
+    color: white;
+  }
 
-#main-container {
-  width: 412px;
-  height: 917px;
-  overflow: hidden;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .deleteUser-container_a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    margin-top: 15%;
+    color: white;
+  }
 
-#background_a {
-  width: 100%;
-  height: 100%;
-  background-image: url("/images/fondo.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  .deleteUser-container_a ::placeholder {
+    color: white;
+  }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-* {
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 10px;
-}
-
-.ship-container {
-  position: relative;
-  width: 100%;
-  height: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.ship1_a,
-.ship2_a {
-  width: 25%;
-  position: absolute;
-  top: 12%;
-}
-
-.ship1_a {
-  left: 5%;
-}
-
-.ship2_a {
-  right: 5%;
-}
-
-.ship3_a {
-  width: 25%;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.ship4_a {
-  width: 13%;
-  height: 5%;
-  position: absolute;
-  top: 68%;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.ship5_a {
-  width: 13%;
-  height: 5%;
-  position: absolute;
-  top: 78%;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#logo_a {
-  padding-top: 15%;
-  margin-top: 135%;
-  width: 780%;
-  max-width: 400px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.description_a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  margin-bottom: 10%;
-}
-
-.userInput_a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.nameInputs_a :hover {
-  background-color: purple;
-  color: yellow;
-}
-
-.input-container_a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-}
-
-.userInput_a input {
-  padding: 12px;
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: #c51e32;
-}
-
-.icon_a {
-  width: 50px;
-  height: 50px;
-  order: 2;
-}
-
-.userInput_a ::placeholder {
-  color: white;
-}
-
-.userInput_a :hover ::placeholder {
-  color: yellow;
-}
-
-.inputField-container_a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  margin-top: 10%;
-  color: white;
-}
-
-#inputField_a {
-  width: 50%;
-  padding: 12px;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: #c51e32;
-}
-
-.entryButton_a {
-  padding: 10px;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: #c51e32;
-  color: white;
-}
-
-.inputField-container_a ::placeholder {
-  color: white;
-}
-
-.button_a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-top: 5%;
-}
-
-.submitbtn_a {
-  width: 75%;
-  padding: 10px;
-  margin-top: 8%;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: #c51e32;
-  color: white;
-}
-
-#mensajeError_a {
-  color: red;
-  font-size: 8px;
-  text-align: center;
-  margin-top: 15px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  #deleteField_a {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+  }
+  
+  .button_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 5%;
+  }
+  
+  .submitbtn_a {
+    width: 75%;
+    padding: 10px;
+    margin-top: 5%;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+    color: white;
+  }
+  
+  #mensajeError_a {
+    color: red;
+    font-size: 8px;
+    text-align: center;
+    margin-top: 5px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-10px) translateX(10px); 
+    }
+    50% {
+      transform: translateY(0) translateX(0px); 
+    }
+    75% {
+      transform: translateY(10px) translateX(10px); 
+    }
+    100% {
+      transform: translateY(0) translateX(0); 
+    }
+  }
+  
+  @keyframes reverseFloat {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(10px) translateX(10px); 
+    }
+    50% {
+      transform: translateY(0) translateX(0px); 
+    }
+    75% {
+      transform: translateY(-10px) translateX(10px); 
+    }
+    100% {
+      transform: translateY(0) translateX(0); 
+    }
+  }

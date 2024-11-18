@@ -1,0 +1,103 @@
+body {
+    background-image: url('images/fondo.png');
+    background-size: cover; /* Redimensiona la imagen */
+    background-position: center center; /* Centra la imagen en ambas direcciones */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+.logo_victoria{
+    text-align: center;
+    position: relative;
+}
+
+.ganador {
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 50px;
+    
+}
+.imagen_ganador{
+    height: 120px;
+    width: 140px;
+    position: absolute;
+    margin-left: -190px;
+    margin-top:-35px;
+}
+.titulo1{
+    margin-top: 20px;
+    
+}
+.segundo{
+text-align: center;
+margin-top: 70px;
+margin-left: 60px;
+}
+.segundo_ganador{
+    height: 60px;
+    width: 80px;
+    margin-left: -120px;
+    margin-top: -10px;
+
+}
+.tercero{
+    
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 60px;  
+    }
+.tercer_ganador{
+    height: 60px;
+    width: 80px;
+    margin-left: -50px;
+    margin-top: -10px;
+
+
+}
+
+
+
+.jugadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra las listas */
+    margin-top: 60px;
+    gap:0px; /*espacio entre cada lista*/
+}
+
+.list-group {
+    display: flex; /* Flexbox para alinear los elementos en fila */
+    gap: 10px; /* Espaciado entre los elementos */
+    padding: 0; /* Opcional: elimina el espacio interno del ul */
+    list-style: none; /* Quita los puntos de la lista */
+}
+
+.list-group-item {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 15px; /* Añade un relleno visual */
+    border: 1px solid #ccc; /* Borde para diferenciarlos */
+}
+.contenido{
+    margin-top: 110px;
+}
+.logo_imagen {
+    max-width: 100%; /* Asegura que la imagen no se salga de su contenedor */
+    height: auto; /* Mantiene las proporciones */
+    width: 100%; /* Se ajusta al tamaño del contenedor */
+    max-width: 1192px; /* Limita el tamaño máximo a 1192px */
+    max-height: 528px; /* Limita la altura máxima a 528px */
+    display: block; /* Elimina cualquier espacio debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    margin-top: 20px;
+}
+
+h1 {
+    margin-top: 20px; /* Asegura un pequeño margen entre la imagen y el texto */
+}
+
+.segundo_y_tercero{
+    display: flex;
+    align-items: center;
+}

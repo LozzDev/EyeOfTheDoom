@@ -38,11 +38,11 @@ function deleteEntry() {
     const index = entries.indexOf(entryToDelete);
     if (index !== -1) {
         entries.splice(index, 1);
-        mensajeError.textContent = `El nombre "${entryToDelete}" ha sido eliminado.`;
+        mensajeError.textContent = `El usuario "${entryToDelete}" ha sido eliminado.`;
         deleteField.value = "";
         contador.textContent = `${entries.length}/16`;
     } else {
-        mensajeError.textContent = `El nombre "${entryToDelete}" no está en la lista.`;
+        mensajeError.textContent = `El usuario "${entryToDelete}" no está en la lista.`;
     }
 }
 

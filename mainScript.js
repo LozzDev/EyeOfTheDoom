@@ -192,9 +192,11 @@ function killAliveHumans(aliveHumansArray){
 //funcion que se activa cuando se aprieta el boton
 //cosas que debe hacer --> crear array vivos, elegir 5 humanos a morir, ejecutar animacion de matar
 
-const executeHumansArray=[];
+ const executeHumansArray=[];
+
 let indexLimitClicker=0;
 let canClick=true;
+
 function executerCasual(){
 //TO-DO
 //cuando se presiona el click se consigue el array de los vivos
@@ -204,7 +206,7 @@ if (!canClick) return; // Si no se puede hacer clic, salimos de la función
 
     setTimeout(() => {
         canClick = true; // Permitimos clics después de 1 segundo
-    }, 1000);
+    }, 900);
 if (indexLimitClicker >= 15) {
     // Eliminar el evento después de 15 clics
     document.removeEventListener("click", executerCasual);
@@ -215,6 +217,40 @@ if (indexLimitClicker >= 15) {
 
     const executedHuman = killAliveHumans(alivehumansCasual); //esto es un objeto human
     executeHumansArray.push(executedHuman);
+
+    //aqui se tiene que hacer para que salga el nombre
+    //se introduce el elemento y sus estilos
+    
+        const textElement = document.createElement("div");
+        textElement.textContent = `${executeHumansArray[indexLimitClicker].name} ha sido eliminado`;
+        textElement.style.position = "absolute";
+        textElement.style.bottom = "20px";
+        textElement.style.left = "50%";
+        textElement.style.transform = "translateX(-50%)";
+        textElement.style.color = "white";
+        textElement.style.fontSize = "30px";
+        textElement.style.fontWeight = "bold";
+        textElement.style.opacity = "1";
+        textElement.style.transition = "all 3s ease-out";
+  
+    // Añadir el texto al cuerpo del documento
+    document.body.appendChild(textElement);
+  
+    // Ejecutar la animación después de un pequeño retardo para que de tiempo a que muera el humano
+    setTimeout(() => {
+      textElement.style.transform = "translateX(-50%) translateY(-100px)";
+      textElement.style.opacity = "0";
+    }, 100); 
+  
+    // Eliminar el elemento del DOM después de la animación
+    setTimeout(() => {
+      textElement.remove();
+    }, 3100); // Eliminar después de 3.1 segundos para que de tiempo a la animacion
+  
+
+
+    //----------------------------------------------
+
     //informacion del humano muerto
     let human=document.getElementById(executedHuman.id);
     let humanCoordsX=executedHuman.coordsX;
@@ -261,7 +297,7 @@ if (indexLimitClicker >= 15) {
     laser.setAttribute("src", "./images/yellowBall.gif");//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
     indexLimitClicker++;
     
-        
+     
     if(indexLimitClicker==15){
         setTimeout(() => {
             
@@ -299,4 +335,3 @@ const createRipple = (e) => {
 }
 
 container.addEventListener('click', createRipple);
-

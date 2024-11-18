@@ -34,10 +34,17 @@
     padding: 0;
     overflow: hidden;
   }
+
+  @font-face {
+    font-family: 'PIXELADE';
+    src: url('./fonts/PIXELADE.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
   
   * {
-    font-family: "Press Start 2P", sans-serif;
-    font-size: 10px;
+    font-family: 'Pixelade', sans-serif;
+    font-size: 15px;
   }
   
   .ship-container {
@@ -120,7 +127,7 @@
     justify-content: center;
     text-align: center;
     color: white;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
   }
   
   .userInput_a {
@@ -143,7 +150,7 @@
   }
   
   .userInput_a input {
-    padding: 12px;
+    padding: 8px;
     text-align: center;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -176,13 +183,13 @@
     align-items: center;
     gap: 8px;
     position: relative;
-    margin-top: 10%;
+    margin-top: 8%;
     color: white;
   }
   
   #inputField_a {
     width: 50%;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -198,7 +205,7 @@
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -232,7 +239,7 @@
 
   #deleteField_a {
     width: 50%;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -254,8 +261,8 @@
   
   .submitbtn_a {
     width: 75%;
-    padding: 10px;
-    margin-top: 12%;
+    padding: 8px;
+    margin-top: 8%;
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -270,10 +277,10 @@
   
   #mensajeError_a {
     color: rgb(240, 72, 72);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 4px;
     padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;

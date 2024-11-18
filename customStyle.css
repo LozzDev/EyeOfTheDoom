@@ -193,13 +193,19 @@
   }
   
   .entryButton_a {
+    background-image: url("./images/arrow.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
     background-color: #c51e32;
     color: white;
-  }
+    padding: 15px 15px;
+}
+
   
   .inputField-container_a ::placeholder {
     color: white;

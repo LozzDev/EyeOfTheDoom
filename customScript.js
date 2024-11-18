@@ -24,7 +24,26 @@ function storeEntry() {
 }
 
 function deleteEntry() {
-    
+    const deleteField = document.getElementById("deleteField_a");
+    const mensajeError = document.getElementById("mensajeError_a");
+    const contador = document.getElementById("contador_a");
+
+    const entryToDelete = deleteField.value.trim();
+
+    if (entryToDelete === "") {
+        mensajeError.textContent = "Por favor, introduce un nombre para eliminar.";
+        return;
+    }
+
+    const index = entries.indexOf(entryToDelete);
+    if (index !== -1) {
+        entries.splice(index, 1);
+        mensajeError.textContent = `El nombre "${entryToDelete}" ha sido eliminado.`;
+        deleteField.value = "";
+        contador.textContent = `${entries.length}/16`;
+    } else {
+        mensajeError.textContent = `El nombre "${entryToDelete}" no está en la lista.`;
+    }
 }
 
 function validarFormulario(event) {
@@ -44,4 +63,6 @@ function validarFormulario(event) {
 
     mensajeError.textContent = "";
     alert("Formulario enviado con éxito.");
+
+    window.location.href = "home.html";
 }

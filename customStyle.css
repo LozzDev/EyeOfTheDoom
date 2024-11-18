@@ -251,11 +251,6 @@
     position: relative;
     margin-top: 5%;
   }
-
-  .button_a :hover {
-    background-color: #008a85;
-    color: #fcfc40;
-  }
   
   .submitbtn_a {
     width: 75%;
@@ -266,6 +261,11 @@
     box-sizing: border-box;
     background-color: #c51e32;
     color: white;
+  }
+
+  .submitbtn_a :hover {
+    background-color: #008a85;
+    color: #fcfc40;
   }
   
   #mensajeError_a {

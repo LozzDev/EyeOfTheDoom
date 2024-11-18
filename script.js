@@ -6,7 +6,8 @@ const text =
   "In a distant future, humanity stands on the edge of extinction. A dark entity, the Eye of the Doom, has awakened in the depths of space. With immense power, it has fixed its gaze on Earth, aiming to consume it in eternal darkness. Yet hope remains: a team of 16 brave astronauts has been assembled to face this threat and stop what is coming.";
 let index = 0;
 let typingInterval;
-
+let musicBackground = new Audio('./sounds/eod_theme.mp3');
+let sfxClick = new Audio('./sounds/button_click.mp3')
 
 function setRedText() {
   let eyeOfTheAbyssTextInterval = [];
@@ -30,6 +31,7 @@ function fadeSkipButton(){
 }
 function generateHiddenText() {
   const eyeOfTheAbyssTextInterval = setRedText();
+  musicBackground.play();
 
   text.split("").forEach((char, i) => {
     const span = document.createElement("span");
@@ -58,7 +60,7 @@ function revealHiddenText() {
       setTimeout(showImage, 1000);
       setTimeout(showStartButton, 1000);
       setTimeout(hideSkipButton, 1000);
-    }, 4000);
+    }, 2000);
   }
 }
 
@@ -84,6 +86,22 @@ function skipIntro() {
 }
 
 skipButton.addEventListener("click", skipIntro);
+skipButton.addEventListener("click", () =>{
+sfxClick.play();
+});
+
+startButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  sfxClick.play().then(() => {
+      setTimeout(() => {
+          window.location.href = startButton.parentElement.href;
+      }, 300);
+  }).catch(error => {
+      console.error("Error reproduciendo el sonido:", error);
+      window.location.href = startButton.parentElement.href;
+  });
+});
+
 
 generateHiddenText();
 revealHiddenText();

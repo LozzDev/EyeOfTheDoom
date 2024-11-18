@@ -1,4 +1,5 @@
 
+/*@media (max-width: 413px) and (max-height: 918px) {*/
 body {
     background-image: url('images/fondo.png');
     background-size: cover; /* Redimensiona la imagen */
@@ -97,3 +98,9 @@ margin-left: 60px;
 h1 {
     margin-top: 20px; /* Asegura un pequeño margen entre la imagen y el texto */
 }
+/*}
+@media (min-width: 1080px) {
+
+
+}
+*/

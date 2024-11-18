@@ -192,11 +192,14 @@ function killAliveHumans(aliveHumansArray){
 //funcion que se activa cuando se aprieta el boton
 //cosas que debe hacer --> crear array vivos, elegir 5 humanos a morir, ejecutar animacion de matar
 
+const executeHumansArray=[];
 
 function executerCasual(){
 //TO-DO
 //cuando se presiona el click se consigue el array de los vivos
+
     const executedHuman = killAliveHumans(alivehumansCasual); //esto es un objeto human
+    executeHumansArray.push(executedHuman);
     //informacion del humano muerto
     let human=document.getElementById(executedHuman.id);
     let humanCoordsX=executedHuman.coordsX;
@@ -230,7 +233,7 @@ function executerCasual(){
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
         
-        doomEyeImage.setAttribute=("src", "./images/eye-attack.gif");
+        doomEyeImage.setAttribute=("src", "./images/eye-attack.gif"); //TO-DO NO FUNCIONA
         human.style.opacity=0;
         
     }, 900);

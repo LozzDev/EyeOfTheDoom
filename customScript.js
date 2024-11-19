@@ -16,14 +16,14 @@ function storeEntry() {
     const contador = document.getElementById("contador_a");
 
     if (entries.length >= 16) {
-        mensajeError.textContent = "Se ha alcanzado el límite de 16 entradas.";
+        mensajeError.textContent = "The 16-entry limit has been reached.";
         return;
     }
 
     const entry = inputField.value.trim();
 
     if (entry === "") {
-        mensajeError.textContent = "Por favor, introduce un valor.";
+        mensajeError.textContent = "Please enter a value.";
         return;
     }
 
@@ -43,7 +43,7 @@ function deleteEntry() {
     const entryToDelete = deleteField.value.trim().toLowerCase();
 
     if (entryToDelete === "") {
-        mensajeError.textContent = "Por favor, introduce un nombre para eliminar.";
+        mensajeError.textContent = "Please enter a name to delete.";
         return;
     }
 
@@ -51,13 +51,13 @@ function deleteEntry() {
 
     if (index !== -1) {
         entries.splice(index, 1);
-        mensajeError.textContent = `El usuario "${entryToDelete}" ha sido eliminado.`;
+        mensajeError.textContent = `The user "${entryToDelete}" has been removed.`;
         deleteField.value = "";
         contador.textContent = `${entries.length}/16`;
 
         updateVisibility();
     } else {
-        mensajeError.textContent = `El usuario "${entryToDelete}" no está en la lista.`;
+        mensajeError.textContent = `The user "${entryToDelete}" is not on the list.`;
     }
 }
 
@@ -76,12 +76,12 @@ function validarFormulario(event) {
     const nombre4 = document.getElementById("nombre4_a").value.trim();
 
     if (!nombre1 || !nombre2 || !nombre3 || !nombre4) {
-        mensajeError.textContent = "Por favor, rellena los primeros 4 campos.";
+        mensajeError.textContent = "Please fill in the first 4 fields.";
         return;
     }
 
     mensajeError.textContent = "";
-    alert("Formulario enviado con éxito.");
+    alert("Form successfully submitted.");
 
     window.location.href = "home.html";
 }

@@ -7,6 +7,7 @@
   }
   
   #main-container {
+    display: flex;
     width: 412px;
     height: 917px;
     overflow: hidden;
@@ -65,17 +66,20 @@
   }
   
   .ship1_a {
+    display: flex;
     left: 5%;
     animation: float 7s ease-in-out infinite;
   }
   
   .ship2_a {
+    display: flex;
     right: 5%;
     animation: float 7s ease-in-out infinite;
     animation-delay: 1s;
   }
   
   .ship3_a {
+    display: flex;
     width: 25%;
     position: absolute;
     top: 60%;
@@ -113,6 +117,7 @@
   }
   
   #logo_a {
+    display:flex;
     padding-top: 15%;
     margin-top: 135%;
     width: 780%;
@@ -201,6 +206,7 @@
   }
   
   .entryButton_a {
+    display: flex;
     background-image: url("./images/arrow.png");
     background-size: 70%;
     background-repeat: no-repeat;
@@ -238,6 +244,7 @@
   }
 
   #deleteField_a {
+    display: flex;
     width: 50%;
     padding: 8px;
     border: 1px solid #000000;
@@ -260,6 +267,7 @@
   }
   
   .submitbtn_a {
+    display: flex;
     width: 75%;
     padding: 8px;
     margin-top: 8%;

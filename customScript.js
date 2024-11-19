@@ -83,5 +83,5 @@ function validarFormulario(event) {
     mensajeError.textContent = "";
     alert("Form successfully submitted.");
 
-    window.location.href = "home.html";
+    window.location.href = "main.html";
 }

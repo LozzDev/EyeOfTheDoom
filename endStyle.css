@@ -5,8 +5,14 @@ body {
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-attachment: fixed; /* Esto fija el fondo */
   margin: 0;
+  font-family: 'Pixelade';
   padding: 0;
   height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+@font-face {
+  font-family: 'Pixelade';
+  src: url('./fonts/PIXELADE.ttf'),
 }
 
 .logo_victoria {
@@ -175,3 +181,4 @@ body {
   background-color: #008a85;
   color: yellow;
 }
+

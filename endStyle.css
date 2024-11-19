@@ -1,14 +1,26 @@
 
 /*@media (max-width: 413px) and (max-height: 918px) {*/
+@font-face {
+    font-family: 'Pixelade';
+    src: url('./fonts/PIXELADE.ttf'),
+  }
 body {
     background-image: url('images/fondo.png');
     background-size: cover; /* Redimensiona la imagen */
     background-position: center center; /* Centra la imagen en ambas direcciones */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: white;
 }
 .logo_victoria{
     text-align: center;
     position: relative;
+    height: 200;
+    text-decoration: white;
+}
+.logo_victoria img{
+   height: 131px;
+   width: 297px;
+   position: relative;
 }
 
 .ganador {

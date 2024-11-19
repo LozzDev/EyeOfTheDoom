@@ -33,6 +33,10 @@ header {
     animation: reverseFloat 6s ease-in-out infinite;
 }
 
+#ovni3 {
+    animation-delay: 1s; 
+}
+
 #ovni4 {
     animation: float 6s ease-in-out infinite;
     margin-top: -40px;

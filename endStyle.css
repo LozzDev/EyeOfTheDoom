@@ -1,18 +1,38 @@
-body {
-  background-image: url("images/fondo.png");
-  background-size: cover; /* Redimensiona la imagen */
-  background-position: center center; /* Centra la imagen en ambas direcciones */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: fixed; /* Esto fija el fondo */
-  margin: 0;
-  font-family: 'Pixelade';
-  padding: 0;
-  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
-}
-
+/* Carga de la fuente personalizada */
 @font-face {
   font-family: 'Pixelade';
-  src: url('./fonts/PIXELADE.ttf'),
+  src: url('fonts/PIXELADE.woff2') format('woff2'),
+    url('fonts/PIXELADE.woff') format('woff'),
+    url('fonts/PIXELADE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Aplicación al body */
+body {
+  font-family: 'Pixelade', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/fondo.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+/* Fuerza la tipografía globalmente */
+* {
+  font-family: 'Pixelade', sans-serif;
+}
+
+.ranking-title {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #ffffec;
+  /* Rojo brillante */
+  font-family: 'Pixelade', sans-serif;
+  /* Aplicación específica de la fuente */
 }
 
 .logo_victoria {
@@ -28,7 +48,8 @@ body {
 .ranking-title {
   font-size: 2rem;
   margin-top: 10px;
-  color: #ffffec; /* Rojo brillante */
+  color: #ffffec;
+  /* Rojo brillante */
 }
 
 .ganador {
@@ -79,7 +100,8 @@ body {
 }
 
 .list-group-item {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo translúcido */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Fondo translúcido */
   color: black;
   border-radius: 5px;
   text-align: center;
@@ -93,47 +115,68 @@ body {
 .footer {
   position: fixed;
   bottom: 0;
+  left: 0;
+  /* Asegura que comience desde la izquierda */
   width: 100%;
-  background-color: #c51e32;  /* Color de fondo */
-  color: #ffffec;  /* Color del texto */
-  padding: 15px 0;  /* Espaciado dentro del footer */
+  /* Ocupa todo el ancho de la página */
+  background-color: #c51e32;
+  /* Color de fondo */
+  color: #ffffec;
+  /* Color del texto */
+  padding: 15px 0;
+  /* Espaciado dentro del footer */
   display: flex;
-  justify-content: center; /* Centra todo el contenido dentro del footer */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  text-align: center;
+  /* Centra el texto dentro */
+  box-sizing: border-box;
+  /* Incluye el padding dentro del ancho total */
 }
 
 /* Contenedor central del footer para alinear los elementos */
 .footer-content {
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Espacia los elementos */
-  align-items: center;  /* Centra verticalmente */
-  padding: 0 20px; /* Espacio a los lados */
-  text-align: center; /* Centra el texto en cada bloque */
+  justify-content: space-between;
+  /* Espacia los elementos */
+  align-items: center;
+  /* Centra verticalmente */
+  padding: 0 20px;
+  /* Espacio a los lados */
+  text-align: center;
+  /* Centra el texto en cada bloque */
 }
 
 /* Estilo del bloque izquierdo */
 .footer-left {
   flex: 1;
-  text-align: left;  /* Alinea a la izquierda */
+  text-align: left;
+  /* Alinea a la izquierda */
 }
 
 /* Estilo del bloque central */
 .footer-center {
   flex: 2;
-  text-align: center;  /* Alinea al centro */
+  text-align: center;
+  /* Alinea al centro */
 }
 
 /* Estilo del bloque derecho */
 .footer-right {
   flex: 1;
-  text-align: right;  /* Alinea a la derecha */
+  text-align: right;
+  /* Alinea a la derecha */
 }
 
 /* Asegura que la imagen del logo se ajuste correctamente */
 .footer-logo {
-  max-height: 40px;  /* Ajusta el tamaño máximo de la imagen */
-  width: auto;  /* Mantiene la proporción original de la imagen */
+  max-height: 40px;
+  /* Ajusta el tamaño máximo de la imagen */
+  width: auto;
+  /* Mantiene la proporción original de la imagen */
 }
 
 .botones {
@@ -141,16 +184,20 @@ body {
   position: fixed;
   text-align: center;
   margin: 0, 20px, 0, 20px;
-  position: relative; /* Posiciona los botones por encima del footer */
-  bottom: 40px; /* Los coloca justo encima del footer, que tiene 80px de altura */
-  left: 50%; /* Centra los botones horizontalmente */
-  transform: translateX(
-    -50%
-  ); /* Ajusta el centro para que esté exactamente en medio */
+  position: relative;
+  /* Posiciona los botones por encima del footer */
+  bottom: 40px;
+  /* Los coloca justo encima del footer, que tiene 80px de altura */
+  left: 50%;
+  /* Centra los botones horizontalmente */
+  transform: translateX(-50%);
+  /* Ajusta el centro para que esté exactamente en medio */
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Espacio entre los botones */
-  z-index: 10; /* Asegura que los botones estén por encima del footer */
+  gap: 20px;
+  /* Espacio entre los botones */
+  z-index: 10;
+  /* Asegura que los botones estén por encima del footer */
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -161,8 +208,10 @@ body {
   height: 36px;
   color: #ffffec;
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
+  align-items: center;
+  /* Centra el contenido verticalmente */
   border-radius: 25px;
 }
 
@@ -172,13 +221,99 @@ body {
   height: 36px;
   color: #ffffec;
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
+  align-items: center;
+  /* Centra el contenido verticalmente */
   border-radius: 25px;
 }
 
-.btn_izquierda:hover, .btn_derecha:hover {
+.btn_izquierda:hover,
+.btn_derecha:hover {
   background-color: #008a85;
   color: yellow;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 900px;
+  /* Establece la separación horizontal entre los ovnis */
+  margin-top: 20px;
+  /* Mantén el margen superior general */
+}
+
+
+.ovni {
+  width: 100px;
+  animation: float 6s ease-in-out infinite;
+  margin: 40px 100px;
+  /* Aumenta la separación general (arriba/abajo y lados) */
+}
+
+#ovni2 {
+  animation: reverseFloat 6s ease-in-out infinite;
+}
+
+#ovni3 {
+  animation-delay: 1s;
+}
+
+#ovni4 {
+  animation: float 6s ease-in-out infinite;
+  margin-top: -40px;
+}
+
+
+/* Ajuste del tamaño de los ovnis */
+.header_img_b,
+.footer_img_b {
+  width: auto;
+  height: 50px;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-10px) translateX(10px);
+  }
+
+  50% {
+    transform: translateY(0) translateX(0px);
+  }
+
+  75% {
+    transform: translateY(10px) translateX(10px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes reverseFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(10px) translateX(10px);
+  }
+
+  50% {
+    transform: translateY(0) translateX(0px);
+  }
+
+  75% {
+    transform: translateY(-10px) translateX(10px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}

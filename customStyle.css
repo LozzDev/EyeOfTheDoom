@@ -126,6 +126,10 @@ body {
   margin-bottom: 8%;
 }
 
+.advice {
+  display: none;
+}
+
 .userInput_a {
   display: flex;
   flex-direction: column;

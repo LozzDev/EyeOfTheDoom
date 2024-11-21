@@ -2,11 +2,7 @@
 const rulesButton = document.getElementById("rulesButton");
 const rulesBox = document.getElementById("rulesBox");
 
-// Alternar visibilidad de las reglas
+// Alternar visibilidad de las reglas al hacer clic en el botón
 rulesButton.addEventListener("click", () => {
-	if (rulesBox.style.display === "none" || rulesBox.style.display === "") {
-		rulesBox.style.display = "block"; // Muestra las reglas
-	} else {
-		rulesBox.style.display = "none"; // Oculta las reglas
-	}
+    rulesBox.classList.toggle("visible"); // Añadir o quitar la clase "visible"
 });

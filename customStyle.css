@@ -245,54 +245,50 @@ body {
   background-color: #c51e32;
 }
 
-.deleteField_a :hover {
-  background-color: #008a85;
-  color: #fcfc40;
-}
+  .deleteField_a :hover {
+    background-color: #008a85;
+    color: #fcfc40;
+  }
+  
+  .button_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 5%;
+  }
+  
+  .submitbtn_a {
+    display: flex;
+    width: 75%;
+    padding: 8px;
+    margin-top: 8%;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+    color: white;
+  }
 
-.advice {
-  display: none;
-}
-
-.button_a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-top: 5%;
-}
-
-.submitbtn_a {
-  justify-content: center;
-  width: 75%;
-  padding: 8px;
-  margin-top: 8%;
-  border: 1px solid #000000;
-  border-radius: 20px;
-  box-sizing: border-box;
-  background-color: #c51e32;
-  color: white;
-}
-
-.submitbtn_a :hover {
-  background-color: #008a85;
-  color: #fcfc40;
-}
-
-#error_a {
-  color: rgb(240, 72, 72);
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 4px;
-  padding: 5px 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  .submitbtn_a :hover {
+    background-color: #008a85;
+    color: #fcfc40;
+  }
+  
+  #mensajeError_a {
+    color: rgb(240, 72, 72);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes float {

@@ -27,14 +27,13 @@
         <div class="userInput_a">
           <div class="input-container_a">
             <div class="nameInputs_a">
-              <input
-                type="text"
-                id="name1_a"
-                name="name"
-                placeholder="Username"
-                required
-              />
-            </div>
+            <input
+              type="text"
+              id="nombre1_a"
+              name="nombre"
+              placeholder="Username"
+            required />
+          </div>
             <img
               src="./images/Sprites/Astronauts/astronaut_01.png"
               class="icon_a"
@@ -43,13 +42,12 @@
           </div>
           <div class="input-container_a">
             <div class="nameInputs_a">
-              <input
-                type="text"
-                id="name2_a"
-                name="name"
-                placeholder="Username"
-                required
-              />
+            <input
+              type="text"
+              id="nombre2_a"
+              name="nombre"
+              placeholder="Username"
+              required />
             </div>
             <img
               src="./images/Sprites/Astronauts/astronaut_02.png"
@@ -59,13 +57,12 @@
           </div>
           <div class="input-container_a">
             <div class="nameInputs_a">
-              <input
-                type="text"
-                id="name3_a"
-                name="name"
-                placeholder="Username"
-                required
-              />
+            <input
+              type="text"
+              id="nombre3_a"
+              name="nombre"
+              placeholder="Username"
+              required />
             </div>
             <img
               src="./images/Sprites/Astronauts/astronaut_03.png"
@@ -75,13 +72,13 @@
           </div>
           <div class="input-container_a">
             <div class="nameInputs_a">
-              <input
-                type="text"
-                id="name4_a"
-                name="name"
-                placeholder="Username"
-              />
-            </div>
+            <input
+              type="text"
+              id="nombre4_a"
+              name="nombre"
+              placeholder="Username"
+            />
+          </div>
             <img
               src="./images/Sprites/Astronauts/astronaut_04.png"
               class="icon_a"
@@ -360,21 +357,15 @@
         <img class="ship4_a" src="./images/ship.png" alt="space ship" />
         <div class="inputField-container_a">
           <input type="text" id="inputField_a" placeholder="Optional" />
-          <button
-            type="button"
-            class="entryButton_a"
-            onclick="storeEntry()"
-          ></button>
-          <p id="cont_a">0/16</p>
+          <button type="button" class="entryButton_a" onclick="storeEntry()">
+          </button>
+          <p id="contador_a">0/16</p>
         </div>
         <img class="ship5_a" src="./images/ship.png" alt="space ship" />
         <div class="deleteUser-container_a">
-          <input type="text" id="deleteField_a" placeholder="Delete user" />
-          <button
-            type="button"
-            class="entryButton_a"
-            onclick="deleteEntry()"
-          ></button>
+          <input type="text" id="deleteField_a" placeholder="Eliminar usuario">
+          <button type="button" class="entryButton_a" onclick="deleteEntry()">
+          </button>
         </div>
         <p class="advice">The blank fields would be filled with random names</p>
         <div class="button_a">
@@ -385,7 +376,7 @@
           >
             PLAY
           </button>
-          <p id="error_a"></p>
+          <p id="mensajeError_a"></p>
         </div>
       </form>
 

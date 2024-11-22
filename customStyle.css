@@ -454,6 +454,11 @@ body {
     margin-right: 1px;
   }
 
+  .column3 .input-container_a img,
+  .column4 .input-container_a img {
+    margin-left: 1px;
+  }
+
   .input-container_a input {
     width: 90%;
     padding: 8px;

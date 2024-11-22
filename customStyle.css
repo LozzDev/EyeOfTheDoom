@@ -83,7 +83,7 @@ body {
   width: 13%;
   height: 5%;
   position: absolute;
-  top: 69%;
+  top: 66%;
   left: 43%;
   transform: translate(-50%);
   display: flex;
@@ -97,7 +97,7 @@ body {
   width: 13%;
   height: 5%;
   position: absolute;
-  top: 84%;
+  top: 75%;
   left: 43%;
   transform: translate(-50%);
   display: flex;
@@ -253,8 +253,38 @@ body {
     background-color: #008a85;
     color: #fcfc40;
   }
+
+  .buttons_a {
+    display: flex;
+    margin-top: 2%;
+    gap: 10%;
+  }
+
+  .backbtn_a {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    padding: 8px;
+    margin-top: 28%;
+    margin-left: 180%;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+    color: white;
+  }
+
+  .backButton_a  {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 5%;
+  }
   
   .button_a {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -478,15 +508,9 @@ body {
   .nameInputs_a {
     margin-bottom: 20px;
   }
-  
 
   .nameInputs_a ::placeholder {
     color: white;
-  }
-
-  .nameInputs_a :hover {
-    background-color: #008a85;
-    color: #fcfc40;
   }
 
   .inputField-container_a {
@@ -499,6 +523,35 @@ body {
     color: white;
     margin-top: 3%;
     font-size: 15px;
+  }
+
+  .buttons_a {
+    display: flex;
+    margin-top: 0%;
+    gap: 10%;
+  }
+
+  .backbtn_a {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    padding: 8px;
+    margin-top: -25%;
+    margin-right: 70%;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: #c51e32;
+    color: white;
+  }
+
+  .backButton_a  {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 5%;
   }
 
   .button_a {

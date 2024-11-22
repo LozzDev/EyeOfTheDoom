@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateVisibility();
 });
 
-function validarFormulario(event) {
+function validateFormulary(event) {
     event.preventDefault();
 
     const error = document.getElementById("error_a");
@@ -84,4 +84,10 @@ function validarFormulario(event) {
     alert("Form successfully submitted.");
 
     window.location.href = "main.html";
+}
+
+function goBack(event) {
+    event.preventDefault();
+
+    window.location.href = "home.html";
 }

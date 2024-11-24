@@ -86,6 +86,44 @@ function validateFormulary(event) {
     window.location.href = "main.html";
 }
 
+/* import { alivehumansCasual } from './mainScript';
+
+function getRandomName() {
+    const randomIndex = Math.floor(Math.random() * alivehumansCasual.length);
+    return alivehumansCasual[randomIndex].name;
+}
+
+function validateFormulary2(event) {
+    event.preventDefault();
+
+    const error = document.getElementById("error_a");
+    const nameInputs = [
+        document.getElementById("name5_a"),
+        document.getElementById("name6_a"),
+        document.getElementById("name7_a"),
+        document.getElementById("name8_a"),
+        document.getElementById("name9_a"),
+        document.getElementById("name10_a"),
+        document.getElementById("name11_a"),
+        document.getElementById("name12_a"),
+        document.getElementById("name13_a"),
+        document.getElementById("name14_a"),
+        document.getElementById("name15_a"),
+        document.getElementById("name16_a")
+    ];
+
+    nameInputs.forEach((input) => {
+        if (!input.value.trim()) {
+            input.value = getRandomName();
+        }
+    });
+
+    error.textContent = "";
+
+    window.location.href = "main.html";
+}
+    */
+
 function goBack(event) {
     event.preventDefault();
 

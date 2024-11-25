@@ -349,4 +349,20 @@
           bottom: 50px;
           right: 10px;
         }
+
+        #music_player{
+          font-size: 9wv;
+          position: absolute;
+          left: 40px;
+        }
+
+        #toggle_music{
+          color: #ffffec;
+          font-family: 'Pixelade';
+          background-color: #c51e32;
+          font-size: 4wv;
+          border-style: none;
+          border: 6px;
+          border-radius: 15px;
+        }
     }

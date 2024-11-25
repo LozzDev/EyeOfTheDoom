@@ -6,15 +6,8 @@ const text =
   "In a distant future, humanity stands on the edge of extinction. A dark entity, the Eye of the Doom, has awakened in the depths of space. With immense power, it has fixed its gaze on Earth, aiming to consume it in eternal darkness. Yet hope remains: a team of 16 brave astronauts has been assembled to face this threat and stop what is coming.";
 let index = 0;
 let typingInterval;
-let sfxClick = new Audio('/sounds/button_click.mp3')
-let musicBackground = document.getElementById("musicBackground");
+let sfxClick = new Audio('/sounds/button_click.mp3');
 
-if (!localStorage.getItem("iniciatedAudio")) {
-            musicBackground = new Audio('/sounds/eod_theme.mp3');
-            musicBackground.loop = true;
-            musicBackground.play();
-            localStorage.setItem("iniciatedAudio", "true");
-}
 function setRedText() {
   let eyeOfTheAbyssTextInterval = [];
   let searchPhrase = "Eye of the Doom";

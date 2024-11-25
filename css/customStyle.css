@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "PIXELADE";
+  src: url("../fonts/PIXELADE.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Pixelade", sans-serif;
+  font-size: 16px;
+}
+
 #main-container {
   display: flex;
   width: 412px;
@@ -12,7 +24,7 @@
 #background_a {
   width: 100%;
   height: 100%;
-  background-image: url("/images/fondo.png");
+  background-image: url("../images/fondo.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -25,18 +37,6 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-}
-
-@font-face {
-  font-family: "PIXELADE";
-  src: url("./fonts/PIXELADE.TTF") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-* {
-  font-family: "Pixelade", sans-serif;
-  font-size: 15px;
 }
 
 .ship-container {
@@ -83,7 +83,7 @@ body {
   width: 13%;
   height: 5%;
   position: absolute;
-  top: 66%;
+  top: 67%;
   left: 43%;
   transform: translate(-50%);
   display: flex;
@@ -97,7 +97,7 @@ body {
   width: 13%;
   height: 5%;
   position: absolute;
-  top: 75%;
+  top: 76%;
   left: 43%;
   transform: translate(-50%);
   display: flex;
@@ -205,7 +205,7 @@ body {
 }
 
 .entryButton_a {
-  background-image: url("./images/arrow.png");
+  background-image: url("../images/arrow.png");
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
@@ -249,85 +249,85 @@ body {
   background-color: #c51e32;
 }
 
-  .deleteField_a :hover {
-    background-color: #008a85;
-    color: #fcfc40;
-  }
+.deleteField_a :hover {
+  background-color: #008a85;
+  color: #fcfc40;
+}
 
-  .buttons_a {
-    display: flex;
-    margin-top: 2%;
-    gap: 10%;
-  }
+.buttons_a {
+  display: flex;
+  margin-top: 2%;
+  gap: 10%;
+}
 
-  .backbtn_a {
-    display: flex;
-    justify-content: center;
-    width: 75%;
-    padding: 8px;
-    margin-top: 28%;
-    margin-left: 180%;
-    border: 1px solid #000000;
-    border-radius: 20px;
-    box-sizing: border-box;
-    background-color: #c51e32;
-    color: white;
-  }
+.backbtn_a {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  padding: 8px;
+  margin-top: 28%;
+  margin-left: 180%;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #c51e32;
+  color: white;
+}
 
-  .backButton_a  {
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 5%;
-  }
-  
-  .button_a {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 5%;
-  }
-  
-  .submitbtn_a {
-    display: flex;
-    justify-content: center;
-    width: 75%;
-    padding: 8px;
-    margin-top: 8%;
-    border: 1px solid #000000;
-    border-radius: 20px;
-    box-sizing: border-box;
-    background-color: #c51e32;
-    color: white;
-  }
+.backButton_a {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 5%;
+}
 
-  .submitbtn_a :hover {
-    background-color: #008a85;
-    color: #fcfc40;
-  }
+.button_a {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 5%;
+}
 
-  .submitbtn2_a {
-    display: none;
-  }
-  
-  #error_a {
-    color: rgb(240, 72, 72);
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 4px;
-    padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+.submitbtn_a {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  padding: 8px;
+  margin-top: 8%;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: #c51e32;
+  color: white;
+}
+
+.submitbtn_a :hover {
+  background-color: #008a85;
+  color: #fcfc40;
+}
+
+.submitbtn2_a {
+  display: none;
+}
+
+#error_a {
+  color: rgb(240, 72, 72);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 4px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes float {
@@ -353,13 +353,13 @@ body {
     transform: translateY(0) translateX(0);
   }
   25% {
-    transform: translateY(-3px) translateX(3px);
+    transform: translateY(-4px) translateX(2px);
   }
   50% {
     transform: translateY(0) translateX(0px);
   }
   75% {
-    transform: translateY(3px) translateX(3px);
+    transform: translateY(2px) translateX(2px);
   }
   100% {
     transform: translateY(0) translateX(0);
@@ -419,6 +419,7 @@ body {
 
   .ship1_a {
     display: flex;
+    margin-top: 3%;
     width: 15%;
     left: 5%;
     animation: float 7s ease-in-out infinite;
@@ -426,10 +427,11 @@ body {
 
   .ship2_a {
     display: flex;
+    margin-top: 3%;
     width: 15%;
     right: 5%;
     animation: float 7s ease-in-out infinite;
-    animation-delay: 1s;
+    animation-delay: 2s;
   }
 
   .ship3_a {
@@ -439,16 +441,17 @@ body {
   .ship4_a {
     display: none;
   }
-  
+
   .ship5_a {
     display: none;
   }
 
   #logo_a {
     display: flex;
-    padding-top: 1%;
-    width: 780%;
-    max-width: 700px;
+    padding-top: 2%;
+    padding-right: 1%;
+    width: 750%;
+    max-width: 670px;
     height: auto;
     margin: 0 auto;
   }
@@ -462,8 +465,16 @@ body {
     margin-top: -35px;
   }
 
-  *  {
+  * {
     font-size: 30px;
+  }
+
+  .icon_a {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 6%;
+    order: 2;
+    animation: upAndDown 4s ease-in-out infinite;
   }
 
   .userInput_a {
@@ -481,7 +492,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
   }
-  
+
   .column1 .input-container_a img,
   .column2 .input-container_a img {
     order: -1;
@@ -501,6 +512,7 @@ body {
     border-radius: 30px;
     box-sizing: border-box;
     background-color: #c51e32;
+    color: white;
     margin-left: 5%;
   }
 
@@ -549,7 +561,7 @@ body {
     color: white;
   }
 
-  .backButton_a  {
+  .backButton_a {
     width: 15%;
     display: flex;
     align-items: center;
@@ -585,10 +597,10 @@ body {
 
   #error_a {
     color: rgb(240, 72, 72);
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
-    margin-top: 4px;
+    margin-top: 10px;
     padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;

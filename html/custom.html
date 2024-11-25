@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <title>Custom page</title>
+    <title>Custom Game</title>
   </head>
   <body>
     <div id="background_a">
@@ -365,33 +365,27 @@
           ></button>
         </div>
         <p class="advice">The blank fields would be filled with random names</p>
-        <div class="buttons_a">
-          <div class="backButton_a">
-            <button
-              type="submit"
-              class="backbtn_a"
-              onclick="goBack(event)"
-            >
-              BACK
-            </button>
-          </div>
-          <div class="button_a">
-            <button
-              type="submit"
-              class="submitbtn_a"
-              onclick="validateFormulary(event)"
-            >
-              PLAY
-            </button>
-            <button
-              type="submit"
-              class="submitbtn2_a"
-              onclick="validateFormulary2(event)"
-            >
-              PLAY
-            </button>
-            <p id="error_a"></p>
-          </div>
+        <div class="button_a">
+          <button
+            type="submit"
+            class="submitbtn_a"
+            onclick="validateFormulary(event)"
+          >
+            PLAY
+          </button>
+          <button
+            type="submit"
+            class="submitbtn2_a"
+            onclick="validateFormulary2(event)"
+          >
+            PLAY
+          </button>
+          <p id="error_a"></p>
+        </div>
+        <div class="backButton_a">
+          <button type="submit" class="backbtn_a" onclick="goBack(event)">
+            BACK
+          </button>
         </div>
       </form>
 

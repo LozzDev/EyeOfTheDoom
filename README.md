@@ -14,19 +14,14 @@ As the eye systematically picks off its victims, the tension mounts until only o
 
 This game of chance delivers suspense, chaos, and the thrill of unpredictable outcomes, making Eye of the Doom a cosmic lottery of life and death.
 
-<h1>Members & Roles <img src="https://github.com/user-attachments/assets/577114cd-3300-42c6-ac53-02e2734a435d" width="50px">
-  <img src="https://github.com/user-attachments/assets/791743cc-00cf-4895-8f3e-bf3371c483c3" width="50px">
-<img src="https://github.com/user-attachments/assets/e20a3115-6a03-4853-bc70-e38f54d7a1e6" width="50px">
-<img src="https://github.com/user-attachments/assets/406e32a8-fc77-4e39-bab8-5004d6fad23a" width="50px">
-<img src="https://github.com/user-attachments/assets/2d73c394-62ed-4cb1-9fee-f27d41cb6837" width="50px">
-<img src="https://github.com/user-attachments/assets/8ba0fd46-b963-4a98-ac08-9700f34a6bbc" width="50px"></h1>
+<h1>Members & Roles 👥</h1>
 
-* Mario Lebrero García - <strong>SCRUM Master</strong>
-* Jesús Manuel García Lozano - <strong>Product Owner</strong>
-* Mauricio Nicolas Ortiz
-* Fernando de la Torre Esperon
-* Samuel Utrilla Núñez
-* Adrián Pérez Agredano
+* Mario Lebrero García  - <strong>SCRUM Master</strong> <img src="https://github.com/user-attachments/assets/577114cd-3300-42c6-ac53-02e2734a435d" width="40px">
+* Jesús Manuel García Lozano - <strong>Product Owner</strong> <img src="https://github.com/user-attachments/assets/791743cc-00cf-4895-8f3e-bf3371c483c3" width="40px">
+* Mauricio Nicolas Ortiz <img src="https://github.com/user-attachments/assets/e20a3115-6a03-4853-bc70-e38f54d7a1e6" width="40px">
+* Fernando de la Torre Esperon <img src="https://github.com/user-attachments/assets/406e32a8-fc77-4e39-bab8-5004d6fad23a" width="40px">
+* Samuel Utrilla Núñez <img src="https://github.com/user-attachments/assets/8ba0fd46-b963-4a98-ac08-9700f34a6bbc" width="40px">
+* Adrián Pérez Agredano <img src="https://github.com/user-attachments/assets/2d73c394-62ed-4cb1-9fee-f27d41cb6837" width="40px">
 
 <h1>Screenshots 📸</h1>
 
@@ -37,7 +32,7 @@ This game of chance delivers suspense, chaos, and the thrill of unpredictable ou
 
 <h1>Stacks ⚙️</h1>
 
-For this project we have used <strong>HTML5</strong>, <strong>CSS3</strong> and <strong>JavaScript</strong>.
+For this project we have used <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>Bootstrap</strong> and <strong>JavaScript</strong>.
 
 <h1>Metodology 📈</h1>
 

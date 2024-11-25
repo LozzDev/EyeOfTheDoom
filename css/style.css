@@ -172,7 +172,7 @@
       right: 10px;
     }
 
-    @media only screen and (min-width: 413px){
+    @media only screen and (min-width: 900px){
       @font-face {
         font-family: 'Pixelade';
         src: url('./fonts/PIXELADE.ttf'),
@@ -278,10 +278,13 @@
         }
         
         .main_div_paragraph_b {
-          font-size: 42px;
-          position: fixed;
-          top: 25%;
-          margin: 10px 400px;
+          font-size: 3vw; /* Escala el texto con el ancho de la pantalla */
+          position: absolute; /* Usa posición relativa al contenedor */
+          top: 22%; /* Ajusta la altura relativa */
+          margin: 0 20%; /* Márgenes proporcionales */
+          left: 5%;
+          width: 50%; /* Limita el ancho del párrafo */
+          line-height: 1.2; /* Mejora la legibilidad */
           opacity: 1;
           transition: opacity 1s ease;
         }

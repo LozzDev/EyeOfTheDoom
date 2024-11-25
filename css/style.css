@@ -350,19 +350,18 @@
           right: 10px;
         }
 
-        #music_player{
-          font-size: 9wv;
-          position: absolute;
-          left: 40px;
+        #music_icon{
+          max-width: 6em;
         }
 
         #toggle_music{
+          position: absolute;
+          left: 20px;
           color: #ffffec;
           font-family: 'Pixelade';
           background-color: #c51e32;
-          font-size: 4wv;
           border-style: none;
-          border: 6px;
-          border-radius: 15px;
+          border: 1px;
+          border-radius: 50px;
         }
     }

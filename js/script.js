@@ -100,6 +100,23 @@ startButton.addEventListener("click", (event) => {
   });
 });
 
+//Bloque de animación de transición
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('fade-in');
+});
+
+document.querySelector('.body_a_b').addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const href = event.currentTarget.getAttribute('href');
+  document.body.classList.add('fade-out');
+
+  setTimeout(() => {
+    window.location.href = href;
+  }, 700);
+});
+
+// Final del bloque de animación de transición
 
 generateHiddenText();
 revealHiddenText();

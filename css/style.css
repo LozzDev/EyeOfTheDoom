@@ -4,6 +4,29 @@
     src: url('./fonts/PIXELADE.ttf'),
   }
   
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pixelade';
+    color: #ffffec;
+    text-align: center;
+    opacity: 0;
+    /* Principio de animación de transición*/
+    transition: opacity 0.7s ease-in-out;
+    background-color: #030711;
+  }
+
+  body.fade-in {
+    opacity: 1;
+  }
+  
+  body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  /* Final bloque de animación de transición*/
+
+
   header{
     display: flex;
     width: 100%;
@@ -76,13 +99,7 @@
     }
   }
   
-  body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Pixelade';
-      color: #ffffec;
-      text-align: center;
-    }
+  
     
     #background_b {
       position: absolute;

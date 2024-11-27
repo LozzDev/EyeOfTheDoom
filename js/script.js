@@ -7,6 +7,7 @@ const text =
 let index = 0;
 let typingInterval;
 let sfxClick = new Audio('/sounds/button_click.mp3');
+let sfxHover = new Audio('/sounds/button_hover.mp3')
 
 function setRedText() {
   let eyeOfTheAbyssTextInterval = [];
@@ -87,7 +88,13 @@ skipButton.addEventListener("click", skipIntro);
 skipButton.addEventListener("click", () =>{
 sfxClick.play();
 });
+skipButton.addEventListener("mouseover", () => {
+  sfxHover.play();
+})
 
+startButton.addEventListener("mouseover", ()=>{
+  sfxHover.play()
+});
 startButton.addEventListener("click", (event) => {
   event.preventDefault();
   sfxClick.play().then(() => {

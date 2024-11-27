@@ -8,9 +8,13 @@
   font-style: normal;
 }
 
-/* Aplicación al body */
-body {
+
+* {
   font-family: 'Pixelade', sans-serif;
+}
+
+
+body {
   margin: 0;
   padding: 0;
   background-image: url("images/fondo.png");
@@ -21,119 +25,105 @@ body {
   height: 100vh;
 }
 
-/* Fuerza la tipografía globalmente */
-* {
-  font-family: 'Pixelade', sans-serif;
-}
 
-.ranking-title {
-  font-size: 24px;
-  margin-top: 10px;
-  color: #ffffec;
-  /* Rojo brillante */
-  font-family: 'Pixelade', sans-serif;
-  /* Aplicación específica de la fuente */
-}
-
-.logo_victoria {
-  text-align: center;
+.parent-div-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
-.logo_imagen {
-  max-width: 400px;
-  height: auto;
+.parent-div-1-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .ranking-title {
   font-size: 2rem;
+  letter-spacing: 25px;
   margin-top: 10px;
-  color: #ffffec;
-  /* Rojo brillante */
-}
-
-.ganador {
-  color: #008a85;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.imagen_ganador {
-  width: 100px;
-  height: 120px;
-}
-
-.titulo1 {
-  font-size: 1.5rem;
-  margin-top: 10px;
-}
-
-.segundo_y_tercero {
-  display: flex;
   justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
+  color: #ffffec;
 }
 
-.segundo,
-.tercero {
-  text-align: center;
-}
-
-.segundo_ganador,
-.tercer_ganador {
-  width: 80px;
-  height: 100px;
-}
-
-.jugadores {
-  margin-top: 50px;
+.parent-div-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
 }
 
-.list-group {
+.child-div-2-1 {
   display: flex;
-  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+
 }
 
-.list-group-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Fondo translúcido */
-  color: black;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: bold;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  width: 80px;
+.child-div-2-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
-/* Estilo del footer */
+.parent-div-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.child-div-3-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.child-div-3-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.child-div-3-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.parent-div-4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25.7%;
+}
+
+#lastOne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+p {
+  color: #008a85;
+  font-size: 32px;
+}
+
 .footer {
-  position: fixed;
   bottom: 0;
   left: 0;
-  /* Asegura que comience desde la izquierda */
   width: 100%;
-  /* Ocupa todo el ancho de la página */
   background-color: #c51e32;
-  /* Color de fondo */
   color: #ffffec;
-  /* Color del texto */
   padding: 15px 0;
-  /* Espaciado dentro del footer */
   display: flex;
   justify-content: center;
-  /* Centra horizontalmente */
   align-items: center;
-  /* Centra verticalmente */
   text-align: center;
-  /* Centra el texto dentro */
   box-sizing: border-box;
-  /* Incluye el padding dentro del ancho total */
 }
 
 /* Contenedor central del footer para alinear los elementos */
@@ -141,42 +131,35 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* Espacia los elementos */
   align-items: center;
-  /* Centra verticalmente */
   padding: 0 20px;
-  /* Espacio a los lados */
   text-align: center;
-  /* Centra el texto en cada bloque */
+
 }
 
-/* Estilo del bloque izquierdo */
+
 .footer-left {
   flex: 1;
   text-align: left;
-  /* Alinea a la izquierda */
 }
 
-/* Estilo del bloque central */
+
 .footer-center {
   flex: 2;
   text-align: center;
-  /* Alinea al centro */
 }
 
-/* Estilo del bloque derecho */
+
 .footer-right {
   flex: 1;
   text-align: right;
-  /* Alinea a la derecha */
 }
 
-/* Asegura que la imagen del logo se ajuste correctamente */
+
 .footer-logo {
   max-height: 40px;
-  /* Ajusta el tamaño máximo de la imagen */
   width: auto;
-  /* Mantiene la proporción original de la imagen */
+
 }
 
 .botones {
@@ -185,38 +168,33 @@ body {
   text-align: center;
   margin: 0, 20px, 0, 20px;
   position: relative;
-  /* Posiciona los botones por encima del footer */
   bottom: 40px;
-  /* Los coloca justo encima del footer, que tiene 80px de altura */
   left: 50%;
-  /* Centra los botones horizontalmente */
   transform: translateX(-50%);
-  /* Ajusta el centro para que esté exactamente en medio */
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  /* Espacio entre los botones */
   z-index: 10;
-  /* Asegura que los botones estén por encima del footer */
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .btn_izquierda {
   background-color: #c51e32;
+  letter-spacing: 5px;
   width: 256px;
   height: 36px;
   color: #ffffec;
   display: flex;
   justify-content: center;
-  /* Centra el contenido horizontalmente */
-  align-items: center;
-  /* Centra el contenido verticalmente */
+    align-items: center;
+  
   border-radius: 25px;
 }
 
 .btn_derecha {
   background-color: #c51e32;
+  letter-spacing: 5px;
   width: 256px;
   height: 36px;
   color: #ffffec;
@@ -232,16 +210,6 @@ body {
 .btn_derecha:hover {
   background-color: #008a85;
   color: yellow;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 900px;
-  /* Establece la separación horizontal entre los ovnis */
-  margin-top: 20px;
-  /* Mantén el margen superior general */
 }
 
 

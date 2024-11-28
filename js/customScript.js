@@ -1,4 +1,9 @@
 let entries = [];
+let sfxClick = new Audio('/sounds/button_click.mp3');
+let sfxHover = new Audio('/sounds/button_hover.mp3');
+const playButton1 = document.getElementById("submitbtn_a");
+const playButton2 = document.getElementById("submitbtn2_a");
+const backButton = document.getElementById("backButton_a");
 
 function updateVisibility() {
   const deleteUserContainer = document.querySelector(".deleteUser-container_a");
@@ -93,6 +98,13 @@ function getRandomName(availableNames) {
   return randomName;
 }
 
+function getRandomName(availableNames) {
+  const randomIndex = Math.floor(Math.random() * availableNames.length);
+  const randomName = availableNames[randomIndex];
+  availableNames.splice(randomIndex, 1);
+  return randomName;
+}
+
 function validateFormulary2(event) {
   event.preventDefault();
 
@@ -123,41 +135,41 @@ function validateFormulary2(event) {
     document.getElementById("name16F2_a"),
   ];
 
-  // Recuperar el array alivehumansCasual desde localStorage
-const alivehumansCasual = JSON.parse(localStorage.getItem("alivehumansCasual"));
+  const alivehumansCasual = [
+    { id: 1, name: "Jesús Manuel", alive: true },
+    { id: 2, name: "Israel", alive: true },
+    { id: 3, name: "Javier", alive: true },
+    { id: 4, name: "Nicolás", alive: true },
+    { id: 5, name: "Felipe", alive: true },
+    { id: 6, name: "Nando", alive: true },
+    { id: 7, name: "Alejandro", alive: true },
+    { id: 8, name: "Pablo", alive: true },
+    { id: 9, name: "Mario", alive: true },
+    { id: 10, name: "Rubén", alive: true },
+    { id: 11, name: "Pablo N", alive: true },
+    { id: 12, name: "Mauricio", alive: true },
+    { id: 13, name: "Adrián", alive: true },
+    { id: 14, name: "Jairo", alive: true },
+    { id: 15, name: "Judith", alive: true },
+    { id: 16, name: "Samuel", alive: true },
+  ];
 
-// Verifica si el array se recuperó correctamente
-if (!alivehumansCasual) {
-  console.log("No se pudo recuperar alivehumansCasual desde localStorage.");
-  error.textContent = "The list of names is unavailable.";
-  return;
-} else {
-  console.log("Lista de nombres recuperada:", alivehumansCasual);
-}
+  const availableNames = alivehumansCasual.map(human => human.name);
 
-// Extrae solo los nombres del array
-const availableNames = alivehumansCasual.map(human => human.name);
+  console.log("Nombres disponibles:", availableNames);
 
-// Verifica el array de nombres disponibles
-console.log("Nombres disponibles:", availableNames);
-
-
-nameInputs.forEach((input) => {
-  if (!input.value.trim()) {
-    if (availableNames.length === 0) {
-      error.textContent = "Not enough unique names available.";
-      return;
+  nameInputs.forEach((input) => {
+    if (!input.value.trim()) {
+      if (availableNames.length === 0) {
+        error.textContent = "Not enough unique names available.";
+        return;
+      }
+      input.value = getRandomName(availableNames);
     }
-    // Asigna un nombre aleatorio del array availableNames
-    input.value = getRandomName(availableNames);
-  }
-});
+  });
 
-
-  // Lista nombres inputs custom
   const inputValues = nameInputs.map((input) => input.value.trim());
 
-  // Guarda la lista inputValues en el localStorage
   localStorage.setItem("inputValues", JSON.stringify(inputValues));
 
   console.log(inputValues);
@@ -166,6 +178,29 @@ nameInputs.forEach((input) => {
 
   window.location.href = "../html/main.html";
 }
+
+sfxHover.playbackRate = 2;
+
+playButton1.addEventListener("click", () =>{
+  sfxClick.play();
+  });
+playButton1.addEventListener("mouseover", () => {
+  sfxHover.play();
+})
+
+playButton2.addEventListener("click", () =>{
+  sfxClick.play();
+  });
+  playButton2.addEventListener("mouseover", () => {
+  sfxHover.play();
+})
+
+backButton.addEventListener("click", () =>{
+  sfxClick.play();
+  });
+  backButton.addEventListener("mouseover", () => {
+  sfxHover.play();
+})
 
 function goBack(event) {
   event.preventDefault();

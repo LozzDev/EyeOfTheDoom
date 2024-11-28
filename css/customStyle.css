@@ -218,6 +218,11 @@ body {
   padding: 15px 15px;
 }
 
+.inputField-container_a :hover {
+  background-color: #008a85;
+  color: #fcfc40;
+}
+
 .inputField-container_a ::placeholder {
   color: white;
 }
@@ -230,6 +235,11 @@ body {
   position: relative;
   margin-top: 5%;
   color: white;
+}
+
+.deleteUser-container_a :hover {
+  background-color: #008a85;
+  color: #fcfc40;
 }
 
 .deleteUser-container_a input {
@@ -249,7 +259,12 @@ body {
   background-color: #c51e32;
 }
 
-.deleteField_a :hover {
+.backButton_a :hover {
+  background-color: #008a85;
+  color: #fcfc40;
+}
+
+.button_a :hover {
   background-color: #008a85;
   color: #fcfc40;
 }
@@ -579,6 +594,16 @@ body {
     box-sizing: border-box;
     background-color: #c51e32;
     color: white;
+  }
+
+  .backButton_a :hover {
+    background-color: #008a85;
+    color: #fcfc40;
+  }
+
+  .button_a :hover {
+    background-color: #008a85;
+    color: #fcfc40;
   }
 
   .submitbtn_a {

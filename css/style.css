@@ -366,19 +366,4 @@
           bottom: 50px;
           right: 10px;
         }
-
-        #music_icon{
-          max-width: 6em;
-        }
-
-        #toggle_music{
-          position: absolute;
-          left: 20px;
-          color: #ffffec;
-          font-family: 'Pixelade';
-          background-color: #c51e32;
-          border-style: none;
-          border: 1px;
-          border-radius: 50px;
-        }
     }

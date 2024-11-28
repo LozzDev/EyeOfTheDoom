@@ -81,107 +81,10 @@ function validateFormulary(event) {
     return;
   }
 
-  /*
-    -- Lista nombres inputs custom
-    const allEntries = [name1, name2, name3, name4, ...entries];
-    console.log("All entries:", allEntries);
-
-    sendToAnotherFile(allEntries);
-
-    localStorage.setItem("entriesData", JSON.stringify(allEntries));
-
-    -- Recibir el array desde otro archivo:
-
-    const receivedData = JSON.parse(localStorage.getItem("entriesData"));
-    */
-
   error.textContent = "";
   alert("Form successfully submitted.");
   window.location.href = "../html/main.html";
 }
-
-const alivehumansCasual = [
-  {
-    id: 1,
-    name: "Jesús Manuel",
-    alive: true,
-  },
-  {
-    id: 2,
-    name: "Israel",
-    alive: true,
-  },
-  {
-    id: 3,
-    name: "Javier",
-    alive: true,
-  },
-  {
-    id: 4,
-    name: "Nicolás",
-    alive: true,
-  },
-  {
-    id: 5,
-    name: "Felipe",
-    alive: true,
-  },
-  {
-    id: 6,
-    name: "Nando",
-    alive: true,
-  },
-  {
-    id: 7,
-    name: "Alejandro",
-    alive: true,
-  },
-  {
-    id: 8,
-    name: "Pablo",
-    alive: true,
-  },
-  {
-    id: 9,
-    name: "Mario",
-    alive: true,
-  },
-  {
-    id: 10,
-    name: "Rubén",
-    alive: true,
-  },
-  {
-    id: 11,
-    name: "Pablo N",
-    alive: true,
-  },
-  {
-    id: 12,
-    name: "Mauricio",
-    alive: true,
-  },
-  {
-    id: 13,
-    name: "Adrián",
-    alive: true,
-  },
-  {
-    id: 14,
-    name: "Jairo",
-    alive: true,
-  },
-  {
-    id: 15,
-    name: "Judith",
-    alive: true,
-  },
-  {
-    id: 16,
-    name: "Samuel",
-    alive: true,
-  },
-];
 
 function getRandomName(availableNames) {
   const randomIndex = Math.floor(Math.random() * availableNames.length);
@@ -220,20 +123,42 @@ function validateFormulary2(event) {
     document.getElementById("name16F2_a"),
   ];
 
-  const availableNames = alivehumansCasual.map((human) => human.name);
+  // Recuperar el array alivehumansCasual desde localStorage
+const alivehumansCasual = JSON.parse(localStorage.getItem("alivehumansCasual"));
 
-  nameInputs.forEach((input) => {
-    if (!input.value.trim()) {
-      if (availableNames.length === 0) {
-        error.textContent = "Not enough unique names available.";
-        return;
-      }
-      input.value = getRandomName(availableNames);
+// Verifica si el array se recuperó correctamente
+if (!alivehumansCasual) {
+  console.log("No se pudo recuperar alivehumansCasual desde localStorage.");
+  error.textContent = "The list of names is unavailable.";
+  return;
+} else {
+  console.log("Lista de nombres recuperada:", alivehumansCasual);
+}
+
+// Extrae solo los nombres del array
+const availableNames = alivehumansCasual.map(human => human.name);
+
+// Verifica el array de nombres disponibles
+console.log("Nombres disponibles:", availableNames);
+
+
+nameInputs.forEach((input) => {
+  if (!input.value.trim()) {
+    if (availableNames.length === 0) {
+      error.textContent = "Not enough unique names available.";
+      return;
     }
-  });
+    // Asigna un nombre aleatorio del array availableNames
+    input.value = getRandomName(availableNames);
+  }
+});
+
 
   // Lista nombres inputs custom
   const inputValues = nameInputs.map((input) => input.value.trim());
+
+  // Guarda la lista inputValues en el localStorage
+  localStorage.setItem("inputValues", JSON.stringify(inputValues));
 
   console.log(inputValues);
 

@@ -7,7 +7,13 @@ const text =
 let index = 0;
 let typingInterval;
 let sfxClick = new Audio('/sounds/button_click.mp3');
-let sfxHover = new Audio('/sounds/button_hover.mp3')
+let sfxHover = new Audio('/sounds/button_hover.mp3');
+
+// Crear o acceder al audio global
+let audio = window.audio || new Audio("/sounds/eod_theme.mp3");
+audio.loop = true; // Hacer que el audio se repita
+audio.muted = false; // Para asegurarnos de que no esté silenciado
+audio.load(); // Cargar el archivo
 
 function setRedText() {
   let eyeOfTheAbyssTextInterval = [];
@@ -23,12 +29,13 @@ function setRedText() {
 }
 
 setTimeout(() => {
-  setTimeout(fadeSkipButton, 1000)
+  setTimeout(fadeSkipButton, 1000);
 }, 300);
 
-function fadeSkipButton(){
-  skipButton.style.opacity= 1; 
+function fadeSkipButton() {
+  skipButton.style.opacity = 1;
 }
+
 function generateHiddenText() {
   const eyeOfTheAbyssTextInterval = setRedText();
 
@@ -39,20 +46,19 @@ function generateHiddenText() {
     span.className = "main_div_paragraph_span_b";
 
     if (eyeOfTheAbyssTextInterval.includes(i)) {
-      span.style.color = "#c51e32"; 
+      span.style.color = "#c51e32";
     }
 
     paragraph.appendChild(span);
   });
 }
 
-
 function revealHiddenText() {
   const spans = document.querySelectorAll(".main_div_paragraph_span_b");
   if (index < spans.length) {
     spans[index].style.visibility = "visible";
     index++;
-    typingInterval = setTimeout(revealHiddenText, 62);
+    typingInterval = setTimeout(revealHiddenText, 52);
   } else {
     setTimeout(() => {
       paragraph.classList.add("fade-out");
@@ -76,38 +82,44 @@ function showStartButton() {
 }
 
 function skipIntro() {
-  clearTimeout(typingInterval); 
+  clearTimeout(typingInterval);
   paragraph.classList.add("fade-out");
-  paragraph.style.transition = "none"; 
-  image.classList.add("fade-in"); 
+  paragraph.style.transition = "none";
+  image.classList.add("fade-in");
   hideSkipButton();
   showStartButton();
+
+  // Ajustar el audio directamente al segundo 23
+  audio.currentTime = 23;
+  audio.play().catch(error => {
+    console.warn("Error al reproducir el audio:", error);
+  });
 }
 
 skipButton.addEventListener("click", skipIntro);
-skipButton.addEventListener("click", () =>{
-sfxClick.play();
+skipButton.addEventListener("click", () => {
+  sfxClick.play();
 });
 skipButton.addEventListener("mouseover", () => {
   sfxHover.play();
-})
+});
 
-startButton.addEventListener("mouseover", ()=>{
-  sfxHover.play()
+startButton.addEventListener("mouseover", () => {
+  sfxHover.play();
 });
 startButton.addEventListener("click", (event) => {
   event.preventDefault();
   sfxClick.play().then(() => {
-      setTimeout(() => {
-          window.location.href = startButton.parentElement.href;
-      }, 300);
-  }).catch(error => {
-      console.error("Error reproduciendo el sonido:", error);
+    setTimeout(() => {
       window.location.href = startButton.parentElement.href;
+    }, 300);
+  }).catch(error => {
+    console.error("Error reproduciendo el sonido:", error);
+    window.location.href = startButton.parentElement.href;
   });
 });
 
-//Bloque de animación de transición
+// Bloque de animación de transición
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('fade-in');
 });

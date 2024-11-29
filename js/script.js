@@ -1,3 +1,5 @@
+import globalState from "./globalState.js";
+
 const paragraph = document.getElementById("main_div_paragraph_b");
 const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
@@ -6,14 +8,8 @@ const text =
   "In a distant future, humanity stands on the edge of extinction. A dark entity, the Eye of the Doom, has awakened in the depths of space. With immense power, it has fixed its gaze on Earth, aiming to consume it in eternal darkness. Yet hope remains: a team of 16 brave astronauts has been assembled to face this threat and stop what is coming.";
 let index = 0;
 let typingInterval;
-let sfxClick = new Audio('/sounds/button_click.mp3');
-let sfxHover = new Audio('/sounds/button_hover.mp3');
-
-// Crear o acceder al audio global
-let audio = window.audio || new Audio("/sounds/eod_theme.mp3");
-audio.loop = true; // Hacer que el audio se repita
-audio.muted = false; // Para asegurarnos de que no esté silenciado
-audio.load(); // Cargar el archivo
+let sfxClick = new Audio("/sounds/button_click.mp3");
+let sfxHover = new Audio("/sounds/button_hover.mp3");
 
 function setRedText() {
   let eyeOfTheAbyssTextInterval = [];
@@ -46,7 +42,7 @@ function generateHiddenText() {
     span.className = "main_div_paragraph_span_b";
 
     if (eyeOfTheAbyssTextInterval.includes(i)) {
-      span.style.color = "#c51e32";
+      span.style.color = "#c51e32"; 
     }
 
     paragraph.appendChild(span);
@@ -89,13 +85,31 @@ function skipIntro() {
   hideSkipButton();
   showStartButton();
 
-  // Ajustar el audio directamente al segundo 23
-  audio.currentTime = 23;
-  audio.play().catch(error => {
-    console.warn("Error al reproducir el audio:", error);
-  });
+  const audio = globalState.audio;
+
+  // Pausar y ajustar el tiempo del audio al segundo 24
+  if (audio.readyState >= 2) { 
+    audio.pause();
+    audio.load();
+    audio.currentTime = 24;  // Segundo al que saltamos
+
+    // Guardamos el nuevo tiempo en localStorage
+    localStorage.setItem("musicTime", audio.currentTime.toString());
+    console.log("Nuevo tiempo de audio guardado en localStorage:", audio.currentTime);
+
+    setTimeout(() => {
+      audio.play().then(() => {
+        if (audio.muted) {
+          audio.muted = false;
+        }
+      }).catch((error) => {
+        console.warn("Error al reproducir el audio:", error);
+      });
+    }, 50);
+  }
 }
 
+// Añadimos los eventos para los botones
 skipButton.addEventListener("click", skipIntro);
 skipButton.addEventListener("click", () => {
   sfxClick.play();
@@ -109,33 +123,34 @@ startButton.addEventListener("mouseover", () => {
 });
 startButton.addEventListener("click", (event) => {
   event.preventDefault();
-  sfxClick.play().then(() => {
-    setTimeout(() => {
+  sfxClick
+    .play()
+    .then(() => {
+      setTimeout(() => {
+        window.location.href = startButton.parentElement.href;
+      }, 300);
+    })
+    .catch((error) => {
+      console.error("Error reproduciendo el sonido:", error);
       window.location.href = startButton.parentElement.href;
-    }, 300);
-  }).catch(error => {
-    console.error("Error reproduciendo el sonido:", error);
-    window.location.href = startButton.parentElement.href;
-  });
+    });
 });
 
 // Bloque de animación de transición
-window.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.add('fade-in');
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-in");
 });
 
-document.querySelector('.body_a_b').addEventListener('click', (event) => {
+document.querySelector(".body_a_b").addEventListener("click", (event) => {
   event.preventDefault();
 
-  const href = event.currentTarget.getAttribute('href');
-  document.body.classList.add('fade-out');
+  const href = event.currentTarget.getAttribute("href");
+  document.body.classList.add("fade-out");
 
   setTimeout(() => {
     window.location.href = href;
   }, 700);
 });
-
-// Final del bloque de animación de transición
 
 generateHiddenText();
 revealHiddenText();

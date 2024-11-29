@@ -1,11 +1,10 @@
 import globalState from "./globalState.js";
 
-// Crear el objeto de audio y mantener toda la funcionalidad original
 let audio = new Audio("/sounds/eod_theme.mp3");
-globalState.audio = audio; // Sincronizar audio con el estado global
+globalState.audio = audio; 
 let domContentLoadedTime = null;
 
-// Detectar cuando el DOM está completamente cargado
+
 window.addEventListener("DOMContentLoaded", () => {
   domContentLoadedTime = performance.now();
 
@@ -14,11 +13,9 @@ window.addEventListener("DOMContentLoaded", () => {
     window.location.pathname === "/";
 
   if (isIndexPage) {
-    // Si es la página de inicio, reiniciamos el audio
     audio.currentTime = 0;
     console.log("Página principal detectada. Audio reiniciado.");
   } else {
-    // Si no es la página de inicio, cargamos el tiempo desde localStorage
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime) {
       audio.currentTime = parseFloat(savedTime);
@@ -31,12 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
   audio.load();
 });
 
-// Guardar el progreso del audio en localStorage
 audio.addEventListener("timeupdate", () => {
   localStorage.setItem("musicTime", audio.currentTime.toString());
 });
 
-// Evento para manejar el mouseover (en páginas distintas de index.html)
 document.body.addEventListener("mouseover", () => {
   const isIndexPage =
     window.location.pathname.endsWith("index.html") ||
@@ -56,14 +51,12 @@ document.body.addEventListener("mouseover", () => {
   }
 });
 
-// Evento para manejar el click en index.html
 document.body.addEventListener("click", () => {
   const isIndexPage =
     window.location.pathname.endsWith("index.html") ||
     window.location.pathname === "/";
 
   if (isIndexPage) {
-    // Si el tiempo del audio ha sido modificado por el skipIntro, no sincronizamos desde el inicio
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime) {
       audio.currentTime = parseFloat(savedTime);

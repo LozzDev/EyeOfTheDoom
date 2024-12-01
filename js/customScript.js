@@ -5,6 +5,7 @@ const playButton1 = document.getElementById("submitbtn_a");
 const playButton2 = document.getElementById("submitbtn2_a");
 const backButton = document.getElementById("backButton_a");
 
+
 function updateVisibility() {
   const deleteUserContainer = document.querySelector(".deleteUser-container_a");
   if (entries.length > 0) {
@@ -87,7 +88,7 @@ function validateFormulary(event) {
   }
 
   error.textContent = "";
-  alert("Form successfully submitted.");
+  //alert("Form successfully submitted.");
   window.location.href = "../html/main.html";
 }
 

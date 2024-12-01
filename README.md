@@ -40,3 +40,5 @@ In this project we have worked with <strong>Agile methodology</strong> and <stro
 
 <h1>Next steps <img src="https://github.com/user-attachments/assets/b8d0de40-1833-4066-9e1b-367c520ebc4f" width="50px"></h1>
 
+For the future of our application we would like to implement a functional custom name list, so that anyone can play with the names they want.
+Also perhaps add other positions to the astronauts and improve and polish animations and other functionalities of the application.

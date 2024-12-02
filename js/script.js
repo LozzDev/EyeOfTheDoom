@@ -75,7 +75,16 @@ function showImage() {
 
 function showStartButton() {
   startButton.style.opacity = 1;
+  startButton.style.pointerEvents = "auto"; // Permitir interacción
 }
+
+function hideStartButton() {
+  startButton.style.opacity = 0;
+  startButton.style.pointerEvents = "none"; // Desactivar interacción
+}
+
+// Inicialmente, el botón no es interactivo
+hideStartButton();
 
 function skipIntro() {
   clearTimeout(typingInterval);
@@ -91,7 +100,7 @@ function skipIntro() {
   if (audio.readyState >= 2) { 
     audio.pause();
     audio.load();
-    audio.currentTime = 24;  // Segundo al que saltamos
+    audio.currentTime = 24; // Segundo al que saltamos
 
     // Guardamos el nuevo tiempo en localStorage
     localStorage.setItem("musicTime", audio.currentTime.toString());
@@ -109,7 +118,7 @@ function skipIntro() {
   }
 }
 
-// Añadimos los eventos para los botones
+// Eventos para el botón "Skip"
 skipButton.addEventListener("click", skipIntro);
 skipButton.addEventListener("click", () => {
   sfxClick.play();
@@ -118,22 +127,30 @@ skipButton.addEventListener("mouseover", () => {
   sfxHover.play();
 });
 
+// Eventos para el botón "Start"
 startButton.addEventListener("mouseover", () => {
-  sfxHover.play();
+  if (window.getComputedStyle(startButton).opacity === "1") {
+    sfxHover.play();
+  }
 });
+
 startButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  sfxClick
-    .play()
-    .then(() => {
-      setTimeout(() => {
+  if (window.getComputedStyle(startButton).opacity === "1") {
+    event.preventDefault();
+    sfxClick
+      .play()
+      .then(() => {
+        setTimeout(() => {
+          window.location.href = startButton.parentElement.href;
+        }, 300);
+      })
+      .catch((error) => {
+        console.error("Error reproduciendo el sonido:", error);
         window.location.href = startButton.parentElement.href;
-      }, 300);
-    })
-    .catch((error) => {
-      console.error("Error reproduciendo el sonido:", error);
-      window.location.href = startButton.parentElement.href;
-    });
+      });
+  } else {
+    console.warn("El botón Start no está visible y no debería ser interactivo.");
+  }
 });
 
 // Bloque de animación de transición

@@ -1,16 +1,26 @@
+@font-face {
+    font-family: 'Pixelade';
+    src: url('/fonts/PIXELADE.woff2') format('woff2'),
+      url('/fonts/PIXELADE.woff') format('woff'),
+      url('/fonts/PIXELADE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+* {
+    font-family: 'Pixelade', sans-serif;
+}
+
+
 body, html{
-    background-image: url('./images/fondo.png');
+    background-image: url('../images/fondo.png');
     background-size: cover; 
     background-position: center;
     background-clip: content-box;
-
-    overflow: hidden;
-    
     cursor: none;
-      
     min-height: 100vh; /* Asegura que siempre sea al menos el tamaño de la ventana */
     height: auto;
-    overflow: auto;
+    
     margin: 0;
     padding: 0;
 }

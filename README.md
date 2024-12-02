@@ -25,10 +25,18 @@ This game of chance delivers suspense, chaos, and the thrill of unpredictable ou
 
 <h1>Screenshots 📸</h1>
 
-<p align="center"><img src="https://github.com/user-attachments/assets/ac524d4f-3729-40b9-b959-be1565dbfe1b" width="1000px" /></p>
-<p align="center"><img src="https://github.com/user-attachments/assets/0271a312-5dbc-4f3e-83a6-c2f37c550732" width="1000px" /></p>
-<p align="center"><img src="https://github.com/user-attachments/assets/f6ceec0f-e7ea-40f8-b573-821733f4d152" width="1000px" /></p>
-<p align="center"><img src="https://github.com/user-attachments/assets/05aacba2-1b28-4de5-86dc-6ed6b6474be0" width="1000px" /></p>
+<h3>Desk Version 💻</h3>
+<p align="center"><img src="https://github.com/user-attachments/assets/ad6708ab-89ab-4854-bfb8-ea156ed6dcfa" width="1000px" /></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/625b4e3b-ebf6-44fd-bc91-ecc4abebf6bd" width="1000px" /></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/9c135875-795b-461d-81d3-0910cffaf184" width="1000px" /></p>
+
+
+<h3>Mobile Version 📱</h3>
+<p align="center"><img src="https://github.com/user-attachments/assets/2bc397a3-28db-4306-9dd5-b0f8ca35623d" width="300px" height="700px" />
+<img src="https://github.com/user-attachments/assets/d45b019d-5ed3-424b-a1c2-c47fecff31ea" width="300px" height="700px" />
+<img src="https://github.com/user-attachments/assets/13a30c2c-0a21-4f54-a038-c88bc20f71b9" width="300px" height="700px" /></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/d365cf36-e46a-404f-b105-7c7dba7a3a06" width="300px" height="700px" />
+<img src="https://github.com/user-attachments/assets/5374de88-c36a-4413-a78b-e4ac106038e4" width="300px" height="700px" /></p>
 
 <h1>Stacks ⚙️</h1>
 
@@ -40,5 +48,5 @@ In this project we have worked with <strong>Agile methodology</strong> and <stro
 
 <h1>Next steps <img src="https://github.com/user-attachments/assets/b8d0de40-1833-4066-9e1b-367c520ebc4f" width="50px"></h1>
 
-For the future of our application we would like to implement a functional custom name list, so that anyone can play with the names they want.
+For the future of our application we would like to implement a <strong>functional custom name list</strong>, so that anyone can play with the names they want.
 Also perhaps add other positions to the astronauts and improve and polish animations and other functionalities of the application.

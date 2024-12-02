@@ -12,13 +12,9 @@
 
 #main-container {
   display: flex;
-  width: 412px;
-  height: 917px;
-  overflow: hidden;
-  margin: 0 auto;
-  position: relative;
   flex-direction: column;
-  align-items: center;
+  flex-grow: 1;
+  width: 100%;
 }
 
 #background_a {
@@ -30,13 +26,13 @@
   background-position: center;
 }
 
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .ship-container {
@@ -137,11 +133,6 @@ body {
   gap: 5px;
 }
 
-.nameInputs_a :hover {
-  background-color: #008a85;
-  color: #fcfc40;
-}
-
 .input-container_a {
   display: flex;
   align-items: center;
@@ -171,10 +162,6 @@ body {
 
 .userInput_a ::placeholder {
   color: white;
-}
-
-.userInput_a :hover ::placeholder {
-  color: yellow;
 }
 
 .userInputWideScreen_a {
@@ -327,6 +314,10 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+footer {
+  display: none;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0) translateX(0);
@@ -393,7 +384,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 413px) and (min-height: 918px) {
+@media only screen and (min-width: 901px) {
   #main-container {
     display: flex;
     width: 1440px;
@@ -403,6 +394,18 @@ body {
     position: relative;
     flex-direction: column;
     align-items: center;
+  }
+
+  #background_a {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .ship-container {
@@ -614,5 +617,44 @@ body {
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    background-color: #1a1a1a;
+    color: #ffffec;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-links a {
+    color: #ffffec;
+    padding: 10px 10px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+    background-color: transparent;
+    border: 2px solid #c51e32;
+    border-radius: 25px;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .footer-links a:hover {
+    background-color: #008a85;
+    color: #fcfc40;
+    border: none;
   }
 }

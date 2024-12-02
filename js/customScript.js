@@ -88,7 +88,6 @@ function validateFormulary(event) {
   }
 
   error.textContent = "";
-  //alert("Form successfully submitted.");
   window.location.href = "../html/main.html";
 }
 
@@ -143,7 +142,6 @@ function validateFormulary2(event) {
     document.getElementById("name16F2_a"),
   ];
 
-  // Recibir lista de humanos (Casual)
   let humanList = JSON.parse(localStorage.getItem("humansAlive"));
 
   const availableNames = humanList.map(human => human.name);
@@ -163,7 +161,6 @@ function validateFormulary2(event) {
 
   const inputValues = nameInputs.map((input) => input.value.trim());
 
-  // Guardar lista de humanos (Custom)
   localStorage.setItem("inputValues", JSON.stringify(inputValues));
 
   console.log(inputValues);
@@ -172,8 +169,6 @@ function validateFormulary2(event) {
 
   window.location.href = "../html/main.html";
 }
-
-sfxHover.playbackRate = 2;
 
 playButton1.addEventListener("click", () =>{
   sfxClick.play();

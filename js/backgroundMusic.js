@@ -56,7 +56,7 @@ document.body.addEventListener("click", () => {
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime) {
       if (domContentLoadedTime !== null && audio.duration > 0) {
-        const timeSinceDomLoaded = (performance.now() - domContentLoadedTime) / 1000; // Convertir a segundos
+        const timeSinceDomLoaded = (performance.now() - domContentLoadedTime) / 1000;
         const adjustedTime = parseFloat(savedTime) + timeSinceDomLoaded;
 
         audio.currentTime = Math.min(adjustedTime, audio.duration);

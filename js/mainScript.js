@@ -84,6 +84,12 @@ const alivehumansCasual = [
 
 console.log(alivehumansCasual)
 
+// Guardar lista de humanos (Casual)
+localStorage.setItem("humansAlive", JSON.stringify(alivehumansCasual));
+
+// Recibir lista de humanos (Custom)
+let humanListCustom = JSON.parse(localStorage.getItem("inputValues"));
+
 //funciones para hallar las coordenadas x e y de los humanos
     
 

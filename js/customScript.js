@@ -109,6 +109,8 @@ function getRandomName(availableNames) {
 function validateFormulary2(event) {
   event.preventDefault();
 
+  const customNameList = [];
+
   const error = document.getElementById("error_a");
 
   const name1 = document.getElementById("name1F2_a").value.trim();
@@ -120,6 +122,11 @@ function validateFormulary2(event) {
     error.textContent = "Please fill in the first 4 fields.";
     return;
   }
+
+  customNameList.push(name1);
+  customNameList.push(name2);
+  customNameList.push(name3);
+  customNameList.push(name4);
 
   const nameInputs = [
     document.getElementById("name5F2_a"),
@@ -136,26 +143,10 @@ function validateFormulary2(event) {
     document.getElementById("name16F2_a"),
   ];
 
-  const alivehumansCasual = [
-    { id: 1, name: "Jesús Manuel", alive: true },
-    { id: 2, name: "Israel", alive: true },
-    { id: 3, name: "Javier", alive: true },
-    { id: 4, name: "Nicolás", alive: true },
-    { id: 5, name: "Felipe", alive: true },
-    { id: 6, name: "Nando", alive: true },
-    { id: 7, name: "Alejandro", alive: true },
-    { id: 8, name: "Pablo", alive: true },
-    { id: 9, name: "Mario", alive: true },
-    { id: 10, name: "Rubén", alive: true },
-    { id: 11, name: "Pablo N", alive: true },
-    { id: 12, name: "Mauricio", alive: true },
-    { id: 13, name: "Adrián", alive: true },
-    { id: 14, name: "Jairo", alive: true },
-    { id: 15, name: "Judith", alive: true },
-    { id: 16, name: "Samuel", alive: true },
-  ];
+  // Recibir lista de humanos (Casual)
+  let humanList = JSON.parse(localStorage.getItem("humansAlive"));
 
-  const availableNames = alivehumansCasual.map(human => human.name);
+  const availableNames = humanList.map(human => human.name);
 
   console.log("Nombres disponibles:", availableNames);
 
@@ -166,11 +157,13 @@ function validateFormulary2(event) {
         return;
       }
       input.value = getRandomName(availableNames);
+      customNameList.push(input.value);
     }
   });
 
   const inputValues = nameInputs.map((input) => input.value.trim());
 
+  // Guardar lista de humanos (Custom)
   localStorage.setItem("inputValues", JSON.stringify(inputValues));
 
   console.log(inputValues);

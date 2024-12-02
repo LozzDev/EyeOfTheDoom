@@ -1,9 +1,8 @@
 import globalState from "./globalState.js";
 
 let audio = new Audio("/sounds/eod_theme.mp3");
-globalState.audio = audio; 
+globalState.audio = audio;
 let domContentLoadedTime = null;
-
 
 window.addEventListener("DOMContentLoaded", () => {
   domContentLoadedTime = performance.now();
@@ -14,12 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (isIndexPage) {
     audio.currentTime = 0;
-    console.log("Página principal detectada. Audio reiniciado.");
   } else {
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime) {
       audio.currentTime = parseFloat(savedTime);
-      console.log("Progreso del audio restaurado desde localStorage:", audio.currentTime);
     }
   }
 
@@ -42,7 +39,6 @@ document.body.addEventListener("mouseover", () => {
       .then(() => {
         if (audio.muted) {
           audio.muted = false;
-          console.log("Audio desmuteado en mouseover");
         }
       })
       .catch((error) => {
@@ -59,15 +55,21 @@ document.body.addEventListener("click", () => {
   if (isIndexPage) {
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime) {
-      audio.currentTime = parseFloat(savedTime);
-      console.log(`Audio sincronizado a: ${audio.currentTime.toFixed(2)} s`);
+      if (domContentLoadedTime !== null && audio.duration > 0) {
+        const timeSinceDomLoaded = (performance.now() - domContentLoadedTime) / 1000; // Convertir a segundos
+        const adjustedTime = parseFloat(savedTime) + timeSinceDomLoaded;
+
+        audio.currentTime = Math.min(adjustedTime, audio.duration);
+
+      } else {
+        audio.currentTime = parseFloat(savedTime);
+      }
     }
 
     audio.play()
       .then(() => {
         if (audio.muted) {
           audio.muted = false;
-          console.log("Audio desmuteado en click");
         }
       })
       .catch((error) => {

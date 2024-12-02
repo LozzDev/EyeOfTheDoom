@@ -75,15 +75,14 @@ function showImage() {
 
 function showStartButton() {
   startButton.style.opacity = 1;
-  startButton.style.pointerEvents = "auto"; // Permitir interacción
+  startButton.style.pointerEvents = "auto"; 
 }
 
 function hideStartButton() {
   startButton.style.opacity = 0;
-  startButton.style.pointerEvents = "none"; // Desactivar interacción
+  startButton.style.pointerEvents = "none"; 
 }
 
-// Inicialmente, el botón no es interactivo
 hideStartButton();
 
 function skipIntro() {
@@ -96,13 +95,11 @@ function skipIntro() {
 
   const audio = globalState.audio;
 
-  // Pausar y ajustar el tiempo del audio al segundo 24
   if (audio.readyState >= 2) { 
     audio.pause();
     audio.load();
-    audio.currentTime = 24; // Segundo al que saltamos
+    audio.currentTime = 24; 
 
-    // Guardamos el nuevo tiempo en localStorage
     localStorage.setItem("musicTime", audio.currentTime.toString());
     console.log("Nuevo tiempo de audio guardado en localStorage:", audio.currentTime);
 
@@ -118,7 +115,6 @@ function skipIntro() {
   }
 }
 
-// Eventos para el botón "Skip"
 skipButton.addEventListener("click", skipIntro);
 skipButton.addEventListener("click", () => {
   sfxClick.play();
@@ -127,7 +123,6 @@ skipButton.addEventListener("mouseover", () => {
   sfxHover.play();
 });
 
-// Eventos para el botón "Start"
 startButton.addEventListener("mouseover", () => {
   if (window.getComputedStyle(startButton).opacity === "1") {
     sfxHover.play();
@@ -153,7 +148,6 @@ startButton.addEventListener("click", (event) => {
   }
 });
 
-// Bloque de animación de transición
 window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("fade-in");
 });

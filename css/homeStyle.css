@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Pixelade";
-	src: url("./fonts/PIXELADE.TTF");
+	src: url("/fonts/PIXELADE.TTF");
 }
 
 /* General Styles */
@@ -10,7 +10,7 @@ html {
 	padding: 0;
 	height: 100%;
 	font-family: "Pixelade";
-	background: url("./images/fondo.png") no-repeat center center fixed;
+	background: url("/images/fondo.png") no-repeat center center fixed;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -142,7 +142,7 @@ header {
 	transform: translateX(-50%);
 }
 
-.btn {
+.btn-game {
 	font-family: "Pixelade";
 	font-size: 1.5rem;
 	width: 80vw;
@@ -159,7 +159,7 @@ header {
 	transition: background-color 0.3s;
 }
 
-.btn:hover {
+.btn-game:hover {
 	background-color: #008a85;
 	color: #fcfc40;
 }
@@ -275,13 +275,13 @@ footer {
 	.rules-toggle-btn-movil {
 		display: block;
 		position: fixed;
-		bottom: 0.5vh;
+		bottom: 0.5vw;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 14vw;
 		height: 6vw;
 		font-family: "Pixelade";
-		font-size: 3vh;
+		font-size: 3vw;
 		background-color: #c51e32;
 		border: none;
 		border-radius: 25px;
@@ -308,7 +308,7 @@ footer {
 		top: 45%;
 	}
 
-	.btn {
+	.btn-game {
 		font-size: 4vw;
 		height: 8vw;
 		width: 30vw;

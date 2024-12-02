@@ -82,7 +82,6 @@ const alivehumansCasual = [
     }
 ];
 
-
 //funciones para hallar las coordenadas x e y de los humanos
     
 
@@ -276,7 +275,7 @@ function executerCasual(){
     
 
 
-    //----------------------------------------------
+//----------------------------------------------
 
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
@@ -295,12 +294,20 @@ function executerCasual(){
     
      
     if(indexLimitClicker==15){
+
+        alivehumansCasual.forEach((human) => {
+            if(human.alive==true){
+                executeHumansArray.push(human.name);
+            }
+        });
+        console.log(executeHumansArray);
+
         setTimeout(() => {
-            window.location.href = "end.html";
+            createEndPage(executeHumansArray);
         }, 3000 );
         
     }  
-    
+    console.log(executeHumansArray);
 }
 
 document.addEventListener("click", executerCasual);
@@ -333,83 +340,500 @@ container.addEventListener('click', createRipple);
 function createEndPage(arrayExecutedHumans){
     //con estas 3 lineas borramos el main y activamos el cursor
     const mainPage=document.getElementById("main");
+    const head = document.head;
     const body = document.body;
     mainPage.remove();
     document.body.style.cursor = "default";
     //-----Aqui comenzamos a crear el end.html aplicando la estructura html de la pagina---------
+    //aqui se aplican los estilos
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Carga de la fuente personalizada */
+    @font-face {
+    font-family: 'Pixelade';
+    src: url('fonts/PIXELADE.woff2') format('woff2'),
+      url('fonts/PIXELADE.woff') format('woff'),
+      url('fonts/PIXELADE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
+  * {
+    font-family: 'Pixelade', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./images/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
+  }
+  
+  .astronaut{
+    width: 50px;
+  }
+
+  #astronaut1{
+    width: 100px;
+  }
+  #astronaut2{
+    width: 75px;
+  }
+  #astronaut3{
+    width: 60px;
+  }
+
+
+  .parent-div-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .parent-div-1-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .ranking-title {
+    font-size: 2rem;
+    letter-spacing: 25px;
+    
+    color: #ffffec;
+  }
+  
+  .parent-div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .child-div-2-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+  }
+  
+  .child-div-2-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+  .child-div-2-2-1{
+    display: flex;
+    align-items: center;
+  }
+
+  .child-div-2-2-2{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  
+  .parent-div-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .child-div-3-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .child-div-3-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .child-div-3-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .parent-div-4 {
+    display: flex;
+    gap: 14%;
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #lastOne {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  p {
+    color: #008a85;
+    font-size: 18px;
+  }
+
+  
+  .btn_izquierda, .btn_derecha {
+    background-color: #c51e32;
+    letter-spacing: 5px;
+    width: 200px;
+    height: 36px;
+    color: #ffffec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin-top: 20px;
+    
+  }
+
+  .btn_izquierda{
+    width: 150px;
+  }
+
+  .parent-div-5{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+/*-----------------------------------------------*/
+  @media (min-width: 901px){
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-image: url("./images/fondo.png");
+      min-height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .astronaut{
+      width: 100px;
+    }
+    #astronaut1{
+      width: 150px;
+    }
+    #astronaut2{
+      width: 100px;
+    }
+    #astronaut3{
+      width: 100px;
+    }
+    .parent-div-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .parent-div-1-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    .ranking-title {
+      font-size: 2rem;
+      letter-spacing: 25px;
+      
+      color: #ffffec;
+    }
+    
+    .parent-div-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .child-div-2-1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    
+    }
+    
+    .child-div-2-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    
+    }
+    
+    .parent-div-3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .child-div-3-1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .child-div-3-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .child-div-3-3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .parent-div-4 {
+      display: flex;
+      gap: 20%;
+      margin-top: 1%;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #lastOne {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    p {
+      color: #008a85;
+      font-size: 32px;
+    }
+
+    
+    .btn_izquierda, .btn_derecha {
+      background-color: #c51e32;
+      letter-spacing: 5px;
+      width: 256px;
+      height: 36px;
+      color: #ffffec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+    }
+    .btn_derecha{
+      float: right;
+    }
+    .parent-div-5{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30%;
+    }
+  }
+    `
+    head.appendChild(style)
     // Crear el primer div sin hijos
-    const div1 = document.createElement('div');
-    div1.className = 'parent-div-1';
-    //aqui van los hijos de este div
+    // Crear el primer div sin hijos
+    // Crear el primer div sin hijos
+    const parentDiv1 = document.createElement('div');
+    parentDiv1.className = 'parent-div-1';
 
+    const childDiv1 = document.createElement('div');
+    childDiv1.className = 'parent-div-1-1';
 
-    body.appendChild(div1);
+    const logoImage = document.createElement('img');
+    logoImage.src = 'images/logoLetras.png';
+    logoImage.alt = 'logoLetras';
+    logoImage.className = 'logo_imagen';
+    logoImage.width = 400;
+
+    const rankingTitle = document.createElement('h1');
+    rankingTitle.className = 'ranking-title';
+    rankingTitle.textContent = 'RANKING';
+
+    childDiv1.appendChild(logoImage);
+    childDiv1.appendChild(rankingTitle);
+    parentDiv1.appendChild(childDiv1);
 
     // Crear el segundo div con 2 hijos
-    const div2 = document.createElement('div');
-    div2.className = 'parent-div-2';
-    //aqui van los hijos de este div
+    const parentDiv2 = document.createElement('div');
+    parentDiv2.className = 'parent-div-2';
 
-    
-    body.appendChild(div2);
+    const childDiv2_1 = document.createElement('div');
+    childDiv2_1.className = 'child-div-2-1';
 
-    const div2Child1 = document.createElement('div');
-    div2Child1.className = 'child-div-2-1';
-    //aqui van los hijos de este div
+    const astronaut1 = document.createElement('img');
+    astronaut1.src = `astronauts/astronaut_01.gif`;
+    astronaut1.id = 'astronaut1';
+    astronaut1.className = 'astronaut';
 
-    
-    div2.appendChild(div2Child1);
+    const firstText = document.createElement('p');
+    firstText.textContent = `1st... ${executeHumansArray[15]}`;
 
-    const div2Child2 = document.createElement('div');
-    div2Child2.className = 'child-div-2-2';
-    //aqui van los hijos de este div
+    childDiv2_1.appendChild(astronaut1);
+    childDiv2_1.appendChild(firstText);
 
-    
-    div2.appendChild(div2Child2);
+    const childDiv2_2 = document.createElement('div');
+    childDiv2_2.className = 'child-div-2-2';
+
+    const childDiv2_2_1 = document.createElement('div');
+    childDiv2_2_1.className = 'child-div-2-2-1';
+
+    const astronaut2 = document.createElement('img');
+    astronaut2.src = 'astronauts/astronaut_02.gif';
+    astronaut2.id = 'astronaut2';
+    astronaut2.className = 'astronaut';
+
+    const secondText = document.createElement('p');
+    secondText.textContent = `2nd... ${executeHumansArray[14]}`;
+
+    childDiv2_2_1.appendChild(astronaut2);
+    childDiv2_2_1.appendChild(secondText);
+
+    const childDiv2_2_2 = document.createElement('div');
+    childDiv2_2_2.className = 'child-div-2-2-2';
+
+    const astronaut3 = document.createElement('img');
+    astronaut3.src = 'astronauts/astronaut_03.gif';
+    astronaut3.id = 'astronaut3';
+    astronaut3.className = 'astronaut';
+
+    const thirdText = document.createElement('p');
+    thirdText.textContent = `3rd... ${executeHumansArray[13]}`;
+
+    childDiv2_2_2.appendChild(astronaut3);
+    childDiv2_2_2.appendChild(thirdText);
+
+    childDiv2_2.appendChild(childDiv2_2_1);
+    childDiv2_2.appendChild(childDiv2_2_2);
+
+    parentDiv2.appendChild(childDiv2_1);
+    parentDiv2.appendChild(childDiv2_2);
 
     // Crear el tercer div con 3 hijos
-    const div3 = document.createElement('div');
-    div3.className = 'parent-div-3';
-    //aqui van los hijos de este div
+    const parentDiv3 = document.createElement('div');
+    parentDiv3.className = 'parent-div-3';
 
-    
-    body.appendChild(div3);
+    const childDiv3_1 = document.createElement('div');
+    childDiv3_1.className = 'child-div-3-1';
 
-    const div3Child1 = document.createElement('div');
-    div3Child1.className = 'child-div-3-1';
-    //aqui van los hijos de este div
+    const astronautsGroup1 = [
+        { src: 'astronauts/astronaut_04.gif', text: `4th... ${executeHumansArray[12]}` },
+        { src: 'astronauts/astronaut_05.gif', text: `5th... ${executeHumansArray[11]}` },
+        { src: 'astronauts/astronaut_06.gif', text: `6th... ${executeHumansArray[10]}` },
+        { src: 'astronauts/astronaut_07.gif', text: `7th... ${executeHumansArray[9]}` }
+    ];
 
-    
-    div3.appendChild(div3Child1);
+    astronautsGroup1.forEach(item => {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.className = 'astronaut';
 
-    const div3Child2 = document.createElement('div');
-    div3Child2.className = 'child-div-3-2';
-    //aqui van los hijos de este div
+        const text = document.createElement('p');
+        text.textContent = item.text;
 
-    
-    div3.appendChild(div3Child2);
+        childDiv3_1.appendChild(img);
+        childDiv3_1.appendChild(text);
+    });
 
-    const div3Child3 = document.createElement('div');
-    div3Child3.className = 'child-div-3-3';
-    //aqui van los hijos de este div
+    const childDiv3_2 = document.createElement('div');
+    childDiv3_2.className = 'child-div-3-2';
 
-    
-    div3.appendChild(div3Child3);
+    const astronautsGroup2 = [
+        { src: 'astronauts/astronaut_08.gif', text: `8th... ${executeHumansArray[8]}` },
+        { src: 'astronauts/astronaut_09.gif', text: `9th... ${executeHumansArray[7]}` },
+        { src: 'astronauts/astronaut_10.gif', text: `10th... ${executeHumansArray[6]}` },
+        { src: 'astronauts/astronaut_11.gif', text: `11th... ${executeHumansArray[5]}` }
+    ];
+
+    astronautsGroup2.forEach(item => {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.className = 'astronaut';
+
+        const text = document.createElement('p');
+        text.textContent = item.text;
+
+        childDiv3_2.appendChild(img);
+        childDiv3_2.appendChild(text);
+    });
+
+    const childDiv3_3 = document.createElement('div');
+    childDiv3_3.className = 'child-div-3-3';
+
+    const astronautsGroup3 = [
+        { src: 'astronauts/astronaut_12.gif', text: `12th... ${executeHumansArray[4]}` },
+        { src: 'astronauts/astronaut_13.gif', text: `13th... ${executeHumansArray[3]}` },
+        { src: 'astronauts/astronaut_14.gif', text: `14th... ${executeHumansArray[2]}` },
+        { src: 'astronauts/astronaut_15.gif', text: `15th... ${executeHumansArray[1]}` }
+    ];
+
+    astronautsGroup3.forEach(item => {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.className = 'astronaut';
+
+        const text = document.createElement('p');
+        text.textContent = item.text;
+
+        childDiv3_3.appendChild(img);
+        childDiv3_3.appendChild(text);
+    });
+
+    parentDiv3.appendChild(childDiv3_1);
+    parentDiv3.appendChild(childDiv3_2);
+    parentDiv3.appendChild(childDiv3_3);
 
     // Crear el cuarto div sin hijos
-    const div4 = document.createElement('div');
-    div4.className = 'parent-div-4';
-    //aqui van los hijos de este div
+    const parentDiv4 = document.createElement('div');
+    parentDiv4.className = 'parent-div-4';
 
-    
-    body.appendChild(div4);
+    const lastOneDiv = document.createElement('div');
+    lastOneDiv.id = 'lastOne';
 
-    //AQUI VA EL FOOTER TO-DO
-    //---------------------
-    //---------------------
-    //---------------------
-    //---------------------
+    const astronaut16 = document.createElement('img');
+    astronaut16.src = 'astronauts/astronaut_16.gif';
+    astronaut16.className = 'astronaut';
+
+    const lastText = document.createElement('p');
+    lastText.textContent = `16th... ${executeHumansArray[0]}`;
+
+    lastOneDiv.appendChild(astronaut16);
+    lastOneDiv.appendChild(lastText);
+    parentDiv4.appendChild(lastOneDiv);
+
+    // Crear botones
+    const parentDiv5 = document.createElement('div');
+    parentDiv5.className = 'parent-div-5';
+
+    const creditsButton = document.createElement('button');
+    creditsButton.className = 'btn_izquierda';
+    creditsButton.textContent = 'Credits';
+
+    const replayButton = document.createElement('button');
+    replayButton.className = 'btn_derecha';
+    replayButton.textContent = 'Replay';
+
+    parentDiv5.appendChild(creditsButton);
+    parentDiv5.appendChild(replayButton);
+
+    // Agregar todo al body
+    document.body.appendChild(parentDiv1);
+    document.body.appendChild(parentDiv2);
+    document.body.appendChild(parentDiv3);
+    document.body.appendChild(parentDiv4);
+    document.body.appendChild(parentDiv5);
+
+
+
 }
 
-createEndPage(executeHumansArray);
+//
+

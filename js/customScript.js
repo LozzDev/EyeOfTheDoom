@@ -3,7 +3,7 @@ let sfxClick = new Audio('/sounds/button_click.mp3');
 let sfxHover = new Audio('/sounds/button_hover.mp3');
 const playButton1 = document.getElementById("submitbtn_a");
 const playButton2 = document.getElementById("submitbtn2_a");
-const backButton = document.getElementById("backButton_a");
+const backButton = document.getElementById("backbtn_a");
 
 
 function updateVisibility() {
@@ -189,3 +189,21 @@ function goBack(event) {
 
   window.location.href = "../html/home.html";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-in");
+});
+
+document.querySelectorAll(".backbtn_a").forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    document.body.classList.add("fade-out");
+
+    const href = btn.getAttribute("data-href");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 500);
+  });
+});

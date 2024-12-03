@@ -7,7 +7,6 @@
   
   * {
     font-family: "Pixelade", sans-serif;
-    font-size: 16px;
   }
   
   #main-container {
@@ -462,13 +461,10 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      font-size: 30px;
       color: white;
       padding-bottom: 1%;
       margin-top: -55px;
-    }
-  
-    * {
-      font-size: 30px;
     }
   
     .icon_a {
@@ -509,6 +505,7 @@
   
     .input-container_a input {
       width: 90%;
+      font-size: 30px;
       padding: 8px;
       text-align: center;
       border: 1px solid #000000;
@@ -548,6 +545,7 @@
     }
   
     .backbtn_a {
+        font-size: 30px;
       display: flex;
       justify-content: center;
       width: 55%;
@@ -579,6 +577,7 @@
     }
   
     .submitbtn2_a {
+        font-size: 30px;
       display: flex;
       justify-content: center;
       width: 30%;
@@ -622,27 +621,27 @@
     }
   
     footer {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 1rem;
-      background-color: #1a1a1a;
-      color: #ffffec;
-      width: 100%;
-      max-width: 100%;
-      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-      padding: 0.5rem;
-      margin-top: auto;
-      box-sizing: border-box;
-    }
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1rem;
+        background-color: #1a1a1a;
+        color: #ffffec;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        padding: 0.5rem;
+        margin-top: auto;
+        box-sizing: border-box;
+      }
     
     .footer-links {
       display: flex;
       justify-content: center;
       gap: 15px;
-      max-width: 80%;  /* Limita el ancho para evitar desbordes */
-      flex-wrap: wrap;  /* Asegura que los enlaces se acomoden en varias líneas si es necesario */
+      max-width: 80%;
+      flex-wrap: wrap;
     }
     
     .footer-links a {

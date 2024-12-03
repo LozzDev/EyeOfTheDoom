@@ -60,3 +60,21 @@ startButton.addEventListener("click", (event) => {
 
 // Inicia los créditos
 startCredits();
+
+
+
+// Animación de transición
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-in");
+});
+
+document.querySelectorAll(".body_button_b").forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      const href = btn.getAttribute("data-href");
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+          window.location.href = href;
+      }, 700);
+  });
+});

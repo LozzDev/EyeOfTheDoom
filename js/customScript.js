@@ -189,5 +189,11 @@ function goBack(event) {
 
   window.location.href = "../html/home.html";
 }
-
-module.exports = getRandomName;
+/*
+module.exports = {
+  updateVisibility,
+  storeEntry,
+  deleteEntry,
+  validateFormulary,
+  getRandomName
+}; */

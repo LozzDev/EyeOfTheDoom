@@ -141,6 +141,7 @@
   }
   
   .userInput_a input {
+    font-size: 15px;
     padding: 8px;
     text-align: center;
     border: 1px solid #000000;
@@ -179,6 +180,7 @@
   }
   
   #inputField_a {
+    font-size: 15px;
     width: 53%;
     padding: 8px;
     border: 1px solid #000000;
@@ -228,6 +230,7 @@
   }
   
   #deleteField_a {
+    font-size: 15px;
     width: 57%;
     padding: 8px;
     border: 1px solid #000000;
@@ -247,6 +250,7 @@
   }
   
   .backbtn_a {
+    font-size: 15px;
     display: flex;
     justify-content: center;
     width: 20%;
@@ -277,6 +281,7 @@
   }
   
   .submitbtn_a {
+    font-size: 15px;
     display: flex;
     justify-content: center;
     width: 70%;

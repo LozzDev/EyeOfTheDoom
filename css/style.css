@@ -11,7 +11,6 @@
     color: #ffffec;
     text-align: center;
     opacity: 0;
-    /* Principio de animación de transición*/
     transition: opacity 0.7s ease-in-out;
     background-color: #030711;
   }
@@ -24,8 +23,6 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
-  /* Final bloque de animación de transición*/
-
 
   header{
     display: flex;
@@ -123,16 +120,17 @@
     }
     
     .main_div_paragraph_b {
-      font-size: 32px;
+      font-size: 7vw;
       position: fixed;
       top: 22%;
-      margin: 10px 30px;
+      margin: 5% 10%;
       opacity: 1;
       transition: opacity 1s ease;
     }
     
     .main_logo_img_b {
-      max-height: 500px;
+      max-height: 500vh;
+      max-width: 80vw;
       width: auto;
       position: fixed;
       top: 45%;
@@ -185,13 +183,13 @@
       opacity: 1;
     }
     
-    footer {
+    .button_container_b {
       position: fixed;
       bottom: 50px;
       right: 10px;
     }
 
-    @media only screen and (min-width: 901px){
+    @media only screen and (min-width: 701px){
       @font-face {
         font-family: 'Pixelade';
         src: url('/fonts/PIXELADE.ttf'),
@@ -311,7 +309,7 @@
         
         .main_logo_img_b {
           z-index: 1;
-          max-height: 3000px;
+          max-height: 3000vh;
           width: auto;
           position: fixed;
           top: 45%;
@@ -364,7 +362,7 @@
           opacity: 1;
         }
         
-        footer {
+        .button_container_b {
           position: fixed;
           bottom: 50px;
           right: 10px;

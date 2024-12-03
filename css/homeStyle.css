@@ -4,6 +4,21 @@
 }
 
 /* General Styles */
+body {
+	opacity: 0;
+	/* Principio de animación de transición*/
+	transition: opacity 0.7s ease-in-out;
+	background-color: #030711;
+}
+body.fade-in {
+	opacity: 1;
+}
+
+body.fade-out {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
 body,
 html {
 	margin: 0;
@@ -28,14 +43,13 @@ header {
 	display: flex;
 	justify-content: space-around;
 	align-items: flex-start;
-	margin-top: 5vh;
+	margin-top: 5vw;
 }
 
 .ovni {
-	width: 15vw;
-	max-width: 100px;
+	width: 8vw;
+	max-width: 10vw;
 	animation: float 6s ease-in-out infinite;
-	margin-top: 4vh;
 }
 
 #ovni2 {
@@ -48,12 +62,12 @@ header {
 
 #ovni4 {
 	animation: float 6s ease-in-out infinite;
-	width: 15vw;
-	max-width: 100px;
+	width: 8vw;
+	max-width: 10vw;
 	text-align: center;
 	position: absolute;
 	top: 80%;
-	left: 46.5%;
+	left: 45%;
 }
 
 .header_img_b,
@@ -73,10 +87,10 @@ header {
 	position: fixed;
 	top: 50%;
 	left: 1%;
-	width: 6vw;
+	width: 8vw;
 	height: 4vw;
 	font-family: "Pixelade";
-	font-size: 1.4vw;
+	font-size: 1.6vw;
 	background-color: #c51e32;
 	border: none;
 	border-radius: 25px;
@@ -143,26 +157,26 @@ header {
 }
 
 .btn-game {
-	font-family: "Pixelade";
-	font-size: 1.5rem;
-	width: 80vw;
-	max-width: 200px;
-	height: 8vh;
-	background-color: #c51e32;
-	border: none;
-	border-radius: 25px;
-	color: #ffffec;
-
-	margin: 5px;
-	cursor: pointer;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-	transition: background-color 0.3s;
+    font-family: "Pixelade";
+    font-size: 2vw;
+    width: 16vw;
+    max-width: 16vw;
+    height: 4vw;
+    background-color: #c51e32;
+    border: none;
+    border-radius: 25px;
+    color: #ffffec;
+    margin: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
 }
 
 .btn-game:hover {
-	background-color: #008a85;
-	color: #fcfc40;
+    background-color: #008a85;
+    color: #fcfc40;
 }
+
 
 /* Footer */
 footer {
@@ -186,7 +200,7 @@ footer {
 
 .footer-links a {
 	color: #ffffec;
-	padding: 10px 10px;
+	padding: 10px 15px;
 	text-decoration: none;
 	transition: color 0.3s, background-color 0.3s, border 0.3s;
 	background-color: transparent;
@@ -246,7 +260,7 @@ footer {
 }
 
 /* Media Query para móviles */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
 	.rules-toggle-btn-desktop {
 		display: none;
 	}
@@ -278,15 +292,14 @@ footer {
 		bottom: 0.5vw;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 14vw;
+		width: 16vw;
 		height: 6vw;
 		font-family: "Pixelade";
-		font-size: 3vw;
+		font-size: 4vw;
 		background-color: #c51e32;
 		border: none;
 		border-radius: 25px;
 		color: #ffffec;
-
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		z-index: 200;
@@ -301,22 +314,28 @@ footer {
 	}
 
 	.logo img {
-		max-width: 300px;
+		max-width: 400px;
 	}
 
 	.buttons {
-		top: 45%;
+		top: 48%;
 	}
 
 	.btn-game {
-		font-size: 4vw;
-		height: 8vw;
-		width: 30vw;
+		font-size: 5vw;
+		height: 10vw;
+		width: 35vw;
+		max-width: 35vw;
 		border-radius: 20px;
+	}
+
+	.ovni {
+		min-width: 12vw;
 	}
 
 	#ovni4 {
 		left: 42%;
+		min-width: 12vw;
 	}
 
 	footer {

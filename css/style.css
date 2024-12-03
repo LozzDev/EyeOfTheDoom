@@ -1,0 +1,328 @@
+@font-face {
+  font-family: 'Pixelade';
+  src: url('/fonts/PIXELADE.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pixelade';
+  color: #ffffec;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  background-color: #030711;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 110px;
+  position: relative;
+  z-index: 10;
+}
+
+/* PC styles */
+#header_img_ovni1_b {
+  position: absolute;
+  top: 870px; /* Ajusta la distancia desde la parte superior */
+  left: 30px; /* Espacio adicional desde el borde izquierdo */
+  animation: float 7s ease-in-out infinite, appear 4s ease;
+  z-index: 15;
+}
+
+#header_img_ovni2_b {
+  position: absolute;
+  top: 870px; /* Ajusta la distancia desde la parte superior */
+  right: 30px; /* Espacio adicional desde el borde derecho */
+  animation: reverseFloat 7s ease-in-out infinite, appear 4s ease;
+  z-index: 15;
+}
+
+#header_img_ovni3_b {
+  position: absolute;
+  bottom: -80px; /* Ajusta la distancia desde la parte inferior */
+  left: 30px; /* Espacio adicional desde el borde izquierdo */
+  animation: float 7s ease-in-out 1s infinite, appear 4s ease;
+  z-index: 15;
+}
+
+#header_img_ovni4_b {
+  position: absolute;
+  bottom: -80px; /* Ajusta la distancia desde la parte inferior */
+  right: 30px; /* Espacio adicional desde el borde derecho */
+  animation: reverseFloat 7s ease-in-out infinite, appear 4s ease;
+  z-index: 15;
+}
+
+.header_img_b {
+  width: auto;
+  height: 30px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(0px);
+  }
+  75% {
+    transform: translateY(10px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes reverseFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(10px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(0px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+#background_b {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/fondo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header {
+  margin-top: 35px;
+}
+
+.main_div_b {
+  width: 100%;
+  text-align: center;
+}
+
+.main_div_paragraph_b {
+  font-size: 32px;
+  position: fixed;
+  top: 22%;
+  margin: 10px 30px;
+  opacity: 1;
+  transition: opacity 1s ease;
+  max-width: 800px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1.4;
+  z-index: 5;
+}
+
+.main_logo_img_b {
+  max-height: 500px;
+  width: auto;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.body_button_b {
+  color: #ffffec;
+  font-family: 'Pixelade';
+  background-color: #c51e32;
+  border-style: none;
+  border: 6px;
+  border-radius: 15px;
+}
+
+.body_button_b:hover {
+  background-color: #008a85;
+  color: #fcfc40;
+}
+
+#body_start_button_b {
+  padding: 8px 45px;
+  font-size: 40px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  transform: translateX(0);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#body_skip_button_b {
+  opacity: 0;
+  margin-right: 5px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+footer {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+}
+
+/* **Media Queries for Responsiveness** */
+@media only screen and (max-width: 600px) {
+  header {
+    gap: 40px; /* Ajuste de espacio entre los ovnis */
+  }
+
+  .header_img_b {
+    height: 40px; /* Aumentamos el tamaño de los ovnis en móvil */
+  }
+
+  #header_img_ovni1_b {
+    position: absolute;
+    top: 70px; /* Ajusta la distancia desde la parte superior */
+    left: 45%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Centrado perfecto */
+    animation: float 7s ease-in-out infinite, appear 4s ease;
+    z-index: 15;
+  }
+
+  /* OVNI 2 (Superior derecho) */
+  #header_img_ovni2_b {
+    position: absolute;
+    top: -5px; /* Ajusta la distancia desde la parte superior */
+    right: 45px; /* Ajusta la distancia desde la parte derecha */
+    animation: reverseFloat 7s ease-in-out infinite, appear 4s ease;
+    z-index: 15;
+  }
+  
+  /* OVNI 3 (Inferior izquierdo) */
+  #header_img_ovni3_b {
+    position: absolute;
+    bottom: -40px; /* Ajusta la distancia desde la parte inferior */
+    left: 45px; /* Ajusta la distancia desde la parte izquierda */
+    animation: float 7s ease-in-out 1s infinite, appear 4s ease;
+    z-index: 15;
+  }
+
+  #header_img_ovni4_b {
+    opacity: 0; /* Ocultar el OVNI en la esquina inferior derecha */
+  }
+
+  .main_div_paragraph_b {
+    font-size: 5vw; /* Tamaño dinámico del texto */
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal */
+    width: 80%;
+    text-align: center; /* Asegura que el texto esté centrado dentro del contenedor */
+    line-height: 1.2;
+    margin: 0; /* Asegura que no haya márgenes adicionales */
+  }
+
+  .main_logo_img_b {
+    max-height: 400px; /* Logo más grande en móvil */
+  }
+
+  #body_start_button_b {
+    font-size: 28px;
+    padding: 8px 35px;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%); /* Centrado del botón */
+    opacity: 1;
+  }
+}
+
+
+/* Desktop Styles (for larger screens like 1080p) */
+/* Desktop Styles (for larger screens like 1080p) */
+@media only screen and (min-width: 601px) {
+  header {
+    gap: 180px;
+  }
+
+  .header_img_b {
+    height: 60px;
+  }
+
+  .main_div_paragraph_b {
+    font-size: 32px;
+    position: fixed;
+    top: 22%;
+    margin: 10px 30px;
+    max-width: 800px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .main_logo_img_b {
+    max-height: 500px; /* Un poco más pequeña la imagen */
+    z-index: 1;
+  }
+
+  #body_start_button_b {
+    font-size: 40px;
+    padding: 8px 25px; /* Reduce aún más el padding horizontal */
+    background-color: #c51e32; /* Color de fondo */
+    bottom: 20%; /* Mantener el botón más arriba */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado perfecto */
+    width: auto; /* Ajustar automáticamente al contenido */
+    max-width: 300px; /* Limitar el ancho máximo */
+  }
+
+  #body_skip_button_b {
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 30px;
+  }
+  
+}
+
+

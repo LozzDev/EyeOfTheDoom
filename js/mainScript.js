@@ -129,15 +129,7 @@ let coordsXeye=0;
 let coordsYeye=0;
 const doomEye = document.getElementById("eye");
 
-function trackingEyePosition(){
-    const coordsEye= doomEye.getBoundingClientRect();
 
-    coordsXeye=coordsEye.left; //creo que esto te coge la esquina superior izquierda pero se arregla
-    coordsYeye=coordsEye.top;
-    
-    requestAnimationFrame(trackingEyePosition);
-}
-trackingEyePosition(); // esto debe estar para que se active la funcion y saber donde esta el ojo
 
 //fpuncion para que el ojo siga al raton en escriotrio
 let mouseX=0;
@@ -149,26 +141,93 @@ function eyeFollowMouse(event){
     doomEye.style.transform = `translate(${mouseX - 50}px, ${mouseY - 80}px)`;
 }
 
-document.addEventListener("mousemove", eyeFollowMouse);
-//funcion para que el ojo siga el movimiento del movil
 
-function eyeFollowGyroscope(event) {
-    // Los ángulos de inclinación del dispositivo
-    const tiltX = event.beta; // Inclinación hacia adelante o atrás (-180 a 180)
-    const tiltY = event.gamma; // Inclinación hacia izquierda o derecha (-90 a 90)
+function trackingEyePosition(){
+    const coordsEye= doomEye.getBoundingClientRect();
 
-    // Ajustar los valores para mover el ojo (puedes calibrarlos según tu diseño)
-    const offsetX = tiltY * 1.5; // Factor multiplicador para ajustar sensibilidad
-    const offsetY = tiltX * 1.5;
+    coordsXeye=coordsEye.left; //creo que esto te coge la esquina superior izquierda pero se arregla
+    coordsYeye=coordsEye.top;
+    
+    requestAnimationFrame(trackingEyePosition);
+}
+trackingEyePosition();
+ // esto debe estar para que se active la funcion y saber donde esta el ojo
 
-    // Aplicar transformaciones al ojo
-    doomEye.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    
+} else {
+    document.addEventListener("mousemove", eyeFollowMouse);
 }
 
-window.addEventListener("deviceorientation", eyeFollowGyroscope);
+//funcion para que el ojo siga el movimiento del movil
+
+let offsetX = 0;
+let offsetY = 0;
+
+function eyeFollowGyroscope(event) {
+
+  // Los ángulos de inclinación del dispositivo
+  const tiltX = event.beta || 0;  // Inclinación hacia adelante o atrás (-180 a 180)
+  const tiltY = event.gamma || 0;  // Inclinación hacia izquierda o derecha (-90 a 90)
+
+  // Limitar los valores de tiltX y tiltY a un rango específico (por ejemplo, entre -45 y 45 grados)
+  const minTiltX = -45;  // Mínimo tiltX (grados)
+  const maxTiltX = 45;   // Máximo tiltX (grados)
+  const minTiltY = -45;  // Mínimo tiltY (grados)
+  const maxTiltY = 45;   // Máximo tiltY (grados)
+
+  // Limitar los valores de tiltX y tiltY para evitar que se muevan demasiado
+  const clampedTiltX = Math.max(minTiltX, Math.min(tiltX, maxTiltX));
+  const clampedTiltY = Math.max(minTiltY, Math.min(tiltY, maxTiltY));
+
+  // Ajustar la sensibilidad del movimiento
+  let targetOffsetX = clampedTiltY * 10;  // Ajustar la sensibilidad en el eje X
+  let targetOffsetY = clampedTiltX * 10;  // Ajustar la sensibilidad en el eje Y
+
+  // Obtener el tamaño del ojo y la ventana
+  const eyeRect = doomEye.getBoundingClientRect();
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  // Limitar el movimiento dentro de la ventana, agregando paredes
+  const maxOffsetX = windowWidth - eyeRect.width; // Pared derecha
+  const minOffsetX = 0; // Pared izquierda
+
+  // Ajustar maxOffsetY para permitir que el ojo se mueva hasta el borde inferior
+  const maxOffsetY = windowHeight - eyeRect.height; // El ojo puede llegar hasta el borde inferior
+  const minOffsetY = 0; // Pared superior
+
+  // Limitar el movimiento en los ejes X e Y, asegurando que el ojo no se mueva fuera de la pantalla
+  targetOffsetX = Math.max(minOffsetX, Math.min(targetOffsetX, maxOffsetX));
+  targetOffsetY = Math.max(minOffsetY, Math.min(targetOffsetY, maxOffsetY));
+
+  // Suavizar el movimiento para evitar cambios bruscos (opcional)
+  offsetX += (targetOffsetX - offsetX) * 0.1;
+  offsetY += (targetOffsetY - offsetY) * 0.1;
+
+  // Aplicar transformaciones al ojo
+  doomEye.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+
+}
+
+//NO TOCAR --------------------------------------------------------------------------------------------
+if (typeof DeviceOrientationEvent !== "undefined" && typeof DeviceOrientationEvent.requestPermission === "function") {
+  DeviceOrientationEvent.requestPermission()
+    .then((permissionState) => {
+      if (permissionState === "granted") {
+        window.addEventListener("deviceorientation", eyeFollowGyroscope);
+      } else {
+        alert("Permiso denegado para usar el giroscopio.");
+      }
+    })
+    .catch(console.error);
+} else {
+  // Para Android u otros navegadores que no requieren permiso
+  window.addEventListener("deviceorientation", eyeFollowGyroscope);
+}
+//NO TOCAR --------------------------------------------------------------------------------------------
 
 //funcion para elegir al humano ejecutado
-
 function killAliveHumans(aliveHumansArray){
     
     let randomHuman=Math.floor(Math.random() * aliveHumansArray.length);
@@ -182,9 +241,9 @@ function killAliveHumans(aliveHumansArray){
     return (aliveHumansArray[randomHuman]);
 }//funciona, esta testeado
 
+
 //funcion que se activa cuando se aprieta el boton
 //cosas que debe hacer --> crear array vivos, elegir 5 humanos a morir, ejecutar animacion de matar
-
 const executeHumansArray=[]; //exportar
 let indexLimitClicker=0;
 let canClick=true;
@@ -253,7 +312,13 @@ function executerCasual(){
     textElement.style.left = "50%";
     textElement.style.transform = "translateX(-50%)";
     textElement.style.color = "white";
-    textElement.style.fontSize = "36px";
+
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        textElement.style.fontSize = "17px";
+    } else {
+        textElement.style.fontSize = "36px";
+    }
+    
     textElement.style.fontFamily = 'pixelade';
     textElement.style.opacity = "1";
     textElement.style.transition = "all 3s ease-out";
@@ -275,7 +340,7 @@ function executerCasual(){
     
 
 
-//----------------------------------------------
+    //----------------------------------------------
 
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
@@ -309,16 +374,14 @@ function executerCasual(){
     console.log(executeHumansArray);
 }
 
-document.addEventListener("click", executerCasual);
-
-
 //efecto onda expansiva cuando dispara
 const container = document.querySelector('.drop_effect');
 
 const createRipple = (e) => {
     let ripple = document.createElement('span');
-    let x = e.clientX;
-    let y = e.clientY;
+
+    let x = coordsXeye+50;
+    let y = coordsYeye+50; 
 
     ripple.style.left = x + 'px';
     ripple.style.top = y + 'px';
@@ -332,7 +395,12 @@ const createRipple = (e) => {
     console.log(x, y);
 }
 
-container.addEventListener('click', createRipple);
+
+    
+    document.addEventListener("click", executerCasual);
+    document.addEventListener('click', createRipple);
+
+
 
 //aqui tenemos que borrar todo el html para mostrar el end.html
 
@@ -350,9 +418,9 @@ function createEndPage(arrayExecutedHumans){
         /* Carga de la fuente personalizada */
     @font-face {
     font-family: 'Pixelade';
-    src: url('fonts/PIXELADE.woff2') format('woff2'),
-      url('fonts/PIXELADE.woff') format('woff'),
-      url('fonts/PIXELADE.ttf') format('truetype');
+    src: url('../fonts/PIXELADE.woff2') format('woff2'),
+      url('../fonts/PIXELADE.woff') format('woff'),
+      url('../fonts/PIXELADE.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -480,7 +548,7 @@ function createEndPage(arrayExecutedHumans){
   
   p {
     color: red;
-    font-size: 21px;
+    font-size: 16px;
   }
 
   
@@ -841,6 +909,3 @@ function createEndPage(arrayExecutedHumans){
 
 
 }
-
-//
-

@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Pixelade';
-  src: url('./fonts/PIXELADE.ttf'),
+  src: url('../fonts/PIXELADE.ttf'),
 }
 
 header {
@@ -89,7 +89,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url('/images/fondo.png');
+    background-image: url('../images/fondo.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

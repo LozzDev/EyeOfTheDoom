@@ -1,5 +1,5 @@
 body, html{
-    background-image: url('./images/fondo.png');
+    background-image: url('../images/fondo.png');
     background-size: cover; 
     background-position: center;
     background-clip: content-box;

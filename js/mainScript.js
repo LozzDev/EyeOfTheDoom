@@ -248,17 +248,17 @@ if (indexLimitClicker >= 15) {
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
         
-        doomEyeImage.setAttribute=("src", "./images/eye-attack.gif"); //TO-DO NO FUNCIONA
+        doomEyeImage.setAttribute=("src", "../images/eye-attack.gif"); //TO-DO NO FUNCIONA
         human.style.opacity=0;
         
     }, 900);
     setTimeout(() => {
             
-        human.setAttribute("src", "./images/blood_effect.gif");
-        laser.setAttribute("src", "./images/yellowBallExplosion.gif");
+        human.setAttribute("src", "../images/blood_effect.gif");
+        laser.setAttribute("src", "../images/yellowBallExplosion.gif");
     }, 500);
     
-    laser.setAttribute("src", "./images/yellowBall.gif");//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
+    laser.setAttribute("src", "../images/yellowBall.gif");//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
     indexLimitClicker++;
     
         

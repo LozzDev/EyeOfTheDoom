@@ -251,6 +251,7 @@ let canClick=true;
 function executerCasual(){
     //TO-DO
     //cuando se presiona el click se consigue el array de los vivos
+    
     if (!canClick) return; // Si no se puede hacer clic, salimos de la función
 
     canClick = false; // Bloqueamos nuevos clics
@@ -295,6 +296,7 @@ function executerCasual(){
         }
         
     `
+    
     // Insertar la animación en el documento
     const style = document.createElement("style");
     style.textContent = shootAnimation;
@@ -303,7 +305,7 @@ function executerCasual(){
     laser.style.animation = "shootAnimation 0.9s ";
     const doomEyeImage=document.getElementById("eye-image");
 
-    
+    doomEyeImage.setAttribute=("src", "../images/eye-attack.gif");
     //se introduce el elemento y sus estilos
     const textElement = document.createElement("div");
     textElement.textContent = `${executedHuman.name} has been executed`;
@@ -344,7 +346,7 @@ function executerCasual(){
 
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
-        doomEyeImage.setAttribute=("src", "../images/eye-attack.gif"); //TO-DO NO FUNCIONA
+         //TO-DO NO FUNCIONA
         human.style.opacity=0;
     }, 900);
 
@@ -368,7 +370,7 @@ function executerCasual(){
 
         setTimeout(() => {
             createEndPage(executeHumansArray);
-        }, 3000 );
+        }, 2000 );
         
     }  
     console.log(executeHumansArray);
@@ -906,6 +908,4 @@ function createEndPage(arrayExecutedHumans){
     document.body.appendChild(parentDiv4);
     document.body.appendChild(parentDiv5);
 
-
-
-}
+  }

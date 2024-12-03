@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eye of the Doom</title>
+		<link rel="stylesheet" href="/css/homeStyle.css" />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<img
+					class="ovni"
+					id="ovni1"
+					src="/images/ovni.png"
+					alt="Ovni"
+				/>
+				<img
+					class="ovni"
+					id="ovni2"
+					src="/images/ovni.png"
+					alt="Ovni"
+				/>
+				<img
+					class="ovni"
+					id="ovni3"
+					src="/images/ovni.png"
+					alt="Ovni"
+				/>
+			</header>
+
+			<main>
+				<!-- Logo del Juego -->
+				<div class="logo">
+					<img src="/images/logo2.png" alt="Eye of the Doom Logo" />
+				</div>
+				<!-- Botones -->
+				<div class="buttons">
+					<button
+						class="btn-game"
+						id="btn-casual"
+						data-href="mainCasual.html"
+					>
+						Casual game
+					</button>
+					<button
+						class="btn-game"
+						id="btn-custom"
+						data-href="custom.html"
+					>
+						Custom game
+					</button>
+				</div>
+
+				<!-- Botón para mostrar/ocultar las reglas de la version de escritorio-->
+				<button
+					class="rules-toggle-btn-desktop"
+					id="rulesButtonDesktop"
+				>
+					Rules >
+				</button>
+
+				<!-- Caja de Reglas (inicialmente oculta) -->
+				<div class="rules-box" id="rulesBox">
+					<p>Game Rules:</p>
+					<ul>
+						<li>
+							Objective: Destroy the Eye of the Abyss before it
+							consumes the Earth.
+						</li>
+						<li>
+							Basic Controls:
+							<ul>
+								<li>Shoot: Click the shoot button.</li>
+							</ul>
+						</li>
+						<li>Victory: The last one standing wins.</li>
+					</ul>
+				</div>
+
+				<!-- Botón para mostrar/ocultar las reglas -->
+				<button class="rules-toggle-btn-movil" id="rulesButtonMovil">
+					Rules
+				</button>
+			</main>
+
+			<img id="ovni4" src="/images/ovni.png" alt="Ovni" />
+			<footer>
+				<div class="footer-links">
+					<p>© 2024 Eye of the Doom</p>
+					<a href="#">Legal Disclaimer</a>
+					<a href="#">Privacy Policy</a>
+					<a href="#">Terms and Conditions</a>
+				</div>
+			</footer>
+		</div>
+	</body>
+	<script src="/js/homeScript.js"></script>
+</html>

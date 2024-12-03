@@ -1,86 +1,176 @@
 const alivehumansCasual = [
-    {
-        id: 1,
-        name: "Jesús Manuel",
-        alive: true,
-        //hay que ponerle un color
-    },
-    {
-        id: 2,
-        name: "Israel",
-        alive: true,
-    },
-    {
-        id: 3,
-        name: "Javier",
-        alive: true,
-    },
-    {
-        id: 4,
-        name: "Nicolás",
-        alive: true,
-    },
-    {
-        id: 5,
-        name: "Felipe",
-        alive: true,
-    },
-    {
-        id: 6,
-        name: "Nando",
-        alive: true,
-    },
-    {
-        id: 7,
-        name: "Alejandro",
-        alive: true,
-    },
-    {
-        id: 8,
-        name: "Pablo",
-        alive: true,
-    },
-    {
-        id: 9,
-        name: "Mario",
-        alive: true,
-    },
-    {
-        id: 10,
-        name: "Rubén",
-        alive: true,
-    },
-    {
-        id: 11,
-        name: "Pablo N",
-        alive: true,
-    },
-    {
-        id: 12,
-        name: "Mauricio",
-        alive: true,
-    },
-    {
-        id: 13,
-        name: "Adrián",
-        alive: true,
-    },
-    {
-        id: 14,
-        name: "Jairo",
-        alive: true,
-    },
-    {
-        id: 15,
-        name: "Judith",
-        alive: true,
-    },
-    {
-        id: 16,
-        name: "Samuel",
-        alive: true,
-    }
+  {
+    id: 1,
+    name: "Jesús Manuel",
+    alive: true,
+    //hay que ponerle un color
+},
+{
+    id: 2,
+    name: "Israel",
+    alive: true,
+},
+{
+    id: 3,
+    name: "Javier",
+    alive: true,
+},
+{
+    id: 4,
+    name: "Nicolás",
+    alive: true,
+},
+{
+    id: 5,
+    name: "Felipe",
+    alive: true,
+},
+{
+    id: 6,
+    name: "Nando",
+    alive: true,
+},
+{
+    id: 7,
+    name: "Alejandro",
+    alive: true,
+},
+{
+    id: 8,
+    name: "Pablo",
+    alive: true,
+},
+{
+    id: 9,
+    name: "Mario",
+    alive: true,
+},
+{
+    id: 10,
+    name: "Rubén",
+    alive: true,
+},
+{
+    id: 11,
+    name: "Pablo N",
+    alive: true,
+},
+{
+    id: 12,
+    name: "Mauricio",
+    alive: true,
+},
+{
+    id: 13,
+    name: "Adrián",
+    alive: true,
+},
+{
+    id: 14,
+    name: "Jairo",
+    alive: true,
+},
+{
+    id: 15,
+    name: "Judith",
+    alive: true,
+},
+{
+    id: 16,
+    name: "Samuel",
+    alive: true,
+}
 ];
+
+//lo de adrian para pasar datos
+localStorage.setItem("humansAlive", JSON.stringify(alivehumansCasual));
+let humanList = JSON.parse(localStorage.getItem("inputValues"));
+
+
+const alivehumansCustom = [
+  {
+    id: 1,
+    name: humanList[0],
+    alive: true,
+    //hay que ponerle un color
+},
+{
+    id: 2,
+    name: humanList[1],
+    alive: true,
+},
+{
+    id: 3,
+    name: humanList[2],
+    alive: true,
+},
+{
+    id: 4,
+    name: humanList[3],
+    alive: true,
+},
+{
+    id: 5,
+    name: humanList[4],
+    alive: true,
+},
+{
+    id: 6,
+    name: humanList[5],
+    alive: true,
+},
+{
+    id: 7,
+    name: humanList[6],
+    alive: true,
+},
+{
+    id: 8,
+    name: humanList[7],
+    alive: true,
+},
+{
+    id: 9,
+    name: humanList[8],
+    alive: true,
+},
+{
+    id: 10,
+    name: humanList[9],
+    alive: true,
+},
+{
+    id: 11,
+    name: humanList[10],
+    alive: true,
+},
+{
+    id: 12,
+    name: humanList[11],
+    alive: true,
+},
+{
+    id: 13,
+    name: humanList[12],
+    alive: true,
+},
+{
+    id: 14,
+    name: humanList[13],
+    alive: true,
+},
+{
+    id: 15,
+    name: humanList[14],
+    alive: true,
+},
+{
+    id: 16,
+    name: humanList[15],
+    alive: true,
+}
+];
+console.log(alivehumansCustom);
 
 //funciones para hallar las coordenadas x e y de los humanos
     function humanUbicationX(human){
@@ -96,11 +186,12 @@ const alivehumansCasual = [
         return coordsY; //cuando se cambien a astronautas se debe modificar ese 35
     }
     
+
 // Inicializamos las coordenadas después de la creación de los humanos
 //con este foreach nos ahorramos codigo y asignamos coordenadas a todos los objetos
 
 function humanCoordsCalculator(){
-    alivehumansCasual.forEach(human => {
+  alivehumansCustom.forEach(human => {
         human.coordsX = humanUbicationX(human);
         human.coordsY = humanUbicationY(human); 
     })
@@ -264,7 +355,7 @@ function executerCasual(){
     }
 
 
-    const executedHuman = killAliveHumans(alivehumansCasual); //esto es un objeto human
+    const executedHuman = killAliveHumans(alivehumansCustom); //esto es un objeto human
     executeHumansArray.push(executedHuman.name);
 
     
@@ -356,7 +447,7 @@ function executerCasual(){
     
     if(indexLimitClicker==15){
 
-        alivehumansCasual.forEach((human) => {
+      alivehumansCustom.forEach((human) => {
             if(human.alive==true){
                 executeHumansArray.push(human.name);
             }

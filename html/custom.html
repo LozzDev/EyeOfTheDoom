@@ -1,11 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/customStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Custom Game</title>
+  </head>
+  <body>
+    <div id="background_a">
+      <div class="ship-container">
+        <img class="ship1_a" src="../images/ship.png" alt="space ship" />
+        <img class="ship2_a" src="../images/ship.png" alt="space ship" />
+        <img class="ship3_a" src="../images/ship.png" alt="space ship" />
+      </div>
+      <form id="form_a">
+        <div class="image_a">
+          <img id="logo_a" src="../images/logoLetras.png" alt="logo of the game" />
+        </div>
+        <div class="description_a">
+          <p>Custom Game</p>
+        </div>
+        <div class="userInput_a">
+          <div class="input-container_a">
+            <div class="nameInputs_a">
+              <input
+                type="text"
+                id="name1_a"
+                name="name"
+                placeholder="Player Name *"
+                required
+              />
+            </div>
+            <img
+              src="../images/Sprites/Astronauts/astronaut_01.png"
+              class="icon_a"
+              alt="icon for user 1"
+            />
+          </div>
+          <div class="input-container_a">
+            <div class="nameInputs_a">
+              <input
+                type="text"
+                id="name2_a"
+                name="name"
+                placeholder="Player Name *"
+                required
+              />
+            </div>
+            <img
+              src="../images/Sprites/Astronauts/astronaut_02.png"
+              class="icon_a"
+              alt="icon for user 2"
+            />
+          </div>
+          <div class="input-container_a">
+            <div class="nameInputs_a">
+              <input
+                type="text"
+                id="name3_a"
+                name="name"
+                placeholder="Player Name *"
+                required
+              />
+            </div>
+            <img
+              src="../images/Sprites/Astronauts/astronaut_03.png"
+              class="icon_a"
+              alt="icon for user 3"
+            />
+          </div>
+          <div class="input-container_a">
+            <div class="nameInputs_a">
+              <input
+                type="text"
+                id="name4_a"
+                name="name"
+                placeholder="Player Name *"
+              />
+            </div>
+            <img
+              src="../images/Sprites/Astronauts/astronaut_04.png"
+              class="icon_a"
+              alt="icon for user 4"
+            />
+          </div>
+        </div>
+
+        <div class="userInputWideScreen_a">
+          <div class="column1">
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name1F2_a"
+                  name="name"
+                  placeholder="Player Name *"
+                  required
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_01.png"
+                class="icon_a"
+                alt="icon for user 1"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name2F2_a"
+                  name="name"
+                  placeholder="Player Name *"
+                  required
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_02.png"
+                class="icon_a"
+                alt="icon for user 2"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name3F2_a"
+                  name="name"
+                  placeholder="Player Name *"
+                  required
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_03.png"
+                class="icon_a"
+                alt="icon for user 3"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name4F2_a"
+                  name="name"
+                  placeholder="Player Name *"
+                  required
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_04.png"
+                class="icon_a"
+                alt="icon for user 4"
+              />
+            </div>
+          </div>
+          <div class="column2">
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name5F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_05.png"
+                class="icon_a"
+                alt="icon for user 5"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name6F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_06.png"
+                class="icon_a"
+                alt="icon for user 6"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name7F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_07.png"
+                class="icon_a"
+                alt="icon for user 7"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name8F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_08.png"
+                class="icon_a"
+                alt="icon for user 8"
+              />
+            </div>
+          </div>
+          <div class="column3">
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name9F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_09.png"
+                class="icon_a"
+                alt="icon for user 9"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name10F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_10.png"
+                class="icon_a"
+                alt="icon for user 10"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name11F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_11.png"
+                class="icon_a"
+                alt="icon for user 11"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name12F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_12.png"
+                class="icon_a"
+                alt="icon for user 12"
+              />
+            </div>
+          </div>
+          <div class="column4">
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name13F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_13.png"
+                class="icon_a"
+                alt="icon for user 13"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name14F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_14.png"
+                class="icon_a"
+                alt="icon for user 14"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name15F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_15.png"
+                class="icon_a"
+                alt="icon for user 15"
+              />
+            </div>
+            <div class="input-container_a">
+              <div class="nameInputs_a">
+                <input
+                  type="text"
+                  id="name16F2_a"
+                  name="name"
+                  placeholder="Player Name"
+                />
+              </div>
+              <img
+                src="../images/Sprites/Astronauts/astronaut_16.png"
+                class="icon_a"
+                alt="icon for user 16"
+              />
+            </div>
+          </div>
+        </div>
+
+        <img class="ship4_a" src="../images/ship.png" alt="space ship" />
+        <div class="inputField-container_a">
+          <input type="text" id="inputField_a" placeholder="Optional" />
+          <button
+            type="button"
+            class="entryButton_a"
+            onclick="storeEntry()"
+          ></button>
+          <p id="cont_a">0/16</p>
+        </div>
+        <img class="ship5_a" src="../images/ship.png" alt="space ship" />
+        <div class="deleteUser-container_a">
+          <input type="text" id="deleteField_a" placeholder="Delete user" />
+          <button
+            type="button"
+            class="entryButton_a"
+            onclick="deleteEntry()"
+          ></button>
+        </div>
+        <p class="advice">The blank fields would be filled with random names</p>
+        <div class="button_a">
+          <button
+            type="submit"
+            class="submitbtn_a"
+            id="submitbtn_a"
+            onclick="validateFormulary(event)"
+          >
+            PLAY
+          </button>
+          <button
+            type="submit"
+            class="submitbtn2_a"
+            id="submitbtn2_a"
+            onclick="validateFormulary2(event)"
+          >
+            PLAY
+          </button>
+          <p id="error_a"></p>
+        </div>
+        <div class="backButton_a">
+          <button
+            type="submit"
+            class="backbtn_a"
+            id="backbtn_a"
+            onclick="goBack(event)"
+          >
+            BACK
+          </button>
+        </div>
+      </form>
+
+      <footer>
+				<div class="footer-links">
+					<p>© 2024 Eye of the Doom</p>
+					<a href="#">Legal Disclaimer</a>
+					<a href="#">Privacy Policy</a>
+					<a href="#">Terms and Conditions</a>
+				</div>
+			</footer>
+
+      <script src="/js/mainScript.js"></script>
+      <script src="/js/customScript.js"></script>
+      <script type="module" src="/js/globalState.js"></script>
+      <script type="module" src="/js/backgroundMusic.js"></script>
+    </div>
+  </body>
 </html>

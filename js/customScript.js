@@ -98,13 +98,6 @@ function getRandomName(availableNames) {
   return randomName;
 }
 
-function getRandomName(availableNames) {
-  const randomIndex = Math.floor(Math.random() * availableNames.length);
-  const randomName = availableNames[randomIndex];
-  availableNames.splice(randomIndex, 1);
-  return randomName;
-}
-
 function validateFormulary2(event) {
   event.preventDefault();
 

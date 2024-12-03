@@ -370,6 +370,7 @@ function createEndPage(arrayExecutedHumans){
     background-repeat: no-repeat;
     min-height: 100vh;
     
+    
   }
   
   .astronaut{
@@ -478,7 +479,7 @@ function createEndPage(arrayExecutedHumans){
   }
   
   p {
-    color: #008a85;
+    color: red;
     font-size: 21px;
   }
 
@@ -493,9 +494,8 @@ function createEndPage(arrayExecutedHumans){
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    margin-top: 20px;
-    font-size: 27px;
     
+    font-size: 27px;
   }
 
   .btn_izquierda{
@@ -509,7 +509,10 @@ function createEndPage(arrayExecutedHumans){
     align-items: center;
     
   }
-
+  #winnerText{
+        color: white;
+  }
+  
 /*-----------------------------------------------*/
   @media (min-width: 901px){
     html, body {
@@ -611,7 +614,7 @@ function createEndPage(arrayExecutedHumans){
     }
     
     p {
-      color: #008a85;
+      color: red;
       font-size: 32px;
     }
 
@@ -637,6 +640,9 @@ function createEndPage(arrayExecutedHumans){
       justify-content: center;
       gap: 30%;
     }
+      #winnerText{
+        color: white;
+      }
   }
     `
     head.appendChild(style)
@@ -677,7 +683,7 @@ function createEndPage(arrayExecutedHumans){
 
     const firstText = document.createElement('p');
     firstText.textContent = `1st ${executeHumansArray[15]}`;
-
+    firstText.id = 'winnerText'
     childDiv2_1.appendChild(astronaut1);
     childDiv2_1.appendChild(firstText);
 

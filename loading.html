@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla de Carga</title>
+  <link rel="stylesheet" href="loadingstyles.css">
+</head>
+<body>
+  <!-- Contenedor principal -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+
+  <!-- Botón que aparece después de la carga -->
+  <button class="start-button" id="start-button" style="visibility: hidden;">Start</button>
+
+  <!-- Logo -->
+  <img src="images\logoLetras.png" alt="Logo" class="logo" id="logo">
+
+  <!-- Texto parpadeante -->
+  <div class="loading-text" id="loading-text">Loading...</div>
+
+  <!-- Script para manejar la barra de progreso, botón y texto -->
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const startButton = document.getElementById('start-button');
+    const loadingText = document.getElementById('loading-text');
+    let progress = 0;
+
+    const interval = setInterval(() => {
+      progress += 1;
+      progressBar.style.width = progress + '%';
+      progressBar.textContent = progress + '%';
+
+      if (progress >= 100) {
+        clearInterval(interval);
+
+        // Mostrar el botón cuando la carga alcanza el 100%
+        startButton.style.visibility = 'visible';
+
+        // Ocultar el texto "loading"
+        loadingText.style.display = 'none';
+      }
+    }, 50); // 50ms * 100 = 5000ms = 5 segundos
+  </script>
+</body>
+</html>

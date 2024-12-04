@@ -20,7 +20,7 @@ function storeEntry() {
   const error = document.getElementById("error_a");
   const cont = document.getElementById("cont_a");
 
-  if (entries.length >= 16) {
+  if (entries.length >= 12) {
     error.textContent = "The 16-entry limit has been reached.";
     return;
   }
@@ -36,7 +36,7 @@ function storeEntry() {
   entries.push(entry);
   customList.push(entry);
   inputField.value = "";
-  cont.textContent = `${entries.length}/16`;
+  cont.textContent = `${entries.length+4}/16`;
 
   updateVisibility();
 }
@@ -62,7 +62,7 @@ function deleteEntry() {
     const deletedName = customList.pop();  
     error.textContent = `The user "${entryToDelete}" has been removed.`;
     deleteField.value = "";
-    cont.textContent = `${entries.length}/16`;
+    cont.textContent = `${entries.length+4}/16`;
 
     updateVisibility();
   } else {
@@ -89,7 +89,7 @@ function validateFormulary(event) {
     return;
   }
 
-  customList.push(name1, name2, name3, name4);
+  customList.unshift(name1, name2, name3, name4);
 
   localStorage.setItem("inputValues", JSON.stringify(customList));
   

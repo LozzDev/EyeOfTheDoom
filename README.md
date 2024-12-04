@@ -51,3 +51,7 @@ In this project we have worked with <strong>Agile methodology</strong>, <strong>
 For the future of our application, we would like to implement additional astronaut positions, enhance and polish animations, and improve other functionalities of the application.
 
 Additionally, we plan to implement testing for the code and create a victory animation. This will ensure the robustness of our application and provide a more engaging user experience.
+
+<h1>Live view 💻</h1>
+
+<p><a href="https://eye-of-the-doom.vercel.app/">Click here!</a></p>

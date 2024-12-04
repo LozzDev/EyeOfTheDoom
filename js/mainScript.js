@@ -248,13 +248,15 @@ function killAliveHumans(aliveHumansArray){
 const executeHumansArray=[]; //exportar
 let indexLimitClicker=0;
 let canClick=true;
-
+const shoot = new Audio('../sounds/eye_shot.mp3');
+const deadAstronautSound = new Audio('../sounds/exploding_astronaut.mp3');
+const winSound = new Audio('../sounds/winning.mp3');
 function executerCasual(){
     //TO-DO
     //cuando se presiona el click se consigue el array de los vivos
     const doomEyeImage = document.getElementById("eye-image");
     doomEyeImage.setAttribute("src", "../images/Sprites/Eye/Attack/eye-attack.gif");
-
+    shoot.play();
     if (!canClick) return; // Si no se puede hacer clic, salimos de la función
 
     canClick = false; // Bloqueamos nuevos clics
@@ -360,6 +362,7 @@ function executerCasual(){
     setTimeout(() => {
         human.setAttribute("src", "../images/blood_effect.gif");
         laser.setAttribute("src", "../images/yellowBallExplosion.gif");
+        deadAstronautSound.play();
     }, 500);
     
     laser.setAttribute("src", "../images/yellowBall.gif");//con estos timeouts timeamos las muertes de los atronautas y generamos su animacion de muerte
@@ -379,7 +382,7 @@ function executerCasual(){
 
         setTimeout(() => {
             createEndPage(executeHumansArray);
-            
+            winSound.play();
         }, 2000 );
         
     }  
@@ -414,7 +417,7 @@ const createRipple = (e) => {
     document.addEventListener('click', createRipple);
 
 
-
+    
 //aqui tenemos que borrar todo el html para mostrar el end.html
 
 function createEndPage(arrayExecutedHumans){

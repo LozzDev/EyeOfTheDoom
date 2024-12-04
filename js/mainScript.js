@@ -1,3 +1,9 @@
+
+//transicion, si lagea mucho lo quitamos
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-in");
+});
+
 const alivehumansCasual = [
     {
         id: 1,
@@ -246,7 +252,9 @@ let canClick=true;
 function executerCasual(){
     //TO-DO
     //cuando se presiona el click se consigue el array de los vivos
-    
+    const doomEyeImage = document.getElementById("eye-image");
+    doomEyeImage.setAttribute("src", "../images/Sprites/Eye/Attack/eye-attack.gif");
+
     if (!canClick) return; // Si no se puede hacer clic, salimos de la función
 
     canClick = false; // Bloqueamos nuevos clics
@@ -298,9 +306,9 @@ function executerCasual(){
     document.head.appendChild(style);
     //ejecutamos la animacion
     laser.style.animation = "shootAnimation 0.9s ";
-    const doomEyeImage=document.getElementById("eye-image");
+    
 
-    doomEyeImage.setAttribute=("src", "../images/eye-attack.gif");
+    
     //se introduce el elemento y sus estilos
     const textElement = document.createElement("div");
     textElement.textContent = `${executedHuman.name} has been executed`;
@@ -315,7 +323,7 @@ function executerCasual(){
     } else {
         textElement.style.fontSize = "36px";
     }
-    
+
     textElement.style.fontFamily = 'pixelade';
     textElement.style.opacity = "1";
     textElement.style.transition = "all 3s ease-out";
@@ -342,6 +350,10 @@ function executerCasual(){
     setTimeout(() => {
         laser.style.display = "none"; //ocultar el rayo una vez se lance
          //TO-DO NO FUNCIONA
+        if(indexLimitClicker!=15){
+          doomEyeImage.setAttribute("src", "../images/eye.png");
+        }
+        
         human.style.opacity=0;
     }, 900);
 
@@ -362,13 +374,17 @@ function executerCasual(){
             }
         });
         console.log(executeHumansArray);
+        doomEyeImage.setAttribute("src", "../images/Sprites/Eye/Death/dead-animation.gif");
+
 
         setTimeout(() => {
             createEndPage(executeHumansArray);
+            
         }, 2000 );
         
     }  
     console.log(executeHumansArray);
+    
 }
 
 //efecto onda expansiva cuando dispara
@@ -403,6 +419,7 @@ const createRipple = (e) => {
 
 function createEndPage(arrayExecutedHumans){
     //con estas 3 lineas borramos el main y activamos el cursor
+    
     const mainPage=document.getElementById("main");
     const head = document.head;
     const body = document.body;
@@ -714,6 +731,7 @@ function createEndPage(arrayExecutedHumans){
     // Crear el primer div sin hijos
     // Crear el primer div sin hijos
     // Crear el primer div sin hijos
+
     const parentDiv1 = document.createElement('div');
     parentDiv1.className = 'parent-div-1';
 
@@ -721,7 +739,7 @@ function createEndPage(arrayExecutedHumans){
     childDiv1.className = 'parent-div-1-1';
 
     const logoImage = document.createElement('img');
-    logoImage.src = '../images/logoLetras.png';
+    logoImage.src = '../images/logo2.png';
     logoImage.alt = 'logoLetras';
     logoImage.className = 'logo_imagen';
     logoImage.width = 400;
@@ -742,7 +760,7 @@ function createEndPage(arrayExecutedHumans){
     childDiv2_1.className = 'child-div-2-1';
 
     const astronaut1 = document.createElement('img');
-    astronaut1.src = `../images/astronauts/astronaut_01.gif`;
+    astronaut1.src = '../images/sprites/astronauts/astronaut_01.gif';
     astronaut1.id = 'astronaut1';
     astronaut1.className = 'astronaut';
 
@@ -759,7 +777,7 @@ function createEndPage(arrayExecutedHumans){
     childDiv2_2_1.className = 'child-div-2-2-1';
 
     const astronaut2 = document.createElement('img');
-    astronaut2.src = '../images/astronauts/dead-astronaut.png';
+    astronaut2.src = '../images/sprites/astronauts/dead-astronaut.png';
     astronaut2.id = 'astronaut2';
     astronaut2.className = 'astronaut';
 
@@ -773,7 +791,7 @@ function createEndPage(arrayExecutedHumans){
     childDiv2_2_2.className = 'child-div-2-2-2';
 
     const astronaut3 = document.createElement('img');
-    astronaut3.src = '../images/astronauts/dead-astronaut.png';
+    astronaut3.src = '../images/sprites/astronauts/dead-astronaut.png';
     astronaut3.id = 'astronaut3';
     astronaut3.className = 'astronaut';
 
@@ -797,10 +815,10 @@ function createEndPage(arrayExecutedHumans){
     childDiv3_1.className = 'child-div-3-1';
 
     const astronautsGroup1 = [
-        { src: '../images/astronauts/dead-astronaut.png', text: `4th ${executeHumansArray[12]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `5th ${executeHumansArray[11]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `6th ${executeHumansArray[10]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `7th ${executeHumansArray[9]}` }
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `4th ${executeHumansArray[12]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `5th ${executeHumansArray[11]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `6th ${executeHumansArray[10]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `7th ${executeHumansArray[9]}` }
     ];
 
     astronautsGroup1.forEach(item => {
@@ -819,10 +837,10 @@ function createEndPage(arrayExecutedHumans){
     childDiv3_2.className = 'child-div-3-2';
 
     const astronautsGroup2 = [
-        { src: '../images/astronauts/dead-astronaut.png', text: `8th ${executeHumansArray[8]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `9th ${executeHumansArray[7]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `10th ${executeHumansArray[6]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `11th ${executeHumansArray[5]}` }
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `8th ${executeHumansArray[8]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `9th ${executeHumansArray[7]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `10th ${executeHumansArray[6]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `11th ${executeHumansArray[5]}` }
     ];
 
     astronautsGroup2.forEach(item => {
@@ -841,10 +859,10 @@ function createEndPage(arrayExecutedHumans){
     childDiv3_3.className = 'child-div-3-3';
 
     const astronautsGroup3 = [
-        { src: '../images/astronauts/dead-astronaut.png', text: `12th ${executeHumansArray[4]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `13th ${executeHumansArray[3]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `14th ${executeHumansArray[2]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `15th ${executeHumansArray[1]}` }
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `12th ${executeHumansArray[4]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `13th ${executeHumansArray[3]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `14th ${executeHumansArray[2]}` },
+        { src: '../images/sprites/astronauts/dead-astronaut.png', text: `15th ${executeHumansArray[1]}` }
     ];
 
     astronautsGroup3.forEach(item => {
@@ -871,7 +889,7 @@ function createEndPage(arrayExecutedHumans){
     lastOneDiv.id = 'lastOne';
 
     const astronaut16 = document.createElement('img');
-    astronaut16.src = '../images/astronauts/dead-astronaut.png';
+    astronaut16.src = '../images/sprites/astronauts/dead-astronaut.png';
     astronaut16.className = 'astronaut';
 
     const lastText = document.createElement('p');
@@ -910,5 +928,6 @@ function createEndPage(arrayExecutedHumans){
     document.body.appendChild(parentDiv3);
     document.body.appendChild(parentDiv4);
     document.body.appendChild(parentDiv5);
-
+    
   }
+  

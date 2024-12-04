@@ -402,7 +402,7 @@ function executerCasual(){
     textElement.style.color = "white";
 
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        textElement.style.fontSize = "17px";
+        textElement.style.fontSize = "20px";
     } else {
         textElement.style.fontSize = "36px";
     }
@@ -493,61 +493,208 @@ const createRipple = (e) => {
 //aqui tenemos que borrar todo el html para mostrar el end.html
 
 function createEndPage(arrayExecutedHumans){
-    //con estas 3 lineas borramos el main y activamos el cursor
-    const mainPage=document.getElementById("main");
-    const head = document.head;
-    const body = document.body;
-    mainPage.remove();
-    document.body.style.cursor = "default";
-    //-----Aqui comenzamos a crear el end.html aplicando la estructura html de la pagina---------
-    //aqui se aplican los estilos
-    const style = document.createElement('style');
-    style.textContent = `
-        /* Carga de la fuente personalizada */
-    @font-face {
-    font-family: 'Pixelade';
-    src: url('../fonts/PIXELADE.woff2') format('woff2'),
-      url('../fonts/PIXELADE.woff') format('woff'),
-      url('../fonts/PIXELADE.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+  //con estas 3 lineas borramos el main y activamos el cursor
+  const mainPage=document.getElementById("main");
+  const head = document.head;
+  const body = document.body;
+  mainPage.remove();
+  document.body.style.cursor = "default";
+  //-----Aqui comenzamos a crear el end.html aplicando la estructura html de la pagina---------
+  //aqui se aplican los estilos
+  const style = document.createElement('style');
+  style.textContent = `
+      /* Carga de la fuente personalizada */
+  @font-face {
+  font-family: 'Pixelade';
+  src: url('../fonts/PIXELADE.woff2') format('woff2'),
+    url('../fonts/PIXELADE.woff') format('woff'),
+    url('../fonts/PIXELADE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  * {
-    font-family: 'Pixelade', sans-serif;
-  }
+* {
+  font-family: 'Pixelade', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   
+  
+}
+
+.astronaut{
+  width: 50px;
+}
+
+#astronaut1{
+  width: 100px;
+}
+#astronaut2{
+  width: 75px;
+}
+#astronaut3{
+  width: 60px;
+}
+
+.parent-div-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parent-div-1-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ranking-title {
+  font-size: 2rem;
+  letter-spacing: 25px;
+  
+  color: #ffffec;
+}
+
+.parent-div-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.child-div-2-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.child-div-2-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.child-div-2-2-1{
+  display: flex;
+  align-items: center;
+}
+
+.child-div-2-2-2{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.parent-div-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.child-div-3-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.child-div-3-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.child-div-3-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.parent-div-4 {
+  display: flex;
+  gap: 14%;
+  margin-top: 1%;
+  justify-content: center;
+  align-items: center;
+}
+
+#lastOne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+p {
+  color: red;
+  font-size: 16px;
+}
+
+
+.btn_izquierda, .btn_derecha {
+  background-color: #c51e32;
+  letter-spacing: 5px;
+  width: 200px;
+  height: 36px;
+  color: #ffffec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  
+  font-size: 27px;
+}
+
+.btn_izquierda{
+  width: 150px;
+}
+
+.parent-div-5{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+#winnerText{
+      color: white;
+}
+
+/*-----------------------------------------------*/
+@media (min-width: 901px){
   html, body {
     margin: 0;
     padding: 0;
     background-image: url("../images/fondo.png");
-    background-size: cover;
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    
-    
   }
-  
   .astronaut{
-    width: 50px;
-  }
-
-  #astronaut1{
     width: 100px;
   }
+  #astronaut1{
+    width: 150px;
+  }
   #astronaut2{
-    width: 75px;
+    width: 100px;
   }
   #astronaut3{
-    width: 60px;
+    width: 100px;
   }
-
   .parent-div-1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
   }
   
   .parent-div-1-1 {
@@ -579,22 +726,10 @@ function createEndPage(arrayExecutedHumans){
   
   .child-div-2-2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   
   }
-
-  .child-div-2-2-1{
-    display: flex;
-    align-items: center;
-  }
-
-  .child-div-2-2-2{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
   
   .parent-div-3 {
     display: flex;
@@ -622,7 +757,7 @@ function createEndPage(arrayExecutedHumans){
   
   .parent-div-4 {
     display: flex;
-    gap: 14%;
+    gap: 20%;
     margin-top: 1%;
     justify-content: center;
     align-items: center;
@@ -636,370 +771,235 @@ function createEndPage(arrayExecutedHumans){
   
   p {
     color: red;
-    font-size: 16px;
+    font-size: 32px;
   }
 
   
   .btn_izquierda, .btn_derecha {
     background-color: #c51e32;
     letter-spacing: 5px;
-    width: 200px;
+    width: 256px;
     height: 36px;
     color: #ffffec;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    
     font-size: 27px;
   }
-
-  .btn_izquierda{
-    width: 150px;
+  .btn_derecha{
+    float: right;
   }
-
   .parent-div-5{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    
+    gap: 30%;
   }
-  #winnerText{
-        color: white;
-  }
-  
-/*-----------------------------------------------*/
-  @media (min-width: 901px){
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-image: url("../images/fondo.png");
-      min-height: 100vh;
-      background-position: center;
-      background-repeat: no-repeat;
+    #winnerText{
+      color: white;
     }
-    .astronaut{
-      width: 100px;
-    }
-    #astronaut1{
-      width: 150px;
-    }
-    #astronaut2{
-      width: 100px;
-    }
-    #astronaut3{
-      width: 100px;
-    }
-    .parent-div-1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .parent-div-1-1 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-    }
-    
-    .ranking-title {
-      font-size: 2rem;
-      letter-spacing: 25px;
-      
-      color: #ffffec;
-    }
-    
-    .parent-div-2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .child-div-2-1 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    
-    }
-    
-    .child-div-2-2 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    
-    }
-    
-    .parent-div-3 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .child-div-3-1 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    
-    .child-div-3-2 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    
-    .child-div-3-3 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    
-    .parent-div-4 {
-      display: flex;
-      gap: 20%;
-      margin-top: 1%;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    #lastOne {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    
-    p {
-      color: red;
-      font-size: 32px;
-    }
+}
+  `
+  head.appendChild(style)
+  // Crear el primer div sin hijos
+  // Crear el primer div sin hijos
+  // Crear el primer div sin hijos
+  const parentDiv1 = document.createElement('div');
+  parentDiv1.className = 'parent-div-1';
 
-    
-    .btn_izquierda, .btn_derecha {
-      background-color: #c51e32;
-      letter-spacing: 5px;
-      width: 256px;
-      height: 36px;
-      color: #ffffec;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 25px;
-      font-size: 27px;
-    }
-    .btn_derecha{
-      float: right;
-    }
-    .parent-div-5{
-      display:flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 30%;
-    }
-      #winnerText{
-        color: white;
-      }
-  }
-    `
-    head.appendChild(style)
-    // Crear el primer div sin hijos
-    // Crear el primer div sin hijos
-    // Crear el primer div sin hijos
-    const parentDiv1 = document.createElement('div');
-    parentDiv1.className = 'parent-div-1';
+  const childDiv1 = document.createElement('div');
+  childDiv1.className = 'parent-div-1-1';
 
-    const childDiv1 = document.createElement('div');
-    childDiv1.className = 'parent-div-1-1';
-
-    const logoImage = document.createElement('img');
-    logoImage.src = '../images/logoLetras.png';
+  const logoImage = document.createElement('img');
+    logoImage.src = '../images/logo2.png';
     logoImage.alt = 'logoLetras';
     logoImage.className = 'logo_imagen';
     logoImage.width = 400;
 
-    const rankingTitle = document.createElement('h1');
-    rankingTitle.className = 'ranking-title';
-    rankingTitle.textContent = 'RANKING';
+  const rankingTitle = document.createElement('h1');
+  rankingTitle.className = 'ranking-title';
+  rankingTitle.textContent = '..RANKING..';
 
-    childDiv1.appendChild(logoImage);
-    childDiv1.appendChild(rankingTitle);
-    parentDiv1.appendChild(childDiv1);
+  childDiv1.appendChild(logoImage);
+  childDiv1.appendChild(rankingTitle);
+  parentDiv1.appendChild(childDiv1);
 
-    // Crear el segundo div con 2 hijos
-    const parentDiv2 = document.createElement('div');
-    parentDiv2.className = 'parent-div-2';
+  // Crear el segundo div con 2 hijos
+  const parentDiv2 = document.createElement('div');
+  parentDiv2.className = 'parent-div-2';
 
-    const childDiv2_1 = document.createElement('div');
-    childDiv2_1.className = 'child-div-2-1';
+  const childDiv2_1 = document.createElement('div');
+  childDiv2_1.className = 'child-div-2-1';
 
-    const astronaut1 = document.createElement('img');
-    astronaut1.src = `../images/astronauts/astronaut_01.gif`;
-    astronaut1.id = 'astronaut1';
-    astronaut1.className = 'astronaut';
+  const astronaut1 = document.createElement('img');
+  astronaut1.src = '../images/sprites/astronauts/astronaut_01.gif';
+  astronaut1.id = 'astronaut1';
+  astronaut1.className = 'astronaut';
 
-    const firstText = document.createElement('p');
-    firstText.textContent = `1st ${executeHumansArray[15]}`;
-    firstText.id = 'winnerText'
-    childDiv2_1.appendChild(astronaut1);
-    childDiv2_1.appendChild(firstText);
+  const firstText = document.createElement('p');
+  firstText.textContent = `1st ${executeHumansArray[15]}`;
+  firstText.id = 'winnerText'
+  childDiv2_1.appendChild(astronaut1);
+  childDiv2_1.appendChild(firstText);
 
-    const childDiv2_2 = document.createElement('div');
-    childDiv2_2.className = 'child-div-2-2';
+  const childDiv2_2 = document.createElement('div');
+  childDiv2_2.className = 'child-div-2-2';
 
-    const childDiv2_2_1 = document.createElement('div');
-    childDiv2_2_1.className = 'child-div-2-2-1';
+  const childDiv2_2_1 = document.createElement('div');
+  childDiv2_2_1.className = 'child-div-2-2-1';
 
-    const astronaut2 = document.createElement('img');
-    astronaut2.src = '../images/astronauts/dead-astronaut.png';
-    astronaut2.id = 'astronaut2';
-    astronaut2.className = 'astronaut';
+  const astronaut2 = document.createElement('img');
+  astronaut2.src = '../images/sprites/astronauts/dead-astronaut.png';
+  astronaut2.id = 'astronaut2';
+  astronaut2.className = 'astronaut';
 
-    const secondText = document.createElement('p');
-    secondText.textContent = `2nd ${executeHumansArray[14]}`;
+  const secondText = document.createElement('p');
+  secondText.textContent = `2nd ${executeHumansArray[14]}`;
 
-    childDiv2_2_1.appendChild(astronaut2);
-    childDiv2_2_1.appendChild(secondText);
+  childDiv2_2_1.appendChild(astronaut2);
+  childDiv2_2_1.appendChild(secondText);
 
-    const childDiv2_2_2 = document.createElement('div');
-    childDiv2_2_2.className = 'child-div-2-2-2';
+  const childDiv2_2_2 = document.createElement('div');
+  childDiv2_2_2.className = 'child-div-2-2-2';
 
-    const astronaut3 = document.createElement('img');
-    astronaut3.src = '../images/astronauts/dead-astronaut.png';
-    astronaut3.id = 'astronaut3';
-    astronaut3.className = 'astronaut';
+  const astronaut3 = document.createElement('img');
+  astronaut3.src = '../images/sprites/astronauts/dead-astronaut.png';
+  astronaut3.id = 'astronaut3';
+  astronaut3.className = 'astronaut';
 
-    const thirdText = document.createElement('p');
-    thirdText.textContent = `3rd ${executeHumansArray[13]}`;
+  const thirdText = document.createElement('p');
+  thirdText.textContent = `3rd ${executeHumansArray[13]}`;
 
-    childDiv2_2_2.appendChild(astronaut3);
-    childDiv2_2_2.appendChild(thirdText);
+  childDiv2_2_2.appendChild(astronaut3);
+  childDiv2_2_2.appendChild(thirdText);
 
-    childDiv2_2.appendChild(childDiv2_2_1);
-    childDiv2_2.appendChild(childDiv2_2_2);
+  childDiv2_2.appendChild(childDiv2_2_1);
+  childDiv2_2.appendChild(childDiv2_2_2);
 
-    parentDiv2.appendChild(childDiv2_1);
-    parentDiv2.appendChild(childDiv2_2);
+  parentDiv2.appendChild(childDiv2_1);
+  parentDiv2.appendChild(childDiv2_2);
 
-    // Crear el tercer div con 3 hijos
-    const parentDiv3 = document.createElement('div');
-    parentDiv3.className = 'parent-div-3';
+  // Crear el tercer div con 3 hijos
+  const parentDiv3 = document.createElement('div');
+  parentDiv3.className = 'parent-div-3';
 
-    const childDiv3_1 = document.createElement('div');
-    childDiv3_1.className = 'child-div-3-1';
+  const childDiv3_1 = document.createElement('div');
+  childDiv3_1.className = 'child-div-3-1';
 
-    const astronautsGroup1 = [
-        { src: '../images/astronauts/dead-astronaut.png', text: `4th ${executeHumansArray[12]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `5th ${executeHumansArray[11]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `6th ${executeHumansArray[10]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `7th ${executeHumansArray[9]}` }
-    ];
+  const astronautsGroup1 = [
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `4th ${executeHumansArray[12]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `5th ${executeHumansArray[11]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `6th ${executeHumansArray[10]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `7th ${executeHumansArray[9]}` }
+  ];
 
-    astronautsGroup1.forEach(item => {
-        const img = document.createElement('img');
-        img.src = item.src;
-        img.className = 'astronaut';
+  astronautsGroup1.forEach(item => {
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.className = 'astronaut';
 
-        const text = document.createElement('p');
-        text.textContent = item.text;
+      const text = document.createElement('p');
+      text.textContent = item.text;
 
-        childDiv3_1.appendChild(img);
-        childDiv3_1.appendChild(text);
-    });
+      childDiv3_1.appendChild(img);
+      childDiv3_1.appendChild(text);
+  });
 
-    const childDiv3_2 = document.createElement('div');
-    childDiv3_2.className = 'child-div-3-2';
+  const childDiv3_2 = document.createElement('div');
+  childDiv3_2.className = 'child-div-3-2';
 
-    const astronautsGroup2 = [
-        { src: '../images/astronauts/dead-astronaut.png', text: `8th ${executeHumansArray[8]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `9th ${executeHumansArray[7]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `10th ${executeHumansArray[6]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `11th ${executeHumansArray[5]}` }
-    ];
+  const astronautsGroup2 = [
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `8th ${executeHumansArray[8]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `9th ${executeHumansArray[7]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `10th ${executeHumansArray[6]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `11th ${executeHumansArray[5]}` }
+  ];
 
-    astronautsGroup2.forEach(item => {
-        const img = document.createElement('img');
-        img.src = item.src;
-        img.className = 'astronaut';
+  astronautsGroup2.forEach(item => {
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.className = 'astronaut';
 
-        const text = document.createElement('p');
-        text.textContent = item.text;
+      const text = document.createElement('p');
+      text.textContent = item.text;
 
-        childDiv3_2.appendChild(img);
-        childDiv3_2.appendChild(text);
-    });
+      childDiv3_2.appendChild(img);
+      childDiv3_2.appendChild(text);
+  });
 
-    const childDiv3_3 = document.createElement('div');
-    childDiv3_3.className = 'child-div-3-3';
+  const childDiv3_3 = document.createElement('div');
+  childDiv3_3.className = 'child-div-3-3';
 
-    const astronautsGroup3 = [
-        { src: '../images/astronauts/dead-astronaut.png', text: `12th ${executeHumansArray[4]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `13th ${executeHumansArray[3]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `14th ${executeHumansArray[2]}` },
-        { src: '../images/astronauts/dead-astronaut.png', text: `15th ${executeHumansArray[1]}` }
-    ];
+  const astronautsGroup3 = [
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `12th ${executeHumansArray[4]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `13th ${executeHumansArray[3]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `14th ${executeHumansArray[2]}` },
+      { src: '../images/sprites/astronauts/dead-astronaut.png', text: `15th ${executeHumansArray[1]}` }
+  ];
 
-    astronautsGroup3.forEach(item => {
-        const img = document.createElement('img');
-        img.src = item.src;
-        img.className = 'astronaut';
+  astronautsGroup3.forEach(item => {
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.className = 'astronaut';
 
-        const text = document.createElement('p');
-        text.textContent = item.text;
+      const text = document.createElement('p');
+      text.textContent = item.text;
 
-        childDiv3_3.appendChild(img);
-        childDiv3_3.appendChild(text);
-    });
+      childDiv3_3.appendChild(img);
+      childDiv3_3.appendChild(text);
+  });
 
-    parentDiv3.appendChild(childDiv3_1);
-    parentDiv3.appendChild(childDiv3_2);
-    parentDiv3.appendChild(childDiv3_3);
+  parentDiv3.appendChild(childDiv3_1);
+  parentDiv3.appendChild(childDiv3_2);
+  parentDiv3.appendChild(childDiv3_3);
 
-    // Crear el cuarto div sin hijos
-    const parentDiv4 = document.createElement('div');
-    parentDiv4.className = 'parent-div-4';
+  // Crear el cuarto div sin hijos
+  const parentDiv4 = document.createElement('div');
+  parentDiv4.className = 'parent-div-4';
 
-    const lastOneDiv = document.createElement('div');
-    lastOneDiv.id = 'lastOne';
+  const lastOneDiv = document.createElement('div');
+  lastOneDiv.id = 'lastOne';
 
-    const astronaut16 = document.createElement('img');
-    astronaut16.src = '../images/astronauts/dead-astronaut.png';
-    astronaut16.className = 'astronaut';
+  const astronaut16 = document.createElement('img');
+  astronaut16.src = '../images/sprites/astronauts/dead-astronaut.png';
+  astronaut16.className = 'astronaut';
 
-    const lastText = document.createElement('p');
-    lastText.textContent = `16th ${executeHumansArray[0]}`;
+  const lastText = document.createElement('p');
+  lastText.textContent = `16th ${executeHumansArray[0]}`;
 
-    lastOneDiv.appendChild(astronaut16);
-    lastOneDiv.appendChild(lastText);
-    parentDiv4.appendChild(lastOneDiv);
+  lastOneDiv.appendChild(astronaut16);
+  lastOneDiv.appendChild(lastText);
+  parentDiv4.appendChild(lastOneDiv);
 
-    // Crear botones
-    const parentDiv5 = document.createElement('div');
-    parentDiv5.className = 'parent-div-5';
+  // Crear botones
+  const parentDiv5 = document.createElement('div');
+  parentDiv5.className = 'parent-div-5';
 
-    const creditsButton = document.createElement('button');
-    creditsButton.className = 'btn_izquierda';
-    creditsButton.textContent = 'Credits';
+  const creditsButton = document.createElement('button');
+  creditsButton.className = 'btn_izquierda';
+  creditsButton.textContent = 'Credits';
 
-    creditsButton.addEventListener('click', () => {
-      window.location.href = '../html/credits.html';
-    });
+  creditsButton.addEventListener('click', () => {
+    window.location.href = '../html/credits.html';
+  });
 
-    const replayButton = document.createElement('button');
-    replayButton.className = 'btn_derecha';
-    replayButton.textContent = 'Replay';
+  const replayButton = document.createElement('button');
+  replayButton.className = 'btn_derecha';
+  replayButton.textContent = 'Replay';
 
-    replayButton.addEventListener('click', () => {
-      window.location.href = '../html/home.html';
-    });
+  replayButton.addEventListener('click', () => {
+    window.location.href = '../html/home.html';
+  });
 
-    parentDiv5.appendChild(creditsButton);
-    parentDiv5.appendChild(replayButton);
+  parentDiv5.appendChild(creditsButton);
+  parentDiv5.appendChild(replayButton);
 
-    // Agregar todo al body
-    document.body.appendChild(parentDiv1);
-    document.body.appendChild(parentDiv2);
-    document.body.appendChild(parentDiv3);
-    document.body.appendChild(parentDiv4);
-    document.body.appendChild(parentDiv5);
+  // Agregar todo al body
+  document.body.appendChild(parentDiv1);
+  document.body.appendChild(parentDiv2);
+  document.body.appendChild(parentDiv3);
+  document.body.appendChild(parentDiv4);
+  document.body.appendChild(parentDiv5);
 
-  }
+}

@@ -459,7 +459,7 @@ indexLimitClicker++;
 
 if(indexLimitClicker==15){
 
-  alivehumansCasual.forEach((human) => {
+  alivehumansCustom.forEach((human) => {
       if(human.alive==true){
           executeHumansArray.push(human.name);
       }

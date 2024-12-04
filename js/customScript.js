@@ -1,10 +1,10 @@
 let entries = [];
+let customList = [];
 let sfxClick = new Audio('/sounds/button_click.mp3');
 let sfxHover = new Audio('/sounds/button_hover.mp3');
 const playButton1 = document.getElementById("submitbtn_a");
 const playButton2 = document.getElementById("submitbtn2_a");
 const backButton = document.getElementById("backbtn_a");
-
 
 function updateVisibility() {
   const deleteUserContainer = document.querySelector(".deleteUser-container_a");
@@ -34,6 +34,7 @@ function storeEntry() {
 
   error.textContent = "";
   entries.push(entry);
+  customList.push(entry);
   inputField.value = "";
   cont.textContent = `${entries.length}/16`;
 
@@ -58,6 +59,7 @@ function deleteEntry() {
 
   if (index !== -1) {
     entries.splice(index, 1);
+    const deletedName = customList.pop();  
     error.textContent = `The user "${entryToDelete}" has been removed.`;
     deleteField.value = "";
     cont.textContent = `${entries.length}/16`;
@@ -87,6 +89,10 @@ function validateFormulary(event) {
     return;
   }
 
+  customList.push(name1, name2, name3, name4);
+
+  localStorage.setItem("inputValues", JSON.stringify(customList));
+  
   error.textContent = "";
   window.location.href = "../html/mainCustom.html";
 }
@@ -97,6 +103,30 @@ function getRandomName(availableNames) {
   availableNames.splice(randomIndex, 1);
   return randomName;
 }
+
+function fillMissingNames() {
+  let humanList = JSON.parse(localStorage.getItem("humansAlive"));
+  const availableNames = humanList.map(human => human.name);
+
+  const error = document.getElementById("error_a");
+
+  while (customList.length < 16) {
+    if (availableNames.length === 0) {
+      error.textContent = "Not enough unique names available.";
+      return;
+    }
+
+    const randomName = getRandomName(availableNames);
+    customList.push(randomName);
+  }
+
+  localStorage.setItem("inputValues", JSON.stringify(customList));
+}
+
+document.getElementById("submitbtn_a").addEventListener("click", () => {
+  fillMissingNames();
+  window.location.href = "../html/mainCustom.html";
+});
 
 function validateFormulary2(event) {
   event.preventDefault();

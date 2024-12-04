@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Pixelade';
+    src: url('/fonts/PIXELADE.woff2') format('woff2'),
+      url('/fonts/PIXELADE.woff') format('woff'),
+      url('/fonts/PIXELADE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+* {
+    font-family: 'Pixelade', sans-serif;
+}
+
+
+body, html{
+    background-image: url('../images/fondo.png');
+    background-size: cover; 
+    background-position: center;
+    background-clip: content-box;
+    cursor: none;
+    min-height: 100vh; /* Asegura que siempre sea al menos el tamaño de la ventana */
+    height: auto;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.mt-custom-eye{
+    margin-top: 2rem;
+}
+
+.mt-custom-humans{
+    margin-top: 17rem;
+}
+
+#eye{
+    z-index: 1; /* Encima de la distorsión */
+}
+
+.drop_effect {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+    overflow: hidden;
+}
+
+.drop_effect span {
+    position: absolute;
+    background-color: #fff587;
+    animation: ripple 1s linear;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Detrás del ojo */
+    opacity: 0.3;
+}
+
+@keyframes ripple {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    60%{
+        width: 450px;
+        height: 450px;
+    }
+    80% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+#eye-image{
+    animation: breathing 4s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0% {
+        transform: translateY(0) translateX(0);
+      }
+      25% {
+        transform: translateY(-5px) translateX(5px); 
+      }
+      50%{
+        
+      }
+      75% {
+        transform: translateY(5px) translateX(5px); 
+      }
+      100% {
+        transform: translateY(0) translateX(0); 
+      }
+}
+
+/*animacion de fade in, si lagea mucho lo quitamos */
+body {
+	opacity: 0;
+	/* Principio de animación de transición*/
+	transition: opacity 0.7s ease-in-out;
+	background-color: #030711;
+}
+body.fade-in {
+	opacity: 1;
+}
+
+body.fade-out {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}

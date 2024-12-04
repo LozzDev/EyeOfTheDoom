@@ -9,7 +9,7 @@ body {
   opacity: 0;
   transition: opacity 0.7s ease-in-out;
   background-color: #030711;
-  margin: 0;
+  margin: 30px;
   padding: 0;
   height: 100%;
   width: 100%;
@@ -154,8 +154,7 @@ html, body {
   align-items: center;
   gap: 1px;
   position: relative;
-  padding-left: 40%;
-  padding-right: 40%;
+  
 }
 
 .userInput_a input {
@@ -275,7 +274,7 @@ html, body {
   display: flex;
   justify-content: center;
   width: 20vw;
-  padding: 1.5vw;
+  
   margin-top: 5vw;
   margin-left: 60vw;
   border: 0.2vw solid #000000;
@@ -415,8 +414,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
-    width: 100vw;
+    
+    
     margin: 0;
     position: relative;
     overflow-x: hidden;
@@ -499,9 +498,10 @@ footer {
 
 .userInputWideScreen_a {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1vw;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: center;
     margin-top: -2vh;
+    margin:3%;
 }
 
 .column1, .column2, .column3, .column4 {
@@ -517,7 +517,7 @@ footer {
 }
 
 .input-container_a input {
-    width: 100%;
+    width: 90%;
     font-size: 1.8vw;
     padding: 1vw;
     text-align: center;
@@ -536,6 +536,7 @@ footer {
 
 .nameInputs_a {
     margin-bottom: 2vh;
+    
 }
 
 .nameInputs_a input::placeholder {
@@ -561,9 +562,9 @@ footer {
     font-size: 1.8vw;  
     display: flex;
     justify-content: center;
-    width: 65vw; 
-    padding: 1vh;
-    margin-top: -10vh;
+    width: 100%; 
+    padding: 3%;
+    margin-top: -13vh;
     border: 1px solid #000000;
     border-radius: 3vw;
     box-sizing: border-box;
@@ -577,7 +578,7 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 7%;
+    margin-top: -0.5%;
     margin-left: 50%;
 }
 
@@ -587,6 +588,7 @@ footer {
     justify-content: center;
     position: relative;
     margin-top: 1%;
+    margin-bottom: 2%;
 }
 
 .submitbtn2_a {
@@ -624,7 +626,7 @@ footer {
 }
 
 footer {
-  position: fixed;
+  
   bottom: 0;
   left: 0;
   width: 100%;
@@ -636,6 +638,7 @@ footer {
   align-items: center;
   text-align: center;
   box-sizing: border-box;
+  margin-top: 0.7%;
 }
 
 .footer-content {
@@ -666,6 +669,10 @@ footer {
 .footer-logo {
   max-height: 40px;
   width: auto;
+}
+
+#custom-game-text{
+  letter-spacing: 10px;
 }
 
 }

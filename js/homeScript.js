@@ -83,4 +83,3 @@ document.querySelectorAll(".btn-game").forEach((btn) => {
         }, 700);
     });
 });
-

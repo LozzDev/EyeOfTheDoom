@@ -88,7 +88,7 @@ function validateFormulary(event) {
   }
 
   error.textContent = "";
-  window.location.href = "../html/main.html";
+  window.location.href = "../html/mainCustom.html";
 }
 
 function getRandomName(availableNames) {
@@ -110,15 +110,12 @@ function validateFormulary2(event) {
   const name3 = document.getElementById("name3F2_a").value.trim();
   const name4 = document.getElementById("name4F2_a").value.trim();
 
+  customNameList.push(name1, name2, name3, name4);
+
   if (!name1 || !name2 || !name3 || !name4) {
     error.textContent = "Please fill in the first 4 fields.";
     return;
   }
-
-  customNameList.push(name1);
-  customNameList.push(name2);
-  customNameList.push(name3);
-  customNameList.push(name4);
 
   const nameInputs = [
     document.getElementById("name5F2_a"),
@@ -136,10 +133,7 @@ function validateFormulary2(event) {
   ];
 
   let humanList = JSON.parse(localStorage.getItem("humansAlive"));
-
   const availableNames = humanList.map(human => human.name);
-
-  console.log("Nombres disponibles:", availableNames);
 
   nameInputs.forEach((input) => {
     if (!input.value.trim()) {
@@ -147,20 +141,19 @@ function validateFormulary2(event) {
         error.textContent = "Not enough unique names available.";
         return;
       }
-      input.value = getRandomName(availableNames);
-      customNameList.push(input.value);
+      const randomName = getRandomName(availableNames);
+      input.value = randomName;
     }
+    customNameList.push(input.value.trim());
   });
 
-  const inputValues = nameInputs.map((input) => input.value.trim());
+  localStorage.setItem("inputValues", JSON.stringify(customNameList));
 
-  localStorage.setItem("inputValues", JSON.stringify(inputValues));
-
-  console.log(inputValues);
+  console.log(customNameList);
 
   error.textContent = "";
 
-  window.location.href = "../html/main.html";
+  window.location.href = "../html/mainCustom.html";
 }
 
 playButton1.addEventListener("click", () =>{

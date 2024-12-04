@@ -130,7 +130,7 @@
     
     .main_logo_img_b {
       max-height: 500vh;
-      max-width: 200vw;
+      max-width: 150vw;
       width: auto;
       position: fixed;
       top: 45%;
@@ -189,6 +189,10 @@
       right: 10px;
     }
 
+    footer{
+      display: none;
+    }
+
     @media only screen and (min-width: 701px){
       @font-face {
         font-family: 'Pixelade';
@@ -199,10 +203,10 @@
         display: flex;
         width: 100%;
         justify-content: center;
-        gap: 180px;
       }
       
       #header_img_ovni2_b{
+        display: none;
         position: relative;
         top: 30px;
         animation: reverseFloat 7s ease-in-out infinite, appear 4s ease;
@@ -210,10 +214,14 @@
       }
       
       #header_img_ovni1_b{
+        position: absolute;
+        left: 2%;
         animation: float 7s ease-in-out infinite, appear 4s ease;
       }
       
       #header_img_ovni3_b{
+        position: absolute;
+        right: 2%;
         animation: float 7s ease-in-out 1s infinite, appear 4s 0s ease;
       }
       
@@ -308,9 +316,9 @@
         .main_logo_img_b {
           z-index: 1;
           max-height: 500vh;
-          max-width: 100vw;
+          max-width: 50vw;
           width: auto;
-          position: fixed;
+          position: absolute;
           top: 45%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -331,14 +339,15 @@
         .body_button_b:hover {
           background-color: #008a85;
           color: #fcfc40;
+          cursor: pointer;
         }
         
         #body_start_button_b {
           padding: 8px 45px;
-          font-size: 40px;
-          position: fixed;
-          left: 90%;
-          top: 90%;
+          font-size: 50px;
+          position: absolute;
+          left: 89%;
+          top: 82%;
           opacity: 0;
           transform: translate(-50%, -50%);
           transition: opacity 1s ease;
@@ -363,7 +372,52 @@
         
         .button_container_b {
           position: fixed;
-          bottom: 50px;
-          right: 10px;
+          bottom: 14%;
+          right: 5%;
+        }
+
+        footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background-color: #c51e32;
+          color: #ffffec;
+          padding: 15px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          box-sizing: border-box;
+        }
+        
+        .footer-content {
+          width: 100%;
+          font-size: 3vh;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          text-align: center;
+        }
+        
+        .footer-left {
+          flex: 1;
+          text-align: left;
+        }
+        
+        .footer-center {
+          flex: 2;
+          text-align: center;
+        }
+        
+        .footer-right {
+          flex: 1;
+          text-align: right;
+        }
+        
+        .footer-logo {
+          max-height: 40px;
+          width: auto;
         }
     }

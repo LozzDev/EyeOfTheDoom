@@ -11,7 +11,6 @@
     color: #ffffec;
     text-align: center;
     opacity: 0;
-    /* Principio de animación de transición*/
     transition: opacity 0.7s ease-in-out;
     background-color: #030711;
   }
@@ -24,20 +23,20 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
-  /* Final bloque de animación de transición*/
-
 
   header{
     display: flex;
     width: 100%;
     justify-content: center;
     gap: 110px;
+    
   }
   
   #header_img_ovni2_b{
     position: relative;
     top: 30px;
     animation: reverseFloat 7s ease-in-out infinite, appear 4s ease;
+    z-index: 999;
   }
   
   #header_img_ovni1_b{
@@ -121,16 +120,17 @@
     }
     
     .main_div_paragraph_b {
-      font-size: 32px;
+      font-size: clamp(2vh, 7vw, 5vh);
       position: fixed;
-      top: 22%;
-      margin: 10px 30px;
+      top: calc(20% + 2vh);
+      margin: 2vh 15vw;
       opacity: 1;
       transition: opacity 1s ease;
     }
     
     .main_logo_img_b {
-      max-height: 500px;
+      max-height: 500vh;
+      max-width: 150vw;
       width: auto;
       position: fixed;
       top: 45%;
@@ -183,13 +183,17 @@
       opacity: 1;
     }
     
-    footer {
+    .button_container_b {
       position: fixed;
       bottom: 50px;
       right: 10px;
     }
 
-    @media only screen and (min-width: 901px){
+    footer{
+      display: none;
+    }
+
+    @media only screen and (min-width: 701px){
       @font-face {
         font-family: 'Pixelade';
         src: url('/fonts/PIXELADE.ttf'),
@@ -199,20 +203,25 @@
         display: flex;
         width: 100%;
         justify-content: center;
-        gap: 180px;
       }
       
       #header_img_ovni2_b{
+        display: none;
         position: relative;
         top: 30px;
         animation: reverseFloat 7s ease-in-out infinite, appear 4s ease;
+        z-index: 999;
       }
       
       #header_img_ovni1_b{
+        position: absolute;
+        left: 2%;
         animation: float 7s ease-in-out infinite, appear 4s ease;
       }
       
       #header_img_ovni3_b{
+        position: absolute;
+        right: 2%;
         animation: float 7s ease-in-out 1s infinite, appear 4s 0s ease;
       }
       
@@ -274,6 +283,7 @@
           font-family: 'Pixelade';
           color: #ffffec;
           text-align: center;
+          overflow: hidden;
         }
         
         #background_b {
@@ -295,12 +305,10 @@
         }
         
         .main_div_paragraph_b {
-          font-size: 3vw; 
+          font-size: clamp(2vh, 7vw, 5vh);
           position: absolute;
-          top: 22%; 
-          margin: 0 20%; 
-          left: 5%;
-          width: 50%; 
+          top: calc(20% + 2vh);
+          margin: 2vh 20vw;
           line-height: 1.2;
           opacity: 1;
           transition: opacity 1s ease;
@@ -308,9 +316,10 @@
         
         .main_logo_img_b {
           z-index: 1;
-          max-height: 3000px;
+          max-height: 500vh;
+          max-width: 50vw;
           width: auto;
-          position: fixed;
+          position: absolute;
           top: 45%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -331,14 +340,15 @@
         .body_button_b:hover {
           background-color: #008a85;
           color: #fcfc40;
+          cursor: pointer;
         }
         
         #body_start_button_b {
           padding: 8px 45px;
-          font-size: 40px;
-          position: fixed;
-          left: 94%;
-          top: 90%;
+          font-size: 50px;
+          position: absolute;
+          left: 89%;
+          top: 82%;
           opacity: 0;
           transform: translate(-50%, -50%);
           transition: opacity 1s ease;
@@ -361,9 +371,54 @@
           opacity: 1;
         }
         
+        .button_container_b {
+          position: fixed;
+          bottom: 14%;
+          right: 5%;
+        }
+
         footer {
           position: fixed;
-          bottom: 50px;
-          right: 10px;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background-color: #c51e32;
+          color: #ffffec;
+          padding: 15px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          box-sizing: border-box;
+        }
+        
+        .footer-content {
+          width: 100%;
+          font-size: 3vh;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          text-align: center;
+        }
+        
+        .footer-left {
+          flex: 1;
+          text-align: left;
+        }
+        
+        .footer-center {
+          flex: 2;
+          text-align: center;
+        }
+        
+        .footer-right {
+          flex: 1;
+          text-align: right;
+        }
+        
+        .footer-logo {
+          max-height: 40px;
+          width: auto;
         }
     }

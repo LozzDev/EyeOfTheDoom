@@ -19,7 +19,7 @@ function createPrompt() {
 
   Object.assign(messageContainer.style, {
     position: "absolute",
-    bottom: "10%",
+    bottom: "3%",
     left: "50%",
     transform: "translateX(-50%)",
     textAlign: "center",

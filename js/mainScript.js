@@ -306,7 +306,7 @@ function executerCasual() {
   }, 900);
 
   setTimeout(() => {
-    human.setAttribute("src", "../images/blood_effect.gif");
+    human.setAttribute("src", "../images/Blood_Effect.gif");
     laser.setAttribute("src", "../images/yellowBallExplosion.gif");
     deadAstronautSound.play();
   }, 500);
@@ -693,7 +693,7 @@ function createEndPage(arrayExecutedHumans) {
   childDiv2_1.className = "child-div-2-1";
 
   const astronaut1 = document.createElement("img");
-  astronaut1.src = "../images/sprites/astronauts/astronaut_01.gif";
+  astronaut1.src = "../images/Sprites/Astronauts/astronaut_01.gif";
   astronaut1.id = "astronaut1";
   astronaut1.className = "astronaut";
 
@@ -710,7 +710,7 @@ function createEndPage(arrayExecutedHumans) {
   childDiv2_2_1.className = "child-div-2-2-1";
 
   const astronaut2 = document.createElement("img");
-  astronaut2.src = "../images/sprites/astronauts/dead-astronaut.png";
+  astronaut2.src = "../images/Sprites/Astronauts/dead-astronaut.png";
   astronaut2.id = "astronaut2";
   astronaut2.className = "astronaut";
 
@@ -724,7 +724,7 @@ function createEndPage(arrayExecutedHumans) {
   childDiv2_2_2.className = "child-div-2-2-2";
 
   const astronaut3 = document.createElement("img");
-  astronaut3.src = "../images/sprites/astronauts/dead-astronaut.png";
+  astronaut3.src = "../images/Sprites/Astronauts/dead-astronaut.png";
   astronaut3.id = "astronaut3";
   astronaut3.className = "astronaut";
 
@@ -748,19 +748,19 @@ function createEndPage(arrayExecutedHumans) {
 
   const astronautsGroup1 = [
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `4th ${executeHumansArray[12]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `5th ${executeHumansArray[11]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `6th ${executeHumansArray[10]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `7th ${executeHumansArray[9]}`,
     },
   ];
@@ -782,19 +782,19 @@ function createEndPage(arrayExecutedHumans) {
 
   const astronautsGroup2 = [
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `8th ${executeHumansArray[8]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `9th ${executeHumansArray[7]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `10th ${executeHumansArray[6]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `11th ${executeHumansArray[5]}`,
     },
   ];
@@ -816,19 +816,19 @@ function createEndPage(arrayExecutedHumans) {
 
   const astronautsGroup3 = [
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `12th ${executeHumansArray[4]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `13th ${executeHumansArray[3]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `14th ${executeHumansArray[2]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `15th ${executeHumansArray[1]}`,
     },
   ];
@@ -856,7 +856,7 @@ function createEndPage(arrayExecutedHumans) {
   lastOneDiv.id = "lastOne";
 
   const astronaut16 = document.createElement("img");
-  astronaut16.src = "../images/sprites/astronauts/dead-astronaut.png";
+  astronaut16.src = "../images/Sprites/Astronauts/dead-astronaut.png";
   astronaut16.className = "astronaut";
 
   const lastText = document.createElement("p");

@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Pixelade";
-  src: url("../fonts/PIXELADE.ttf");
+  src: url("../fonts/PIXELADE.ttf") format("truetype");
 }
 
 header {

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Pixelade";
-  src: url("../fonts/PIXELADE.TTF");
+  src: url("../fonts/PIXELADE.ttf") format("truetype");
 }
 
 body {

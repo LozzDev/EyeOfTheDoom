@@ -391,7 +391,7 @@ function executerCasual() {
   }, 900);
 
   setTimeout(() => {
-    human.setAttribute("src", "../images/blood_effect.gif");
+    human.setAttribute("src", "../images/Blood_Effect.gif");
     laser.setAttribute("src", "../images/yellowBallExplosion.gif");
     deadAstronautSound.play();
   }, 500);
@@ -451,304 +451,304 @@ function createEndPage(arrayExecutedHumans) {
 
   const style = document.createElement("style");
   style.textContent = `
+        
+    @font-face {
+    font-family: 'Pixelade';
+    src: url('../fonts/PIXELADE.woff2') format('woff2'),
+      url('../fonts/PIXELADE.woff') format('woff'),
+      url('../fonts/PIXELADE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  * {
+    font-family: 'Pixelade', sans-serif;
+  }
   
-@font-face {
-font-family: 'Pixelade';
-src: url('../fonts/PIXELADE.woff2') format('woff2'),
-url('../fonts/PIXELADE.woff') format('woff'),
-url('../fonts/PIXELADE.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
+    
+  }
+  
+  .astronaut{
+    width: 50px;
+  }
 
-* {
-font-family: 'Pixelade', sans-serif;
-}
+  #astronaut1{
+    width: 100px;
+  }
+  #astronaut2{
+    width: 75px;
+  }
+  #astronaut3{
+    width: 60px;
+  }
 
-html, body {
-margin: 0;
-padding: 0;
-background-image: url("../images/fondo.png");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-min-height: 100vh;
+  .parent-div-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .parent-div-1-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .ranking-title {
+    font-size: 2rem;
+    letter-spacing: 25px;
+    
+    color: #ffffec;
+  }
+  
+  .parent-div-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .child-div-2-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+  }
+  
+  .child-div-2-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
 
+  .child-div-2-2-1{
+    display: flex;
+    align-items: center;
+  }
 
-}
+  .child-div-2-2-2{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
-.astronaut{
-width: 50px;
-}
+  
+  .parent-div-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .child-div-3-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .child-div-3-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .child-div-3-3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .parent-div-4 {
+    display: flex;
+    gap: 14%;
+    margin-top: 1%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #lastOne {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  p {
+    color: red;
+    font-size: 16px;
+  }
 
-#astronaut1{
-width: 100px;
-}
-#astronaut2{
-width: 75px;
-}
-#astronaut3{
-width: 60px;
-}
+  
+  .btn_izquierda, .btn_derecha {
+    background-color: #c51e32;
+    letter-spacing: 5px;
+    width: 200px;
+    height: 36px;
+    color: #ffffec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    
+    font-size: 27px;
+  }
 
-.parent-div-1 {
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-}
+  .btn_izquierda{
+    width: 150px;
+  }
 
-.parent-div-1-1 {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 20px;
-}
+  .parent-div-5{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  #winnerText{
+        color: white;
+  }
+  
 
-.ranking-title {
-font-size: 2rem;
-letter-spacing: 25px;
+  @media (min-width: 901px){
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-image: url("../images/fondo.png");
+      min-height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .astronaut{
+      width: 100px;
+    }
+    #astronaut1{
+      width: 150px;
+    }
+    #astronaut2{
+      width: 100px;
+    }
+    #astronaut3{
+      width: 100px;
+    }
+    .parent-div-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .parent-div-1-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    .ranking-title {
+      font-size: 2rem;
+      letter-spacing: 25px;
+      
+      color: #ffffec;
+    }
+    
+    .parent-div-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .child-div-2-1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    
+    }
+    
+    .child-div-2-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    
+    }
+    
+    .parent-div-3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .child-div-3-1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .child-div-3-2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .child-div-3-3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    .parent-div-4 {
+      display: flex;
+      gap: 20%;
+      margin-top: 1%;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #lastOne {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    
+    p {
+      color: red;
+      font-size: 32px;
+    }
 
-color: #ffffec;
-}
-
-.parent-div-2 {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.child-div-2-1 {
-display: flex;
-flex-direction: row;
-align-items: center;
-
-}
-
-.child-div-2-2 {
-display: flex;
-flex-direction: column;
-align-items: center;
-
-}
-
-.child-div-2-2-1{
-display: flex;
-align-items: center;
-}
-
-.child-div-2-2-2{
-display: flex;
-align-items: center;
-margin-bottom: 10px;
-}
-
-
-.parent-div-3 {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.child-div-3-1 {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-.child-div-3-2 {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-.child-div-3-3 {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-.parent-div-4 {
-display: flex;
-gap: 14%;
-margin-top: 1%;
-justify-content: center;
-align-items: center;
-}
-
-#lastOne {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-p {
-color: red;
-font-size: 16px;
-}
-
-
-.btn_izquierda, .btn_derecha {
-background-color: #c51e32;
-letter-spacing: 5px;
-width: 200px;
-height: 36px;
-color: #ffffec;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 25px;
-
-font-size: 27px;
-}
-
-.btn_izquierda{
-width: 150px;
-}
-
-.parent-div-5{
-display:flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-}
-#winnerText{
-  color: white;
-}
-
-
-@media (min-width: 901px){
-html, body {
-margin: 0;
-padding: 0;
-background-image: url("../images/fondo.png");
-min-height: 100vh;
-background-position: center;
-background-repeat: no-repeat;
-}
-.astronaut{
-width: 100px;
-}
-#astronaut1{
-width: 150px;
-}
-#astronaut2{
-width: 100px;
-}
-#astronaut3{
-width: 100px;
-}
-.parent-div-1 {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.parent-div-1-1 {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 20px;
-}
-
-.ranking-title {
-font-size: 2rem;
-letter-spacing: 25px;
-
-color: #ffffec;
-}
-
-.parent-div-2 {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.child-div-2-1 {
-display: flex;
-flex-direction: row;
-align-items: center;
-
-}
-
-.child-div-2-2 {
-display: flex;
-flex-direction: row;
-align-items: center;
-
-}
-
-.parent-div-3 {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.child-div-3-1 {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-.child-div-3-2 {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-.child-div-3-3 {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-.parent-div-4 {
-display: flex;
-gap: 20%;
-margin-top: 1%;
-justify-content: center;
-align-items: center;
-}
-
-#lastOne {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
-
-p {
-color: red;
-font-size: 32px;
-}
-
-
-.btn_izquierda, .btn_derecha {
-background-color: #c51e32;
-letter-spacing: 5px;
-width: 256px;
-height: 36px;
-color: #ffffec;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 25px;
-font-size: 27px;
-}
-.btn_derecha{
-float: right;
-}
-.parent-div-5{
-display:flex;
-flex-direction: row;
-justify-content: center;
-gap: 30%;
-}
-#winnerText{
-  color: white;
-}
-}
-`;
+    
+    .btn_izquierda, .btn_derecha {
+      background-color: #c51e32;
+      letter-spacing: 5px;
+      width: 256px;
+      height: 36px;
+      color: #ffffec;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+      font-size: 27px;
+    }
+    .btn_derecha{
+      float: right;
+    }
+    .parent-div-5{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30%;
+    }
+      #winnerText{
+        color: white;
+      }
+  }
+    `;
   head.appendChild(style);
 
   const parentDiv1 = document.createElement("div");
@@ -778,7 +778,7 @@ gap: 30%;
   childDiv2_1.className = "child-div-2-1";
 
   const astronaut1 = document.createElement("img");
-  astronaut1.src = "../images/sprites/astronauts/astronaut_01.gif";
+  astronaut1.src = "../images/Sprites/Astronauts/astronaut_01.gif";
   astronaut1.id = "astronaut1";
   astronaut1.className = "astronaut";
 
@@ -795,7 +795,7 @@ gap: 30%;
   childDiv2_2_1.className = "child-div-2-2-1";
 
   const astronaut2 = document.createElement("img");
-  astronaut2.src = "../images/sprites/astronauts/dead-astronaut.png";
+  astronaut2.src = "../images/Sprites/Astronauts/dead-astronaut.png";
   astronaut2.id = "astronaut2";
   astronaut2.className = "astronaut";
 
@@ -809,7 +809,7 @@ gap: 30%;
   childDiv2_2_2.className = "child-div-2-2-2";
 
   const astronaut3 = document.createElement("img");
-  astronaut3.src = "../images/sprites/astronauts/dead-astronaut.png";
+  astronaut3.src = "../images/Sprites/Astronauts/dead-astronaut.png";
   astronaut3.id = "astronaut3";
   astronaut3.className = "astronaut";
 
@@ -833,19 +833,19 @@ gap: 30%;
 
   const astronautsGroup1 = [
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `4th ${executeHumansArray[12]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `5th ${executeHumansArray[11]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `6th ${executeHumansArray[10]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `7th ${executeHumansArray[9]}`,
     },
   ];
@@ -867,19 +867,19 @@ gap: 30%;
 
   const astronautsGroup2 = [
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `8th ${executeHumansArray[8]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `9th ${executeHumansArray[7]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `10th ${executeHumansArray[6]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `11th ${executeHumansArray[5]}`,
     },
   ];
@@ -901,19 +901,19 @@ gap: 30%;
 
   const astronautsGroup3 = [
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `12th ${executeHumansArray[4]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `13th ${executeHumansArray[3]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `14th ${executeHumansArray[2]}`,
     },
     {
-      src: "../images/sprites/astronauts/dead-astronaut.png",
+      src: "../images/Sprites/Astronauts/dead-astronaut.png",
       text: `15th ${executeHumansArray[1]}`,
     },
   ];
@@ -941,7 +941,7 @@ gap: 30%;
   lastOneDiv.id = "lastOne";
 
   const astronaut16 = document.createElement("img");
-  astronaut16.src = "../images/sprites/astronauts/dead-astronaut.png";
+  astronaut16.src = "../images/Sprites/Astronauts/dead-astronaut.png";
   astronaut16.className = "astronaut";
 
   const lastText = document.createElement("p");

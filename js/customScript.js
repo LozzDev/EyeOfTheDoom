@@ -59,10 +59,11 @@ function deleteEntry() {
 
   if (index !== -1) {
     entries.splice(index, 1);
-    const deletedName = customList.pop();  
+    customList.splice(index, 1);
+
     error.textContent = `The user "${entryToDelete}" has been removed.`;
     deleteField.value = "";
-    cont.textContent = `${entries.length+4}/16`;
+    cont.textContent = `${entries.length + 4}/16`;
 
     updateVisibility();
   } else {

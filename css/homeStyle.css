@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Pixelade";
-	src: url("/fonts/PIXELADE.TTF");
+	src: url("../fonts/PIXELADE.TTF");
 }
 
 /* General Styles */
@@ -180,42 +180,51 @@ header {
 
 /* Footer */
 footer {
+  
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #c51e32;
+	color: #ffffec;
+	padding: 15px 0;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	justify-content: center;
-	font-size: 1rem;
-	background-color: #1a1a1a;
-	color: #ffffec;
-	width: 100vw;
-	box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-	padding: 0.5rem;
-}
-
-.footer-links {
-	display: flex;
-	justify-content: center;
-	gap: 15px;
-}
-
-.footer-links a {
-	color: #ffffec;
-	padding: 10px 15px;
-	text-decoration: none;
-	transition: color 0.3s, background-color 0.3s, border 0.3s;
-	background-color: transparent;
-	border: 2px solid #c51e32;
-	border-radius: 25px;
-	display: inline-block;
 	text-align: center;
-	font-size: 1.2rem;
-}
-
-.footer-links a:hover {
-	background-color: #008a85;
-	color: #fcfc40;
-	border: none;
-}
+	box-sizing: border-box;
+	margin-top: 0.7%;
+  }
+  
+  .footer-content {
+	width: 100%;
+	font-size: 3vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	text-align: center;
+  }
+  
+  .footer-left {
+	flex: 1;
+	text-align: left;
+  }
+  
+  .footer-center {
+	flex: 2;
+	text-align: center;
+  }
+  
+  .footer-right {
+	flex: 1;
+	text-align: right;
+  }
+  
+  .footer-logo {
+	max-height: 40px;
+	width: auto;
+  }
+  
 
 /* Animations */
 @keyframes float {

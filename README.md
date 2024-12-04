@@ -44,8 +44,10 @@ For this project we have used <strong>HTML5</strong>, <strong>CSS3</strong>, <st
 
 <h1>Metodology 📈</h1>
 
-In this project we have worked with <strong>Agile methodology</strong> and <strong>SCRUM</strong>.
+In this project we have worked with <strong>Agile methodology</strong>, <strong>Pair programming</strong> and <strong>SCRUM</strong>.
 
 <h1>Next steps <img src="https://github.com/user-attachments/assets/b8d0de40-1833-4066-9e1b-367c520ebc4f" width="50px"></h1>
 
-For the future of our application we would like to implement other positions to the astronauts and improve and polish animations and other functionalities of the application.
+For the future of our application, we would like to implement additional astronaut positions, enhance and polish animations, and improve other functionalities of the application.
+
+Additionally, we plan to implement testing for the code and create a victory animation. This will ensure the robustness of our application and provide a more engaging user experience.

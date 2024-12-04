@@ -2,7 +2,9 @@ const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
 const skipButton = document.getElementById("body_skip_button_b");
 let musicBackground = new Audio('./sounds/eod_theme.mp3');
-let sfxClick = new Audio('./sounds/button_click.mp3');
+let sfxClick = new Audio('../sounds/button_click.mp3');
+const sfxHover = new Audio("../sounds/button_hover.mp3");
+const sfxRules = new Audio("../sounds/rules_layout.mp3");
 
 // Reproduce la música de fondo al iniciar los créditos
 function startCredits() {
@@ -58,10 +60,14 @@ startButton.addEventListener("click", (event) => {
   });
 });
 
+// Reproduce el sonido al pasar el cursor sobre el botón "Play Again"
+startButton.addEventListener("mouseover", () => {
+  console.log("has pasao el raton geranio")
+  sfxHover.play()
+});
+
 // Inicia los créditos
 startCredits();
-
-
 
 // Animación de transición
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,11 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelectorAll(".body_button_b").forEach((btn) => {
   btn.addEventListener("click", (event) => {
-      event.preventDefault();
-      const href = btn.getAttribute("data-href");
-      document.body.classList.add("fade-out");
-      setTimeout(() => {
-          window.location.href = href;
-      }, 700);
+    event.preventDefault();
+    const href = btn.getAttribute("data-href");
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = href;
+    }, 700);
   });
 });

@@ -379,11 +379,10 @@ function executerCasual(){
         console.log(executeHumansArray);
         doomEyeImage.setAttribute("src", "../images/Sprites/Eye/Death/dead-animation.gif");
 
-
         setTimeout(() => {
             createEndPage(executeHumansArray);
             winSound.play();
-        }, 2000 );
+        }, 3000);
         
     }  
     console.log(executeHumansArray);

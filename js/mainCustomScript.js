@@ -194,7 +194,7 @@ function humanUbicationY(human){
 //con este foreach nos ahorramos codigo y asignamos coordenadas a todos los objetos
 
 function humanCoordsCalculator(){
-alivehumansCasual.forEach(human => {
+  alivehumansCustom.forEach(human => {
   human.coordsX = humanUbicationX(human);
   human.coordsY = humanUbicationY(human); 
 })
@@ -362,7 +362,7 @@ return; // Salimos de la función
 }
 
 
-const executedHuman = killAliveHumans(alivehumansCasual); //esto es un objeto human
+const executedHuman = killAliveHumans(alivehumansCustom); //esto es un objeto human
 executeHumansArray.push(executedHuman.name);
 
 
@@ -471,7 +471,7 @@ if(indexLimitClicker==15){
   setTimeout(() => {
       createEndPage(executeHumansArray);
       winSound.play();
-  }, 2000 );
+  }, 3000);
   
 }  
 console.log(executeHumansArray);

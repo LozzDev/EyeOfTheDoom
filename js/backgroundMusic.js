@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
     window.location.pathname === "/";
 
   if (isIndexPage) {
-    
+
     audio.currentTime = 0;
   } else {
     
@@ -73,11 +73,8 @@ audio.addEventListener("timeupdate", () => {
 });
 
 document.body.addEventListener("click", () => {
-  const isIndexPage =
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname === "/";
 
-  if (isIndexPage && !isAudioActivated) {
+  if (!isAudioActivated) {
     isAudioActivated = true;
 
     const savedTime = localStorage.getItem("musicTime");

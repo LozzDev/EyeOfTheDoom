@@ -1,5 +1,5 @@
 const globalState = {
-    audio: null, // Aquí guardaremos el objeto Audio
+    audio: null,
   };
   
   export default globalState;

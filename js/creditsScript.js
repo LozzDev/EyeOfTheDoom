@@ -1,39 +1,32 @@
 const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
 const skipButton = document.getElementById("body_skip_button_b");
-let musicBackground = new Audio('./sounds/eod_theme.mp3');
 let sfxClick = new Audio('../sounds/button_click.mp3');
 const sfxHover = new Audio("../sounds/button_hover.mp3");
 const sfxRules = new Audio("../sounds/rules_layout.mp3");
 
-// Reproduce la música de fondo al iniciar los créditos
 function startCredits() {
-  musicBackground.play();
   setTimeout(() => {
     setTimeout(() => {
       showImage();
       showStartButton();
       hideSkipButton();
-    }, 4300); // Muestra el contenido al finalizar los créditos
-  }, 10000); // Duración de la animación de créditos
+    }, 4300); 
+  }, 10000);
 }
 
-// Muestra el botón "Play Again"
 function showStartButton() {
   startButton.style.opacity = 1;
 }
 
-// Oculta el botón "Skip"
 function hideSkipButton() {
   skipButton.style.display = "none";
 }
 
-// Muestra el logo
 function showImage() {
   image.classList.add("fade-in");
 }
 
-// Permite saltar los créditos
 function skipIntro() {
   musicBackground.pause();
   musicBackground.currentTime = 0;
@@ -42,7 +35,6 @@ function skipIntro() {
   showStartButton();
 }
 
-// Eventos
 skipButton.addEventListener("click", skipIntro);
 skipButton.addEventListener("click", () => {
   sfxClick.play();
@@ -60,16 +52,13 @@ startButton.addEventListener("click", (event) => {
   });
 });
 
-// Reproduce el sonido al pasar el cursor sobre el botón "Play Again"
 startButton.addEventListener("mouseover", () => {
   console.log("has pasao el raton geranio")
   sfxHover.play()
 });
 
-// Inicia los créditos
 startCredits();
 
-// Animación de transición
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("fade-in");
 });

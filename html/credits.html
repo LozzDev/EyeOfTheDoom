@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credits</title>
+    <link rel="stylesheet" href="../css/creditsStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../images/favicon.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Credits</title>
-  <link rel="stylesheet" href="../css/creditsStyle.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Electrolize&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet"/>
-  <link rel="icon" href="../images/favicon.png" >
-</head>
-
-<body>
-  <div id="background_b">
-    <header>
-
-    </header>
-    <main>
-
-      <div id="credits_container">
-        <p id="credits_text">
-          <img id="credits_image" src="../images\logo2.png" alt="Image for Credits" width="300px" />
-          <br /><br />
-          Aplication developed by:
-          <br /><br />
-          MARIO LEBRERO GARCÍA - Scrum Master
-          <br /><br />
-          JESÚS MANUEL GARCÍA LOZANO - Product Owner
-          <br /><br />
-          FERNANDO DE LA TORRE ESPERON
-          <br /><br />
-          ADRIÁN PÉREZ AGREDANO
-          <br /><br />
-          SAMUEL UTRILLA NÚÑEZ
-          <br /><br />
-          MAURICIO NICOLÁS ORTIZ
-          <br /><br />
-          <br /><br />
-        </p>
+  <body>
+    <div id="background_b">
+      <header></header>
+      <main>
+        <div id="credits_container">
+          <p id="credits_text">
+            <img
+              id="credits_image"
+              src="../images\logo2.png"
+              alt="Image for Credits"
+              width="300px"
+            />
+            <br /><br />
+            Aplication developed by:
+            <br /><br />
+            MARIO LEBRERO GARCÍA - Scrum Master
+            <br /><br />
+            JESÚS MANUEL GARCÍA LOZANO - Product Owner
+            <br /><br />
+            FERNANDO DE LA TORRE ESPERON
+            <br /><br />
+            ADRIÁN PÉREZ AGREDANO
+            <br /><br />
+            SAMUEL UTRILLA NÚÑEZ
+            <br /><br />
+            MAURICIO NICOLÁS ORTIZ
+            <br /><br />
+            <br /><br />
+          </p>
+        </div>
+        <img
+          class="main_logo_img_b"
+          id="main_logo_img_b"
+          src="../images/logoPortadaTransparente.png"
+          alt="Logo Eye Of Doom"
+        />
+      </main>
+      <div class="container_b">
+        <a class="body_a_b" href="home.html">
+          <button class="body_button_b" id="body_start_button_b">
+            Play Again
+          </button></a
+        >
       </div>
-      <img class="main_logo_img_b" id="main_logo_img_b" src="../images/logoPortadaTransparente.png"
-        alt="Logo Eye Of Doom" />
+      <footer>
+        <button class="body_button_b" id="body_skip_button_b">
+          Skip Intro
+        </button>
+      </footer>
 
-
-    </main>
-    <div class="container_b">
-
-      <a class="body_a_b" href="home.html"> <button class="body_button_b" id="body_start_button_b">Play Again</button></a>
+      <script type="module" src="../js/globalState.js"></script>
+      <script type="module" src="../js/backgroundMusic.js"></script>
+      <script src="../js/creditsScript.js"></script>
     </div>
-    <footer>
-
-      <button class="body_button_b" id="body_skip_button_b">Skip Intro</button>
-
-    </footer>
-
-    <script type="module" src="../js/globalState.js"></script>
-    <script type="module" src="../js/backgroundMusic.js"></script>
-    <script src="../js/creditsScript.js"></script>
-  </div>
-</body>
-
+  </body>
 </html>

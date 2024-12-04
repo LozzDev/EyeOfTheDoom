@@ -1,5 +1,5 @@
 const globalState = {
-    audio: null,
-  };
-  
-  export default globalState;
+  audio: null,
+};
+
+export default globalState;

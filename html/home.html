@@ -1,103 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home</title>
-		<link rel="stylesheet" href="/css/homeStyle.css" />
-		<link rel="icon" href="../images/favicon.png" >
-	</head>
-	<body>
-		<div class="container">
-			<header>
-				<img
-					class="ovni"
-					id="ovni1"
-					src="/images/ovni.png"
-					alt="Ovni"
-				/>
-				<img
-					class="ovni"
-					id="ovni2"
-					src="/images/ovni.png"
-					alt="Ovni"
-				/>
-				<img
-					class="ovni"
-					id="ovni3"
-					src="/images/ovni.png"
-					alt="Ovni"
-				/>
-			</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/homeStyle.css" />
+    <link rel="icon" href="../images/favicon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img class="ovni" id="ovni1" src="/images/ovni.png" alt="Ovni" />
+        <img class="ovni" id="ovni2" src="/images/ovni.png" alt="Ovni" />
+        <img class="ovni" id="ovni3" src="/images/ovni.png" alt="Ovni" />
+      </header>
 
-			<main>
-				<!-- Logo del Juego -->
-				<div class="logo">
-					<img src="/images/logo2.png" alt="Eye of the Doom Logo" />
-				</div>
-				<!-- Botones -->
-				<div class="buttons">
-					<button
-						class="btn-game"
-						id="btn-casual"
-						data-href="mainCasual.html"
-					>
-						Casual game
-					</button>
-					<button
-						class="btn-game"
-						id="btn-custom"
-						data-href="custom.html"
-					>
-						Custom game
-					</button>
-				</div>
+      <main>
+        <div class="logo">
+          <img src="/images/logo2.png" alt="Eye of the Doom Logo" />
+        </div>
 
-				<!-- Botón para mostrar/ocultar las reglas de la version de escritorio-->
-				<button
-					class="rules-toggle-btn-desktop"
-					id="rulesButtonDesktop"
-				>
-					Rules >
-				</button>
+        <div class="buttons">
+          <button class="btn-game" id="btn-casual" data-href="mainCasual.html">
+            Casual game
+          </button>
+          <button class="btn-game" id="btn-custom" data-href="custom.html">
+            Custom game
+          </button>
+        </div>
 
-				<!-- Caja de Reglas (inicialmente oculta) -->
-				<div class="rules-box" id="rulesBox">
-					<p>Game Rules:</p>
-					<ul>
-						<li>
-							Objective: Destroy the Eye of the Abyss before it
-							consumes the Earth.
-						</li>
-						<li>
-							Basic Controls:
-							<ul>
-								<li>Shoot: Click the shoot button.</li>
-							</ul>
-						</li>
-						<li>Victory: The last one standing wins.</li>
-					</ul>
-				</div>
+        <button class="rules-toggle-btn-desktop" id="rulesButtonDesktop">
+          Rules >
+        </button>
 
-				<!-- Botón para mostrar/ocultar las reglas -->
-				<button class="rules-toggle-btn-movil" id="rulesButtonMovil">
-					Rules
-				</button>
-			</main>
+        <div class="rules-box" id="rulesBox">
+          <p>Game Rules:</p>
+          <ul>
+            <li>
+              Objective: Destroy the Eye of the Abyss before it consumes the
+              Earth.
+            </li>
+            <li>
+              Basic Controls:
+              <ul>
+                <li>Shoot: Click the shoot button.</li>
+              </ul>
+            </li>
+            <li>Victory: The last one standing wins.</li>
+          </ul>
+        </div>
 
-			<img id="ovni4" src="/images/ovni.png" alt="Ovni" />
-			<footer>
-				<div class="footer-content">
-					<div class="footer-left">© 2024 Eye of the Doom</div>
-					<div class="footer-center">Aviso Legal | Política de Privacidad | Términos y Condiciones</div>
-					<div class="footer-right">
-						<a href="https://github.com/LozzDev/WheelOfDoom"><img src="../images/github-icon.png" alt="Logotipo" class="footer-logo"></a>
-					</div>
-				</div>
-			  </footer>
-		</div>
-	</body>
-	<script type="module" src="../js/globalState.js"></script>
-    <script type="module" src="../js/backgroundMusic.js"></script>
-	<script src="../js/homeScript.js"></script>
+        <button class="rules-toggle-btn-movil" id="rulesButtonMovil">
+          Rules
+        </button>
+      </main>
+
+      <img id="ovni4" src="/images/ovni.png" alt="Ovni" />
+      <footer>
+        <div class="footer-content">
+          <div class="footer-left">© 2024 Eye of the Doom</div>
+          <div class="footer-center">
+            Aviso Legal | Política de Privacidad | Términos y Condiciones
+          </div>
+          <div class="footer-right">
+            <a href="https://github.com/LozzDev/WheelOfDoom"
+              ><img
+                src="../images/github-icon.png"
+                alt="Logotipo"
+                class="footer-logo"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script type="module" src="../js/globalState.js"></script>
+  <script type="module" src="../js/backgroundMusic.js"></script>
+  <script src="../js/homeScript.js"></script>
 </html>

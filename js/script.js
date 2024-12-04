@@ -54,7 +54,7 @@ function revealHiddenText() {
   if (index < spans.length) {
     spans[index].style.visibility = "visible";
     index++;
-    typingInterval = setTimeout(revealHiddenText, 52);
+    typingInterval = setTimeout(revealHiddenText, 59);
   } else {
     setTimeout(() => {
       paragraph.classList.add("fade-out");

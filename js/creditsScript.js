@@ -1,7 +1,7 @@
 const image = document.getElementById("main_logo_img_b");
 const startButton = document.getElementById("body_start_button_b");
 const skipButton = document.getElementById("body_skip_button_b");
-let sfxClick = new Audio('../sounds/button_click.mp3');
+let sfxClick = new Audio("../sounds/button_click.mp3");
 const sfxHover = new Audio("../sounds/button_hover.mp3");
 const sfxRules = new Audio("../sounds/rules_layout.mp3");
 
@@ -11,7 +11,7 @@ function startCredits() {
       showImage();
       showStartButton();
       hideSkipButton();
-    }, 4300); 
+    }, 4300);
   }, 10000);
 }
 
@@ -42,19 +42,22 @@ skipButton.addEventListener("click", () => {
 
 startButton.addEventListener("click", (event) => {
   event.preventDefault();
-  sfxClick.play().then(() => {
-    setTimeout(() => {
+  sfxClick
+    .play()
+    .then(() => {
+      setTimeout(() => {
+        window.location.href = startButton.parentElement.href;
+      }, 300);
+    })
+    .catch((error) => {
+      console.error("Error reproduciendo el sonido:", error);
       window.location.href = startButton.parentElement.href;
-    }, 300);
-  }).catch(error => {
-    console.error("Error reproduciendo el sonido:", error);
-    window.location.href = startButton.parentElement.href;
-  });
+    });
 });
 
 startButton.addEventListener("mouseover", () => {
-  console.log("has pasao el raton geranio")
-  sfxHover.play()
+  
+  sfxHover.play();
 });
 
 startCredits();

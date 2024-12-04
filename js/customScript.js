@@ -1,7 +1,7 @@
 let entries = [];
 let customList = [];
-let sfxClick = new Audio('/sounds/button_click.mp3');
-let sfxHover = new Audio('/sounds/button_hover.mp3');
+let sfxClick = new Audio("/sounds/button_click.mp3");
+let sfxHover = new Audio("/sounds/button_hover.mp3");
 const playButton1 = document.getElementById("submitbtn_a");
 const playButton2 = document.getElementById("submitbtn2_a");
 const backButton = document.getElementById("backbtn_a");
@@ -36,7 +36,7 @@ function storeEntry() {
   entries.push(entry);
   customList.push(entry);
   inputField.value = "";
-  cont.textContent = `${entries.length+4}/16`;
+  cont.textContent = `${entries.length + 4}/16`;
 
   updateVisibility();
 }
@@ -93,7 +93,7 @@ function validateFormulary(event) {
   customList.unshift(name1, name2, name3, name4);
 
   localStorage.setItem("inputValues", JSON.stringify(customList));
-  
+
   error.textContent = "";
   window.location.href = "../html/mainCustom.html";
 }
@@ -107,7 +107,7 @@ function getRandomName(availableNames) {
 
 function fillMissingNames() {
   let humanList = JSON.parse(localStorage.getItem("humansAlive"));
-  const availableNames = humanList.map(human => human.name);
+  const availableNames = humanList.map((human) => human.name);
 
   const error = document.getElementById("error_a");
 
@@ -164,7 +164,7 @@ function validateFormulary2(event) {
   ];
 
   let humanList = JSON.parse(localStorage.getItem("humansAlive"));
-  const availableNames = humanList.map(human => human.name);
+  const availableNames = humanList.map((human) => human.name);
 
   nameInputs.forEach((input) => {
     if (!input.value.trim()) {
@@ -180,33 +180,33 @@ function validateFormulary2(event) {
 
   localStorage.setItem("inputValues", JSON.stringify(customNameList));
 
-  console.log(customNameList);
+  
 
   error.textContent = "";
 
   window.location.href = "../html/mainCustom.html";
 }
 
-playButton1.addEventListener("click", () =>{
+playButton1.addEventListener("click", () => {
   sfxClick.play();
-  });
+});
 playButton1.addEventListener("mouseover", () => {
   sfxHover.play();
-})
+});
 
-playButton2.addEventListener("click", () =>{
+playButton2.addEventListener("click", () => {
   sfxClick.play();
-  });
-  playButton2.addEventListener("mouseover", () => {
+});
+playButton2.addEventListener("mouseover", () => {
   sfxHover.play();
-})
+});
 
-backButton.addEventListener("click", () =>{
+backButton.addEventListener("click", () => {
   sfxClick.play();
-  });
-  backButton.addEventListener("mouseover", () => {
+});
+backButton.addEventListener("mouseover", () => {
   sfxHover.play();
-})
+});
 
 function goBack(event) {
   event.preventDefault();
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll(".backbtn_a").forEach((btn) => {
   btn.addEventListener("click", (event) => {
     event.preventDefault();
-    
+
     document.body.classList.add("fade-out");
 
     const href = btn.getAttribute("data-href");

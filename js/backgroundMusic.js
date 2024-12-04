@@ -51,10 +51,8 @@ window.addEventListener("DOMContentLoaded", () => {
     window.location.pathname === "/";
 
   if (isIndexPage) {
-
     audio.currentTime = 0;
   } else {
-    
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime) {
       audio.currentTime = parseFloat(savedTime);
@@ -73,18 +71,19 @@ audio.addEventListener("timeupdate", () => {
 });
 
 document.body.addEventListener("click", () => {
-
   if (!isAudioActivated) {
     isAudioActivated = true;
 
     const savedTime = localStorage.getItem("musicTime");
     if (savedTime && domContentLoadedTime !== null && audio.duration > 0) {
-      const timeSinceDomLoaded = (performance.now() - domContentLoadedTime) / 1000;
+      const timeSinceDomLoaded =
+        (performance.now() - domContentLoadedTime) / 1000;
       const adjustedTime = parseFloat(savedTime) + timeSinceDomLoaded;
       audio.currentTime = Math.min(adjustedTime, audio.duration);
     }
 
-    audio.play()
+    audio
+      .play()
       .then(() => {
         if (audio.muted) {
           audio.muted = false;
